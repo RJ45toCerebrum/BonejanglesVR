@@ -11,7 +11,8 @@ namespace com.EvolveVR.BonjanglesVR
         private void Awake()
         {
             node = JSON.Parse(skeletonInfo.text);
-            Debug.Log(node.ToString());
+            Debug.Log(node["cranium"]["wikiURL"]);
+            //node.AsObject.
         }
 
     }
