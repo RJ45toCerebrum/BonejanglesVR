@@ -1,0 +1,237 @@
+fileFormatVersion: 2
+guid: 0bd58af2a72f92d45846a1a6ef5d595d
+timeCreated: 1506140511
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: back1
+    100002: capitate
+    100004: carpals
+    100006: distal
+    100008: distal_phalange_1
+    100010: distal_phalange_2
+    100012: distal_phalange_3
+    100014: distal_phalange_4
+    100016: distal_phalange_5
+    100018: hamate
+    100020: //RootNode
+    100022: hand_R
+    100024: intermediate
+    100026: intermediate_phalange_1
+    100028: intermediate_phalange_2
+    100030: intermediate_phalange_3
+    100032: intermediate_phalange_4
+    100034: lunate
+    100036: metacarpal
+    100038: metacarpal_1
+    100040: metacarpal_2
+    100042: metacarpal_3
+    100044: metacarpal_4
+    100046: metacarpal_5
+    100048: phalanges
+    100050: pisiform
+    100052: proximal
+    100054: proximal_phalange_1
+    100056: proximal_phalange_2
+    100058: proximal_phalange_3
+    100060: proximal_phalange_4
+    100062: proximal_phalange_5
+    100064: scaphoid
+    100066: trapezium
+    100068: trapezoid
+    100070: triquetrum
+    400000: back1
+    400002: capitate
+    400004: carpals
+    400006: distal
+    400008: distal_phalange_1
+    400010: distal_phalange_2
+    400012: distal_phalange_3
+    400014: distal_phalange_4
+    400016: distal_phalange_5
+    400018: hamate
+    400020: //RootNode
+    400022: hand_R
+    400024: intermediate
+    400026: intermediate_phalange_1
+    400028: intermediate_phalange_2
+    400030: intermediate_phalange_3
+    400032: intermediate_phalange_4
+    400034: lunate
+    400036: metacarpal
+    400038: metacarpal_1
+    400040: metacarpal_2
+    400042: metacarpal_3
+    400044: metacarpal_4
+    400046: metacarpal_5
+    400048: phalanges
+    400050: pisiform
+    400052: proximal
+    400054: proximal_phalange_1
+    400056: proximal_phalange_2
+    400058: proximal_phalange_3
+    400060: proximal_phalange_4
+    400062: proximal_phalange_5
+    400064: scaphoid
+    400066: trapezium
+    400068: trapezoid
+    400070: triquetrum
+    2000000: back1
+    2300000: capitate
+    2300002: distal_phalange_1
+    2300004: distal_phalange_2
+    2300006: distal_phalange_3
+    2300008: distal_phalange_4
+    2300010: distal_phalange_5
+    2300012: hamate
+    2300014: intermediate_phalange_1
+    2300016: intermediate_phalange_2
+    2300018: intermediate_phalange_3
+    2300020: intermediate_phalange_4
+    2300022: lunate
+    2300024: metacarpal_1
+    2300026: metacarpal_2
+    2300028: metacarpal_3
+    2300030: metacarpal_4
+    2300032: metacarpal_5
+    2300034: pisiform
+    2300036: proximal_phalange_1
+    2300038: proximal_phalange_2
+    2300040: proximal_phalange_3
+    2300042: proximal_phalange_4
+    2300044: proximal_phalange_5
+    2300046: scaphoid
+    2300048: trapezium
+    2300050: trapezoid
+    2300052: triquetrum
+    3300000: capitate
+    3300002: distal_phalange_1
+    3300004: distal_phalange_2
+    3300006: distal_phalange_3
+    3300008: distal_phalange_4
+    3300010: distal_phalange_5
+    3300012: hamate
+    3300014: intermediate_phalange_1
+    3300016: intermediate_phalange_2
+    3300018: intermediate_phalange_3
+    3300020: intermediate_phalange_4
+    3300022: lunate
+    3300024: metacarpal_1
+    3300026: metacarpal_2
+    3300028: metacarpal_3
+    3300030: metacarpal_4
+    3300032: metacarpal_5
+    3300034: pisiform
+    3300036: proximal_phalange_1
+    3300038: proximal_phalange_2
+    3300040: proximal_phalange_3
+    3300042: proximal_phalange_4
+    3300044: proximal_phalange_5
+    3300046: scaphoid
+    3300048: trapezium
+    3300050: trapezoid
+    3300052: triquetrum
+    4300000: lunate
+    4300002: pisiform
+    4300004: triquetrum
+    4300006: hamate
+    4300008: capitate
+    4300010: trapezoid
+    4300012: trapezium
+    4300014: scaphoid
+    4300016: metacarpal_5
+    4300018: metacarpal_4
+    4300020: metacarpal_3
+    4300022: metacarpal_2
+    4300024: metacarpal_1
+    4300026: proximal_phalange_1
+    4300028: proximal_phalange_2
+    4300030: proximal_phalange_3
+    4300032: proximal_phalange_4
+    4300034: proximal_phalange_5
+    4300036: intermediate_phalange_1
+    4300038: intermediate_phalange_2
+    4300040: intermediate_phalange_3
+    4300042: intermediate_phalange_4
+    4300044: distal_phalange_1
+    4300046: distal_phalange_2
+    4300048: distal_phalange_3
+    4300050: distal_phalange_4
+    4300052: distal_phalange_5
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
