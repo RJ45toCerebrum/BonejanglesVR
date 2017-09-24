@@ -3,15 +3,13 @@
 		"name": "sternum",
 		"description": "The sternum or breastbone is a long flat bone shaped like a necktie located in the center of the chest. It connects to the ribs via cartilage, forming the front of the rib cage, and thus helps to protect the heart, lungs, and major blood vessels from injury. The sternum consists of three regions: the manubrium, the body, and the xiphoid process.\nThe word sternum originates from the Greek στέρνον, meaning chest.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Sternum",
-		"location": "middle chest area",
+		"location": "axial#rib_cage",
 		"function": [
 			"provide structural supprt to rib cage",
 			"ligament attachment for pectoralis muscles",
 			"protect internal organs such as lungs and heart"
 		],
-		"articulations": [
-			""
-		],
+		"articulations": [],
 		"substructures": [
 			"manubrium",
 			"body",
@@ -22,670 +20,505 @@
 		"name": "C1",
 		"description": "First Cervical vertebrae, aka Atlas. Most superior cervical vertebrae. It is named for the Atlas of Greek mythology, because it supports the globe of the head. The atlas is the topmost vertebra and with the axis forms the joint connecting the skull and spine. The atlas and axis are specialized to allow a greater range of motion than normal vertebrae. They are responsible for the nodding and rotation movements of the head.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Atlas_(anatomy)",
-		"location": "Base of the Skull",
+		"location": "axial#spine#cervical",
 		"function": [
 			"provide support to the skull",
 			"more specialized for greater range of motion than most vertebrae."
 		],
-		"articulations": [
-			""
-		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"articulations": ["cranium", "C2"],
+		"substructures": []
 	},
 	"C2": {
 		"name": "C2",
 		"description": "In anatomy, the second cervical vertebra (C2) of the spine is named the axis(from Latin axis, \"axle\") or epistropheus. It forms the pivot upon which the first cervical vertebra (the atlas), which carries the head, rotates.\nThe most distinctive characteristic of this bone is the strong odontoid process known as the dens which rises perpendicularly from the upper surface of the body. That peculiar feature gives to the vertebra a rarely used third name: vertebra dentata. In some judicial hangings the odontoid process may break and hit the medulla oblongata, causing death.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Axis_(anatomy)",
-		"location": "Base of the head just below C1. Think of it as pivot of the C1.",
+		"location": "axial#spine#cervical",
 		"function": [
 			"Structure to the spine and very important for for supporting C1.",
 			"Specialized for allowing C1 a greater range of motion than most vertebrae."
 		],
-		"articulations": [
-			""
-		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"articulations": ["C1", "C3"],
+		"substructures": []
 	},
 	"C3": {
 		"name": "C3",
 		"description": "Just below C2 and above C3. Support head and muscle attachment for head movement.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Cervical_vertebrae",
-		"location": "below C2 above C3 in the Cervicle region fo the spine.",
+		"location":"axial#spine#cervical",
 		"function": [
 			"Support for head.",
 			"neck muscle attachment"
 		],
-		"articulations": [
-			""
-		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"articulations": ["C2", "C4"],
+		"substructures": []
 	},
 	"C4": {
 		"name": "C4",
 		"description": "Just below C2 and above C3. Support head and muscle attachment for head movement.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Cervical_vertebrae",
-		"location": "below C2 above C3 in the Cervicle region fo the spine.",
+		"location": "axial#spine#cervical",
 		"function": [
 			"Support for head.",
 			"neck muscle attachment"
 		],
-		"articulations": [
-			""
-		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"articulations": ["C3", "C5"],
+		"substructures": []
 	},
 	"C5": {
 		"name": "C5",
 		"description": "Just below C2 and above C3. Support head and muscle attachment for head movement.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Cervical_vertebrae",
-		"location": "below C2 above C3 in the Cervicle region fo the spine.",
+		"location": "axial#spine#cervical",
 		"function": [
 			"Support for head.",
 			"neck muscle attachment"
 		],
-		"articulations": [
-			""
-		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"articulations": ["C4", "C6"],
+		"substructures": []
 	},
 	"C6": {
 		"name": "C6",
 		"description": "Just below C2 and above C3. Support head and muscle attachment for head movement.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Cervical_vertebrae",
-		"location": "below C2 above C3 in the Cervicle region fo the spine.",
+		"location": "axial#spine#cervical",
 		"function": [
 			"Support for head.",
 			"neck muscle attachment"
 		],
-		"articulations": [
-			""
-		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"articulations": ["C5", "C7"],
+		"substructures": []
 	},
 	"C7": {
 		"name": "C7",
 		"description": "Just below C2 and above C3. Support head and muscle attachment for head movement.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Cervical_vertebrae",
-		"location": "below C2 above C3 in the Cervicle region fo the spine.",
+		"location": "axial#spine#cervical",
 		"function": [
 			"Support for head.",
 			"neck muscle attachment"
 		],
-		"articulations": [
-			""
-		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"articulations": ["C6", "T1"],
+		"substructures": []
 	},
 	"T1": {
 		"name": "T1",
 		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. The first thoracic vertebra has, on either side of the body, an entire articular facet for the head of the first rib, and a demi-facet for the upper half of the head of the second rib.\nThe body is like that of a cervical vertebra, being broad, concave, and lipped on either side.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
-		"location": "Below C7 and above T2 in the Thoracic region of the spine",
+		"location": "axial#spine#thoracic",
 		"function": [
 			"Support for cervical vertebrae",
 			"support for ribs"
 		],
-		"articulations": [
-			""
-		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"articulations": [ "C7", "T2"],
+		"substructures": []
 	},
 	"T2": {
 		"name": "T2",
-		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. The thoracic spinal nerve 2 (T2) passes out underneath it. The second thoracic vertebra is larger than the first thoracic vertebra",
+		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the 11th and 12th, for articulation with the tubercles of the ribs. The thoracic spinal nerve 2 (T2) passes out underneath it. The second thoracic vertebra is larger than the first thoracic vertebra",
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
-		"location": "Below T1 and above T3 in the Thoracic region of the spine",
+		"location": "axial#spine#thoracic",
 		"function": [
 			"Support for T1",
-			"support for ribs"
+			"Support for ribs"
 		],
-		"articulations": [
-			""
-		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"articulations": ["T1", "T3"],
+		"substructures": []
 	},
 	"T3": {
 		"name": "T3",
 		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. The thoracic spinal nerve 3 (T3) passes out underneath it.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
-		"location": "Below T2 and above T4 in the Thoracic region of the spine",
+		"location": "axial#spine#thoracic",
 		"function": [
 			"Support for T2",
 			"support for ribs"
 		],
 		"articulations": [
-			""
+			"T2", "T4"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"T4": {
 		"name": "T4",
 		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. The fourth thoracic vertebra, together with the fifth, is at the same level as the sternal angle. The thoracic spinal nerve 4 (T4) passes out underneath it.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
-		"location": "Below T3 and above T5 in the Thoracic region of the spine",
+		"location": "axial#spine#thoracic",
 		"function": [
 			"Support for T3",
 			"support for ribs"
 		],
 		"articulations": [
-			""
+			"T3", "T5"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"T5": {
 		"name": "T5",
 		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. The fifth thoracic vertebra, together with the fourth, is at the same level as the sternal angle. The human trachea divides into two main bronchi at the level of the 5th thoracic vertebra, but may also end higher or lower, depending on breathing.\nThe thoracic spinal nerve 5 (T5) passes out underneath it.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
-		"location": "Below T4 and above T6 in the Thoracic region of the spine",
+		"location": "axial#spine#thoracic",
 		"function": [
 			"Support for T4",
 			"support for ribs"
 		],
 		"articulations": [
-			""
+			"T4", "T6"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"T6": {
 		"name": "T6",
 		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. The thoracic spinal nerve 6 (T6) passes out underneath it.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
-		"location": "Below T5 and above T7 in the Thoracic region of the spine",
+		"location": "axial#spine#thoracic",
 		"function": [
 			"Support for T5",
 			"support for ribs"
 		],
 		"articulations": [
-			""
+			"T5", "T7"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"T7": {
 		"name": "T7",
 		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. The thoracic spinal nerve 7 (T7) passes out underneath it.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
-		"location": "Below T6 and above T8 in the Thoracic region of the spine",
+		"location": "axial#spine#thoracic",
 		"function": [
 			"Support for T6",
 			"support for ribs"
 		],
 		"articulations": [
-			""
+			"T6","T8"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"T8": {
 		"name": "T8",
 		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. The eighth thoracic vertebra is, together with the ninth thoracic vertebra, at the same level as the xiphisternum.\nThe thoracic spinal nerve 8 (T8) passes out underneath it.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
-		"location": "Below T7 and above T9 in the Thoracic region of the spine",
+		"location": "axial#spine#thoracic",
 		"function": [
 			"Support for T7",
 			"support for ribs"
 		],
 		"articulations": [
-			""
+			"T7", "T9"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"T9": {
 		"name": "T9",
 		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. The ninth thoracic vertebra may have no demi-facets below. In some subjects however, it has two demi-facets on either side; when this occurs the tenth doesn't have facets but demi-facets at the upper part.\nThe thoracic spinal nerve 9 (T9) passes out underneath it.\nThe xiphisternum (or xiphoid process of the sternum) is at the same level in the axial plane.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
-		"location": "Below T8 and above T10 in the Thoracic region of the spine",
+		"location": "axial#spine#thoracic",
 		"function": [
 			"Support for T8",
 			"support for ribs"
 		],
 		"articulations": [
-			""
+			"T8", "T10"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"T10": {
 		"name": "T10",
 		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. The tenth thoracic vertebra has (except in the cases just mentioned) an entire articular facet (not demi-facet) on either side, which is placed partly on the lateral surface of the pedicle. It doesn't have any kind of facet below, because the following ribs only have one facet on their heads.\nThe thoracic spinal nerve 10 (T10) passes out underneath it.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
-		"location": "Below T9 and above T11 in the Thoracic region of the spine",
+		"location":"axial#spine#thoracic",
 		"function": [
 			"Support for T9",
 			"support for ribs"
 		],
 		"articulations": [
-			""
+			"T9", "T11"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"T11": {
 		"name": "T11",
 		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. In the eleventh thoracic vertebra the body approaches in its form and size to that of the lumbar vertebrae.\nThe articular facets for the heads of the ribs are of large size, and placed chiefly on the pedicles, which are thicker and stronger in this and the next vertebra than in any other part of the thoracic region.\nThe spinous process is short, and nearly horizontal in direction.\nThe transverse processes are very short, tuberculated at their extremities, and do not have articular facets.\nThe thoracic spinal nerve 11 (T11) passes out underneath it.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
-		"location": "Below T10 and above T12 in the Thoracic region of the spine",
+		"location": "axial#spine#thoracic",
 		"function": [
 			"Support for T10",
 			"support for ribs"
 		],
 		"articulations": [
-			""
+			"T10", "T12"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"T12": {
 		"name": "T12",
 		"description": "In vertebrates, thoracic vertebrae compose the middle segment of the vertebral column, between the cervical vertebrae and the lumbar vertebrae.[1] In humans, there are twelve thoracic vertebrae and they are intermediate in size between the cervical and lumbar vertebrae; they increase in size going towards the lumbar vertebrae, with the lower ones being a lot larger than the upper. They are distinguished by the presence of facets on the sides of the bodies for articulationwith the heads of the ribs, and facets on the transverse processes of all, except the eleventh and twelfth, for articulation with the tubercles of the ribs. The twelfth thoracic vertebra has the same general characteristics as the eleventh, but may be distinguished from it by its inferior articular surfaces being convex and directed lateralward, like those of the lumbar vertebrae; by the general form of the body, laminae, and spinous process, in which it resembles the lumbar vertebrae; and by each transverse process being subdivided into three elevations, the superior, inferior, and lateral tubercles: the superior and inferior correspond to the mammillary and accessory processes of the lumbar vertebrae. Traces of similar elevations are found on the transverse processes of the tenth and eleventh thoracic vertebrae.\nThe thoracic spinal nerve 12 (T12) passes out underneath it.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
-		"location": "Below T11 and above L1 in the Thoracic region of the spine",
+		"location": "axial#spine#thoracic",
 		"function": [
 			"Support for T11",
 			"support for ribs"
 		],
 		"articulations": [
-			""
+			"T11", "L1"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"L1": {
 		"name": "L1",
 		"description": "The lumbar vertebrae are, in human anatomy, the five vertebrae between the rib cage and the pelvis. They are the largest segments of the vertebral column and are characterized by the absence of the foramen transversarium within the transverse process (as it is only found in the cervical region), and by the absence of facets on the sides of the body. They are designated L1 to L5, starting at the top. The lumbar vertebrae help support the weight of the body, and permit movement.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Lumbar_vertebrae",
-		"location": "Just below T12 and Above L2 in the Lumbar region of the spine. Starting point of the Lumbar region.",
+		"location": "axial#spine#lumbar",
 		"function": [
 			"Support for Thoracic vertebrae",
 			"lower back muscle attachment",
 			"support of the upper body"
 		],
 		"articulations": [
-			""
+			"T12", "L2"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"L2": {
 		"name": "L2",
 		"description": "The lumbar vertebrae are, in human anatomy, the five vertebrae between the rib cage and the pelvis. They are the largest segments of the vertebral column and are characterized by the absence of the foramen transversarium within the transverse process (as it is only found in the cervical region), and by the absence of facets on the sides of the body. They are designated L1 to L5, starting at the top. The lumbar vertebrae help support the weight of the body, and permit movement.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Lumbar_vertebrae",
-		"location": "Just below L1 and Above L3 in the Lumbar region.",
+		"location": "axial#spine#lumbar",
 		"function": [
 			"Support for Thoracic vertebrae",
 			"lower back muscle attachment",
 			"support of the upper body"
 		],
 		"articulations": [
-			""
+			"L1", "L3"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"L3": {
 		"name": "L3",
 		"description": "The lumbar vertebrae are, in human anatomy, the five vertebrae between the rib cage and the pelvis. They are the largest segments of the vertebral column and are characterized by the absence of the foramen transversarium within the transverse process (as it is only found in the cervical region), and by the absence of facets on the sides of the body. They are designated L1 to L5, starting at the top. The lumbar vertebrae help support the weight of the body, and permit movement.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Lumbar_vertebrae",
-		"location": "Just below L2 and Above L4 in the Lumbar region.",
+		"location": "axial#spine#lumbar",
 		"function": [
 			"Support for Thoracic vertebrae",
 			"lower back muscle attachment",
 			"support of the upper body"
 		],
 		"articulations": [
-			""
+			"L2", "L4"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"L4": {
 		"name": "L4",
 		"description": "The lumbar vertebrae are, in human anatomy, the five vertebrae between the rib cage and the pelvis. They are the largest segments of the vertebral column and are characterized by the absence of the foramen transversarium within the transverse process (as it is only found in the cervical region), and by the absence of facets on the sides of the body. They are designated L1 to L5, starting at the top. The lumbar vertebrae help support the weight of the body, and permit movement.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Lumbar_vertebrae",
-		"location": "Just below L3 and Above L5 in the Lumbar region.",
+		"location": "axial#spine#lumbar",
 		"function": [
 			"Support for Thoracic vertebrae",
 			"lower back muscle attachment",
 			"support of the upper body"
 		],
 		"articulations": [
-			""
+			"L3", "L5"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"L5": {
 		"name": "L5",
 		"description": "The lumbar vertebrae are, in human anatomy, the five vertebrae between the rib cage and the pelvis. They are the largest segments of the vertebral column and are characterized by the absence of the foramen transversarium within the transverse process (as it is only found in the cervical region), and by the absence of facets on the sides of the body. They are designated L1 to L5, starting at the top. The lumbar vertebrae help support the weight of the body, and permit movement.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Lumbar_vertebrae",
-		"location": "Just below L4 and Above Sacrum in the Lumbar region. End of the lumbar region.",
+		"location": "axial#spine#lumbar",
 		"function": [
 			"Support for Thoracic vertebrae",
 			"lower back muscle attachment",
 			"support of the upper body"
 		],
 		"articulations": [
-			""
+			"L4", "sacrum"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"sacrum": {
 		"name": "sacrum",
 		"description": "The sacrum in human anatomy is a large, triangular bone at the base of the spine, that forms by the fusing of sacral vertebrae S1–S5, between 18 and 30 years of age.\nThe sacrum articulates (forms a joint with) with four other bones. It is situated at the upper, back part of the pelvic cavity, where it is anatomically insertedbetween the two hip bones (ilium). The two lateral projections of the sacrum are called the alae (wings), and articulate with the ilium at the L-shaped sacroiliac joints. The upper part of the sacrum connects with the last lumbar vertebra, and its lower part with the coccyx (tailbone) via the sacral and coccygeal cornua.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Sacrum",
-		"location": "Just below L5. Intersects the os coxa (hip bones) in the pelvis region.",
+		"location": "axial#girdle_pelvic",
 		"function": [
 			"The sacrum is a complex structure providing support for the spine.",
 			"accommodation for the spinal nerves."
 		],
 		"articulations": [
-			""
+			"os_coxa","L5"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"os_coxa": {
-		"name": "os_coxa",
+		"name": "os_coxa / hip bone",
 		"description": "The hip bone (innominate bone, pelvic bone or coxal bone) is a large flat bone, constricted in the center and expanded above and below. In some vertebrates (including humans before puberty) it is composed of three bones: the ilium, ischium, and the pubis.\nThe two hip bones join at the pubic symphysis and together with the sacrum and coccyx (the pelvic part of the spine) comprise the skeletal component of the pelvis – the pelvic girdle which surrounds the pelvic cavity. They are connected to the sacrum, which is part of the axial skeleton, at the sacroiliac joint. Each hip bone is connected to the corresponding femur (thigh bone) (forming the primary connection between the bones of the lower limb and the axial skeleton) through the large ball and socket joint of the hip.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Hip_bone",
-		"location": "Hips. They articulate with the Sacrum in the pelvis region.",
+		"location": "appendicular#girdle_pelvic",
 		"function": [
 			"supports upper body",
 			"form the primary connection between the bones of the lower limb and the axial skeleton.",
 			"provide connections for muscle and thus allowing lowe leg movement."
 		],
 		"articulations": [
-			""
+			"sacrum","femur"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
-	"rib": {
-		"name": "rib",
-		"description": "In vertebrate anatomy, ribs (Latin: costae) are the long curved bones which form the rib cage. In most tetrapods, ribs surround the chest, enabling the lungs to expand and thus facilitate breathing by expanding the chest cavity. They serve to protect the lungs, heart, and other internal organs of the thorax. In some animals, especially snakes, ribs may provide support and protection for the entire body.",
-		"wikiURL": "https://en.wikipedia.org/wiki/Rib",
-		"location": "Middle fo the body. Many of the ribs articulate with the thoracic vertebrae of the spine. Middle of the Body.",
+	"rib_cage": {
+		"name": "Rib Cage",
+		"description": "The rib cage is an arrangement of bones in the thorax of all vertebrates except the lamprey and the frog. It is formed by the vertebral column, ribs, and sternum and encloses the heart and lungs. In humans, the rib cage, also known as the thoracic cage, is a bony and cartilaginous structure which surrounds the thoracic cavity and supports the pectoral girdle (shoulder girdle), forming a core portion of the human skeleton. A typical human rib cage consists of 24 ribs, the sternum (with xiphoid process), costal cartilages, and the 12 thoracic vertebrae. Together with the skin and associated fascia and muscles, the rib cage makes up the thoracic wall and provides attachments for the muscles of the neck, thorax, upper abdomen, and back.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Rib_cage",
+		"location": "axial#rib_cage",
 		"function": [
 			"Help expand lungs",
-			"protect lungs"
+			"protect lungs",
+			"muscle attachment"
 		],
-		"articulations": [
-			""
-		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"articulations": ["sternum"],
+		"substructures": ["sacrum", "false_rib"]
 	},
-	"false_rib": {
-		"name": "false_rib",
-		"description": "ribs that DO NOT articulate with thoracic vertebrae.",
+	"floating_rib": {
+		"name": "Floating Rib",
+		"description": "ribs that DO NOT connect to the sacrum.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Rib",
-		"location": "lower posterior region of the rib cage.",
+		"location": "axial#rib_cage",
 		"function": [
 			"protection of kidneys and organs near by"
 		],
 		"articulations": [
-			""
+			"T11","T12"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"cranium": {
 		"name": "cranium",
 		"description": "Makes up the hard bony structure around the brain. Main function is for protecting the brain from trauma.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Skull",
-		"location": "Skull region.",
+		"location": "axial#skull",
 		"function": [
-			"Protection of the brain."
+			"Protection of the brain.",
+			"Protection of eyes.",
+			"Muscle attachment for jaw and neck."
 		],
 		"articulations": [
-			""
+			"teeth","mandible", "C1"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"mandible": {
 		"name": "mandible",
 		"description": "Mandible, aka the jaw, is the bone that is used for forming the mouth and allows for chewing.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Mandible",
-		"location": "Skull region.",
+		"location": "axial#skull",
 		"function": [
 			"chewing of food. Provides a structure for muscle attachment that allows the chewing of food.",
 			"protection of inner mouth parts."
 		],
 		"articulations": [
-			""
+			"cranium","teeth"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"clavicle": {
 		"name": "clavicle",
 		"description": "In human anatomy, the clavicle or collarbone is a long bone that serves as a strutbetween the shoulder blade and the sternum or breastbone. There are two clavicles, one on the left and one on the right. The clavicle is the only long bone in the body that lies horizontally. Together with the shoulder blade it makes up the shoulder girdle. It is a palpable bone and in people who have less fat in this region, the location of the bone is clearly visible, as it creates a bulge in the skin. It receives its name from the Latin: clavicula (\"little key\") because the bone rotates along its axis like a key when the shoulder is abducted.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Clavicle",
-		"location": "Shoulder region.",
+		"location": "appendicular#girdle_shoulder",
 		"function": [
 			"It serves as a rigid support from which the scapula and free limb suspended; an arrangement that keeps the upper limb away from the thorax so that the arm has maximum range of movement. Acting as a flexible, crane-like strut, it allows the scapula to move freely on the thoracic wall.",
 			"Covering the cervicoaxillary canal, it protects the neurovascular bundle that supplies the upper limb.",
 			"Transmits physical impacts from the upper limb to the axial skeleton."
 		],
 		"articulations": [
-			""
+			"scapula", "sternum"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"humerus": {
-		"name": "humerus",
+		"name": "Humerus",
 		"description": "The humerus is a long bone in the arm or forelimbthat runs from the shoulder to the elbow. It connects the scapula and the two bones of the lower arm, the radius and ulna, and consists of three sections. The humeral upper extremity consists of a rounded head, a narrow neck, and two short processes (tubercles, sometimes called tuberosities). The body is cylindrical in its upper portion, and more prismatic below. The lower extremityconsists of 2 epicondyles, 2 processes (trochlea & capitulum), and 3 fossae (radial fossa, coronoid fossa, and olecranon fossa). As well as its true anatomical neck, the constriction below the greater and lesser tubercles of the humerus is referred to as its surgical neck due to its tendency to fracture, thus often becoming the focus of surgeons.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Humerus",
-		"location": "Upper Arm / Bicep region.",
+		"location": "appendicular#extremity_superior#arm#upper",
 		"function": [
 			"Structure to the arm",
 			"muscle attachment for arm movement."
 		],
 		"articulations": [
-			""
+			"scapula", "radius", "ulna"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"scapula": {
 		"name": "scapula",
 		"description": "In anatomy, the scapula (plural scapulae or scapulas) or shoulder blade is the bone that connects the humerus (upper arm bone) with the clavicle (collar bone). Like their connected bones the scapulae are paired, with the scapula on the left side of the body being roughly a mirror image of the right scapula. In early Roman times, people thought the bone resembled a trowel, a small shovel. The shoulder blade is also called omo in Latin medical terminology.\nThe scapula forms the back of the shoulder girdle. In humans, it is a flat bone, roughly triangular in shape, placed on a posterolateral aspect of the thoracic cage.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Scapula",
-		"location": "Back of Shoulder Girdle.",
+		"location": "appendicular#girdle_shoulder",
 		"function": [
 			"Many muscles attach to it for musle movement."
 		],
 		"articulations": [
 			""
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"ulna": {
 		"name": "ulna",
 		"description": "The ulna is one of the two long bones in the forearm (the other is the radius). It is on the side opposite the thumb, extends from the elbow to the wrist, and runs parallel to the radius, which it exceeds in length and size. In anatomical position, when the arms are down at the sides of the body and the palms of the hands face forward, the ulna is located at the side of the forearm closest to the body (the medial side). The bone may break due to excessive weight or impact",
 		"wikiURL": "https://en.wikipedia.org/wiki/Ulna",
-		"location": "Biceps region of the lower arm.",
+		"location": "appendicular#extremity_superior#arm#lower",
 		"function": [
 			"arm movement",
 			"muscle attachment for hand muscles."
 		],
 		"articulations": [
-			""
+			"humerus", "radius", "lunate", "triquetrum", "pisiform"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"radius": {
 		"name": "radius",
 		"description": "The radius or radial bone is one of the two large bones of the forearm, the other being the ulna. It extends from the lateral side of the elbow to the thumb side of the wrist and runs parallel to the ulna, which exceeds it in length and size. It is a long bone, prism-shaped and slightly curved longitudinally.\nThe radius is part of two joints: the elbow and the wrist. At the elbow, it joins with the capitulum of the humerus, and in a separate region, with the ulna at the radial notch. At the wrist, the radius forms a joint with the ulna bone.\nThe corresponding bone in the lower leg is the tibia.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Radius_(bone)",
-		"location": "Biceps region of the lower arm.",
+		"location": "appendicular#extremity_superior#arm#lower",
 		"function": [
 			"arm movement",
 			"muscle attachment for hand muscles."
 		],
 		"articulations": [
-			""
+			"humerus", "scaphoid", "lunate", "radius", "trapezium"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"patella": {
 		"name": "patella",
 		"description": "The patella, also known as the kneecap or kneepan, is a thick, circular-triangular bone which articulates with the femur (thigh bone) and covers and protects the anterior articular surface of the knee joint. The patella is found in many tetrapods, such as mice, cats, and birds, but not in whales or most reptilesand amphibians such as snakes or frogs.\nIn humans, the patella is the largest sesamoid bone in the body. Babies are born with a patella of soft cartilage which begins to ossify into bone at about three years of age.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Patella",
-		"location": "Knee region",
+		"location": "appendicular#extremity_inferior#leg#lower",
 		"function": [
 			"The primary functional role of the patella is knee extension. The patella increases the leverage that the tendon can exert on the femur by increasing the angle at which it acts."
 		],
 		"articulations": [
 			""
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"tibia": {
-		"name": "tibia",
+		"name": "Tibia",
 		"description": "The tibia, also known as the shinboneor shankbone, is the larger and stronger of the two bones in the leg below the knee in vertebrates (the other being the fibula), and it connects the knee with the ankle bones. The tibia is found on the medial side of the leg next to the fibula, and closer to the median plane or centre-line. The tibia is connected to the fibula by the interosseous membrane of the leg, forming a type of fibrous joint called a syndesmosis with very little movement. The tibia is named for the flute tibia. It is the second largest bone in the human bodynext to the femur. The leg bones are the strongest long bones as they support the rest of the body.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Tibia",
-		"location": "Leg Region",
+		"location": "appendicular#extremity_inferior#leg#lower",
 		"function": [
 			"Supports the Femur",
 			"Muscle attachment for calf and other muscle movement."
 		],
 		"articulations": [
-			""
+			"fibula", "femur", "patella", "talus"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"fibula": {
 		"name": "fibula",
@@ -706,335 +539,685 @@
 		]
 	},
 	"femur": {
-		"name": "femur",
+		"name": "Femur",
 		"description": "The femur or thighbone, is the most proximal (closest to the hip joint) bone of the leg in tetrapod vertebratescapable of walking or jumping, such as most land mammals, birds, many reptilessuch as lizards, and amphibians such as frogs. In vertebrates with four legs such as dogs and horses, the femur is found only in the hindlimbs. The head of the femur articulates with the acetabulum in the pelvic bone forming the hip joint, while the distal part of the femur articulates with the tibia and kneecap forming the knee joint. By most measures the femur is the strongest bone in the body. The femur is also the longest bone in the body.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Femur",
-		"location": "Thigh Region",
+		"location": "appendicular#extremity_inferior#leg#upper",
 		"function": [
 			"Supports the Pelvis",
 			"Thigh muscle attachment"
 		],
 		"articulations": [
-			""
+			"os_coxa", "patella", "tibia"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"trapezoid": {
 		"name": "trapezoid",
 		"description": "The trapezoid bone (lesser multangular bone) is a carpal bone in tetrapods, including humans. It is the smallest bone in the distal row. It may be known by its wedge-shaped form, the broad end of the wedge constituting the dorsal, the narrow end the palmar surface; and by its having four articular facets touching each other, and separated by sharp edges. It is homologous with the \"second distal carpal\" of reptiles and amphibians.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Trapezoid_bone",
-		"location": "hand",
+		"location": "appendicular#extremity_superior#hand#carpals",
 		"function": [
 			"The carpal bones function as a unit to provide a bony superstructure for the hand."
 		],
 		"articulations": [
-			""
+			"trapezium", "capitate", "scaphoid", "metacarpal_2"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"scaphoid": {
 		"name": "scaphoid",
 		"description": "The scaphoid bone is one of the carpal bones of the wrist. It is situated between the hand and forearm on the thumb side of the wrist (also called the lateral or radial side). It forms the radial border of the carpal tunnel. The scaphoid bone is the largest bone of the proximal row of wrist bones, its long axis being from above downward, lateralward, and forward. It is approximately the size and shape of a medium cashew.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Scaphoid_bone",
-		"location": "hand",
+		"location": "appendicular#extremity_superior#hand#carpals",
 		"function": [
 			"The carpal bones function as a unit to provide a bony superstructure for the hand.",
 			"The scaphoid is also involved in movement of the wrist."
 		],
 		"articulations": [
-			""
+			"radius", "triquetrum", "capitate", "trapezoid", "trapezium"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"lunate": {
 		"name": "lunate",
 		"description": "The lunate bone (semilunar bone) is a carpal bone in the human hand. It is distinguished by its deep concavity and crescentic outline. It is situated in the center of the proximal row carpal bones, which lie between the ulna and radiusand the hand. The lunate carpal bone is situated between the lateral scaphoidbone and medial triquetral bone.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Lunate_bone",
-		"location": "hand",
+		"location": "appendicular#extremity_superior#hand#carpals",
 		"function": [
 			"The carpal bones function as a unit to provide a bony superstructure for the hand.",
 			"As a proximal carpal bone, the lunate is also involved in movement of the wrist."
 		],
 		"articulations": [
-			""
+			"triquetrum", "hamate", "capitate", "scaphoid", "ulna", "radius"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
-	"triquetral": {
-		"name": "triquetral",
-		"description": "The triquetral bone also called triquetrum, pyramidal, three-cornered or triangular bone, and formerly cuneiform bone) is located in the wrist on the medial side of the proximal row of the carpus between the lunate and pisiform bones. It is on the ulnar side of the hand, but does not articulate with the ulna. It connects with the pisiform, hamate, and lunate bones. It is the 3rd most commonly fractured carpal bone.",
+	"triquetrum": {
+		"name": "triquetral / triquetrum",
+		"description": "The triquetral bone also called triquetral, pyramidal, three-cornered or triangular bone, and formerly cuneiform bone) is located in the wrist on the medial side of the proximal row of the carpus between the lunate and pisiform bones. It is on the ulnar side of the hand, but does not articulate with the ulna. It connects with the pisiform, hamate, and lunate bones. It is the 3rd most commonly fractured carpal bone.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Triquetral_bone",
-		"location": "hand",
+		"location": "appendicular#extremity_superior#hand#carpals",
 		"function": [
 			"The carpal bones function as a unit to provide a bony superstructure for the hand."
 		],
 		"articulations": [
-			""
+			"pisiform", "hamate", "lunate", "ulna"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"trapezium": {
 		"name": "trapezium",
 		"description": "The trapezium bone (greater multangular bone) is a carpal bone in the wrist. It forms the radial border of the carpal tunnel.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Trapezium_(bone)",
-		"location": "hand",
+		"location": "appendicular#extremity_superior#hand#carpals",
 		"function": [
 			"The carpal bones function as a unit to provide a bony superstructure for the hand.",
 			"It is important in thumb movement."
 		],
 		"articulations": [
-			""
+			"scaphoid", "trapezoid", "metacarpal_1"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"hamate": {
 		"name": "hamate",
 		"description": "The hamate bone or unciform bone (from Latin uncus, \"hook\") is a bone in the human wrist readily distinguishable by its wedge shape and a hook-like process (\"hamulus\") projecting from its palmar surface.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Hamate_bone",
-		"location": "hand",
+		"location": "appendicular#extremity_superior#hand#carpals",
 		"function": [
 			"The carpal bones function as a unit to provide a bony superstructure for the hand."
 		],
 		"articulations": [
-			""
+			"metacarpal_4", "metacarpal_5", "capitate", "triquetrum", "lunate"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"capitate": {
 		"name": "capitate",
 		"description": "The capitate bone is the largest of the carpal bones in the humanhand, and occupies the center of the wrist. It presents, above, a rounded portion or head, which is received into the concavity formed by the scaphoid and lunate bones; a constricted portion or neck; and below this, the body.[1] The bone is also found in many other mammals, and is homologous with the \"third distal carpal\" of reptiles and amphibians.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Capitate_bone",
-		"location": "hand",
+		"location": "appendicular#extremity_superior#hand#carpals",
 		"function": [
 			"The carpal bones function as a unit to provide a bony superstructure for the hand."
 		],
 		"articulations": [
-			""
+			"trapezoid","metacarpal_2", "metacarpal_3", "metacarpal_4", "scaphoid", "lunate", "hamate"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"pisiform": {
-		"name": "pisiform",
+		"name": "Pisiform",
 		"description": "The pisiform bone, also spelled pisiforme (from the Latin pisifomis, pea-shaped), is a small knobbly, pea-shaped bone that is found in the wrist. It forms the ulnar border of the carpal tunnel.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Pisiform_bone",
-		"location": "hand",
+		"location": "appendicular#extremity_superior#hand#carpals",
 		"function": [
 			"The carpal bones function as a unit to provide a bony superstructure for the hand.",
 			"the pisiform is not involved in movement of the wrist."
 		],
 		"articulations": [
-			""
+			"triquetrum", "hamate", "ulna"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
-	"metacarpal": {
-		"name": "metacarpal",
-		"description": "In human anatomy, the metacarpal bones or metacarpus, form the intermediate part of the skeletal hand located between the phalanges of the fingers and the carpal bones of the wrist which forms the connection to the forearm. The metacarpal bones are equivalent to the metatarsal bones in the foot.",
+	"metacarpal_1": {
+		"name": "Metacarpal 1",
+		"description": "In human anatomy, the metacarpal bones or metacarpus, form the intermediate part of the skeletal hand located between the phalanges of the fingers and the carpal bones of the wrist which forms the connection to the forearm. The metacarpal bones are equivalent to the metatarsal bones in the foot. They are numbered from 1-5 going from the thumb to the pinky.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Metacarpal_bones",
-		"location": "hand",
+		"location": "appendicular#extremity_superior#hand#metacarpal",
 		"function": [
 			"hand structure",
 			"hand movement"
 		],
 		"articulations": [
-			""
+			"proximal_phalange_1", "trapezium"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
-	"proximal_phalange": {
-		"name": "proximal_phalange",
-		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
-		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
-		"location": "base of the finger connecting to knuckle",
+	"metacarpal_2": {
+		"name": "Metacarpal 2",
+		"description": "In human anatomy, the metacarpal bones or metacarpus, form the intermediate part of the skeletal hand located between the phalanges of the fingers and the carpal bones of the wrist which forms the connection to the forearm. The metacarpal bones are equivalent to the metatarsal bones in the foot. They are numbered from 1-5 going from the thumb to the pinky.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Metacarpal_bones",
+		"location": "appendicular#extremity_superior#hand#metacarpal",
 		"function": [
-			"finger structure/movement"
+			"hand structure",
+			"hand movement"
 		],
 		"articulations": [
-			""
+			"proximal_phalange_2", "trapezium", "capitate", "metacarpal_3", "trapezoid"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
-	"intermediate_phalange": {
-		"name": "intermediate_phalange",
+	"metacarpal_3": {
+		"name": "Metacarpal 3",
+		"description": "In human anatomy, the metacarpal bones or metacarpus, form the intermediate part of the skeletal hand located between the phalanges of the fingers and the carpal bones of the wrist which forms the connection to the forearm. The metacarpal bones are equivalent to the metatarsal bones in the foot. They are numbered from 1-5 going from the thumb to the pinky.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Metacarpal_bones",
+		"location": "appendicular#extremity_superior#hand#metacarpal",
+		"function": [
+			"hand structure",
+			"hand movement"
+		],
+		"articulations": [
+			"proximal_phalange_3","capitate", "metacarpal_2","metacarpal_4", "trapezoid"
+		],
+		"substructures": []
+	},
+	"metacarpal_4": {
+		"name": "Metacarpal 4",
+		"description": "In human anatomy, the metacarpal bones or metacarpus, form the intermediate part of the skeletal hand located between the phalanges of the fingers and the carpal bones of the wrist which forms the connection to the forearm. The metacarpal bones are equivalent to the metatarsal bones in the foot. They are numbered from 1-5 going from the thumb to the pinky.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Metacarpal_bones",
+		"location": "appendicular#extremity_superior#hand#metacarpal",
+		"function": [
+			"hand structure",
+			"hand movement"
+		],
+		"articulations": [
+			"proximal_phalange_4","capitate", "metacarpal_3","metacarpal_5", "hamate"
+		],
+		"substructures": []
+	},
+	"metacarpal_5": {
+		"name": "Metacarpal 5",
+		"description": "In human anatomy, the metacarpal bones or metacarpus, form the intermediate part of the skeletal hand located between the phalanges of the fingers and the carpal bones of the wrist which forms the connection to the forearm. The metacarpal bones are equivalent to the metatarsal bones in the foot. They are numbered from 1-5 going from the thumb to the pinky.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Metacarpal_bones",
+		"location": "appendicular#extremity_superior#hand#metacarpal",
+		"function": [
+			"hand structure",
+			"hand movement"
+		],
+		"articulations": [
+			"proximal_phalange_5", "metacarpal_4", "hamate"
+		],
+		"substructures": []
+	},
+	"proximal_phalange_1": {
+		"name": "Proximal Phalange 1",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_superior#hand#proximal",
+		"function": [
+			"Thumb movement", "grip"
+		],
+		"articulations": [
+			"distal_phalange_1", "metacarpal_1"
+		],
+		"substructures": []
+	},
+	"proximal_phalange_2": {
+		"name": "Proximal Phalange 2",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_superior#hand#proximal",
+		"function": [
+			"pointer finger movement and grip"
+		],
+		"articulations": [
+			"intermediate_phalange_1", "metacarpal_2"
+		],
+		"substructures": []
+	},
+	"proximal_phalange_3": {
+		"name": "Proximal Phalange 3",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_superior#hand#proximal",
+		"function": [
+			"middle finger movement and grip.", "Also for socken fools"
+		],
+		"articulations": [
+			"intermediate_phalange_2", "metacarpal_3"
+		],
+		"substructures": []
+	},
+	"proximal_phalange_4": {
+		"name": "Proximal Phalange 4",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_superior#hand#proximal",
+		"function": [
+			"ring finger movement and grip.", "dont put a ring on it. You wil regret it"
+		],
+		"articulations": [
+			"intermediate_phalange_3", "metacarpal_4"
+		],
+		"substructures": []
+	},
+	"proximal_phalange_5": {
+		"name": "Proximal Phalange 5",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_superior#hand#proximal",
+		"function": [
+			"pinky finger movement and grip."
+		],
+		"articulations": [
+			"intermediate_phalange_4", "metacarpal_5"
+		],
+		"substructures": []
+	},
+	"proximal_fphalange_1": {
+		"name": "Proximal Phalange 1",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_inferior#foot#phalanges#proximal",
+		"function": [
+			"Toe movement", "leg and foot support"
+		],
+		"articulations": ["metatarsal_1", "distal_fphalange_1"],
+		"substructures": []
+	},
+	"proximal_fphalange_2": {
+		"name": "Proximal Phalange 2",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_inferior#foot#phalanges#proximal",
+		"function": [
+			"Toe movement", "leg and foot support"
+		],
+		"articulations": ["metatarsal_2", "intermediate_fphalange_1"],
+		"substructures": []
+	},
+	"proximal_fphalange_3": {
+		"name": "Proximal Phalange 3",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_inferior#foot#phalanges#proximal",
+		"function": [
+			"Toe movement", "leg and foot support"
+		],
+		"articulations": ["metatarsal_3", "intermediate_fphalange_2"],
+		"substructures": []
+	},
+	"proximal_fphalange_4": {
+		"name": "Proximal Phalange 4",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_inferior#foot#phalanges#proximal",
+		"function": [
+			"Toe movement", "leg and foot support"
+		],
+		"articulations": ["metatarsal_4", "intermediate_fphalange_3"],
+		"substructures": []
+	},
+	"proximal_fphalange_5": {
+		"name": "Proximal Phalange 5",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_inferior#foot#phalanges#proximal",
+		"function": [
+			"Toe movement", "leg and foot support"
+		],
+		"articulations": ["metatarsal_5", "intermediate_fphalange_4"],
+		"substructures": []
+	},
+	"intermediate_phalange_1": {
+		"name": "Intermediate Phalange 1",
 		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone#Middle_phalanges",
-		"location": "middle of finger",
+		"location": "appendicular#extremity_superior#hand#phalanges#intermediate",
 		"function": [
 			"finger structure/movement"
 		],
 		"articulations": [
-			""
+			"distal_phalange_2", "proximal_phalange_2"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
-	"distal_phalange": {
-		"name": "distal_phalange",
+	"intermediate_phalange_2": {
+		"name": "Intermediate Phalange 2",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone#Middle_phalanges",
+		"location": "appendicular#extremity_superior#hand#phalanges#intermediate",
+		"function": [
+			"finger structure/movement"
+		],
+		"articulations": [
+			"distal_phalange_3", "proximal_phalange_3"
+		],
+		"substructures": []
+	},
+	"intermediate_phalange_3": {
+		"name": "Intermediate Phalange 3",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone#Middle_phalanges",
+		"location": "appendicular#extremity_superior#hand#phalanges#intermediate",
+		"function": [
+			"finger structure/movement"
+		],
+		"articulations": [
+			"distal_phalange_4", "proximal_phalange_4"
+		],
+		"substructures": []
+	},
+	"intermediate_phalange_4": {
+		"name": "Intermediate Phalange 4",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone#Middle_phalanges",
+		"location": "appendicular#extremity_superior#hand#phalanges#intermediate",
+		"function": [
+			"finger structure/movement"
+		],
+		"articulations": [
+			"distal_phalange_5", "proximal_phalange_5"
+		],
+		"substructures": []
+	},
+	"intermediate_fphalange_1": {
+		"name": "Intermediate Phalange 1",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone#Middle_phalanges",
+		"location": "appendicular#extremity_inferior#foot#phalanges#intermediate",
+		"function": ["foot movement", "foot support"],
+		"articulations": ["proximal_fphalange_2", "distal_fphalange_2"],
+		"substructures": []
+	},
+	"intermediate_fphalange_2": {
+		"name": "Intermediate Phalange 2",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone#Middle_phalanges",
+		"location": "appendicular#extremity_inferior#foot#phalanges#intermediate",
+		"function": ["foot movement", "foot support"],
+		"articulations": ["proximal_fphalange_3", "distal_fphalange_3"],
+		"substructures": []
+	},
+	"intermediate_fphalange_3": {
+		"name": "Intermediate Phalange 3",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone#Middle_phalanges",
+		"location": "appendicular#extremity_inferior#foot#phalanges#intermediate",
+		"function": ["foot movement", "foot support"],
+		"articulations": ["proximal_fphalange_4", "distal_fphalange_4"],
+		"substructures": []
+	},
+	"intermediate_fphalange_4": {
+		"name": "Intermediate Phalange 3",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone#Middle_phalanges",
+		"location": "appendicular#extremity_inferior#foot#phalanges#intermediate",
+		"function": ["foot movement", "foot support"],
+		"articulations": ["proximal_fphalange_5", "distal_fphalange_5"],
+		"substructures": []
+	},
+	"distal_phalange_1": {
+		"name": "Distal Phalange 1",
 		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
-		"location": "tip of the finger",
+		"location": "appendicular#extremity_superior#hand#phalanges#distal",
 		"function": [
-			"finger structure/movement"
+			"movement for the tip of thumbs"
 		],
 		"articulations": [
-			""
+			"proximal_phalange_1"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
-	"metatarsal": {
-		"name": "metatarsal",
-		"description": "The metatarsal bones, or metatarsus are a group of five long bones in the foot, located between the tarsal bones of the hind- and mid-foot and the phalanges of the toes. Lacking individual names, the metatarsal bones are numbered from the medial side (the side of the great toe): the first, second, third, fourth, and fifth metatarsal (often depicted with Roman numerals). The metatarsals are analogous to the metacarpal bones of the hand. The lengths of the metatarsal bones in humans are, in descending order: second, third, fourth, fifth and first.",
-		"wikiURL": "https://en.wikipedia.org/wiki/Metatarsal_bones",
-		"location": "Middle foot",
+	"distal_phalange_2": {
+		"name": "Distal Phalange 2",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_superior#hand#phalanges#distal",
 		"function": [
-			"foot structure"
+			"movement for the tip pointer fingers"
 		],
 		"articulations": [
-			""
+			"intermediate_phalange_1"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
+	},
+	"distal_phalange_3": {
+		"name": "Distal Phalange 3",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_superior#hand#phalanges#distal",
+		"function": [
+			"movement for the tip middle finger. Fuck you joe boo!"
+		],
+		"articulations": [
+			"intermediate_phalange_2"
+		],
+		"substructures": []
+	},
+	"distal_phalange_4": {
+		"name": "Distal Phalange 4",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_superior#hand#phalanges#distal",
+		"function": [
+			"movement for the tip middle finger. Fuck you joe boo!"
+		],
+		"articulations": [
+			"intermediate_phalange_3"
+		],
+		"substructures": []
+	},
+	"distal_phalange_5": {
+		"name": "Distal Phalange 5",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_superior#hand#phalanges#distal",
+		"function": [
+			"movement for the tip middle finger. Fuck you joe boo!"
+		],
+		"articulations": [
+			"intermediate_phalange_4"
+		],
+		"substructures": []
+	},
+	"distal_fphalange_1": {
+		"name": "Distal Phalange 1",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_inferior#foot#phalanges#distal",
+		"function": ["foot movement", "foot support"],
+		"articulations": ["proximal_fphalange_1"],
+		"substructures": []
+	},
+	"distal_fphalange_2": {
+		"name": "Distal Phalange 2",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_inferior#foot#phalanges#distal",
+		"function": ["foot movement", "foot support"],
+		"articulations": ["intermediate_fphalange_1"],
+		"substructures": []
+	},
+	"distal_fphalange_3": {
+		"name": "Distal Phalange 3",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_inferior#foot#phalanges#distal",
+		"function": ["foot movement", "foot support"],
+		"articulations": ["intermediate_fphalange_2"],
+		"substructures": []
+	},
+	"distal_fphalange_4": {
+		"name": "Distal Phalange 4",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_inferior#foot#phalanges#distal",
+		"function": ["foot movement", "foot support"],
+		"articulations": ["intermediate_fphalange_3"],
+		"substructures": []
+	},
+	"distal_fphalange_5": {
+		"name": "Distal Phalange 5",
+		"description": "The phalanges are digital bones in the hands and feet of most vertebrates. In primates, the thumbs and big toes have two phalanges while the other digits have three phalanges. The phalanges are classed as long bones.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Phalanx_bone",
+		"location": "appendicular#extremity_inferior#foot#phalanges#distal",
+		"function": ["foot movement", "foot support"],
+		"articulations": ["intermediate_fphalange_4"],
+		"substructures": []
+	},
+	"metatarsal_1": {
+		"name": "Metatarsal 1",
+		"description": "The metatarsal bones, or metatarsus are a group of five long bones in the foot, located between the tarsal bones of the hind- and mid-foot and the phalanges of the toes. Lacking individual names, the metatarsal bones are numbered from the medial side (the side of the great toe): the first, second, third, fourth, and fifth metatarsal (often depicted with Roman numerals). The metatarsals are analogous to the metacarpal bones of the hand. The lengths of the metatarsal bones in humans are, in descending order: second, third, fourth, fifth and first. They are numbered 1-5 from toe -> pinky toe.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Metatarsal_bones",
+		"location": "appendicular#extremity_inferior#foot#metatarsals",
+		"function": [
+			"foot structure", "toe movement"
+		],
+		"articulations": [
+			"cuneiform_medial", "proximal_fphalange_1", "metatarsal_2"
+		],
+		"substructures": []
+	},
+	"metatarsal_2": {
+		"name": "Metatarsal 2",
+		"description": "The metatarsal bones, or metatarsus are a group of five long bones in the foot, located between the tarsal bones of the hind- and mid-foot and the phalanges of the toes. Lacking individual names, the metatarsal bones are numbered from the medial side (the side of the great toe): the first, second, third, fourth, and fifth metatarsal (often depicted with Roman numerals). The metatarsals are analogous to the metacarpal bones of the hand. The lengths of the metatarsal bones in humans are, in descending order: second, third, fourth, fifth and first. They are numbered 1-5 from toe -> pinky toe.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Metatarsal_bones",
+		"location": "appendicular#extremity_inferior#foot#metatarsals",
+		"function": [
+			"foot structure/support"
+		],
+		"articulations": [
+			"cuneiform_medial", "cuneiform_intermediate", "cuneiform_lateral", "metatarsal_1", "metatarsal_3", "proximal_fphalange_2"
+		],
+		"substructures": []
+	},
+	"metatarsal_3": {
+		"name": "Metatarsal 3",
+		"description": "The metatarsal bones, or metatarsus are a group of five long bones in the foot, located between the tarsal bones of the hind- and mid-foot and the phalanges of the toes. Lacking individual names, the metatarsal bones are numbered from the medial side (the side of the great toe): the first, second, third, fourth, and fifth metatarsal (often depicted with Roman numerals). The metatarsals are analogous to the metacarpal bones of the hand. The lengths of the metatarsal bones in humans are, in descending order: second, third, fourth, fifth and first. They are numbered 1-5 from toe -> pinky toe.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Metatarsal_bones",
+		"location": "appendicular#extremity_inferior#foot#metatarsals",
+		"function": [
+			"foot structure/support"
+		],
+		"articulations": [
+			"cuneiform_lateral", "metatarsal_2", "metatarsal_4", "proximal_fphalange_3"
+		],
+		"substructures": []
+	},
+	"metatarsal_4": {
+		"name": "Metatarsal 4",
+		"description": "The metatarsal bones, or metatarsus are a group of five long bones in the foot, located between the tarsal bones of the hind- and mid-foot and the phalanges of the toes. Lacking individual names, the metatarsal bones are numbered from the medial side (the side of the great toe): the first, second, third, fourth, and fifth metatarsal (often depicted with Roman numerals). The metatarsals are analogous to the metacarpal bones of the hand. The lengths of the metatarsal bones in humans are, in descending order: second, third, fourth, fifth and first. They are numbered 1-5 from toe -> pinky toe.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Metatarsal_bones",
+		"location": "appendicular#extremity_inferior#foot#metatarsals",
+		"function": [
+			"foot structure/support"
+		],
+		"articulations": [
+			"cuneiform_lateral", "metatarsal_5", "metatarsal_3", "proximal_fphalange_4", "cuboid"
+		],
+		"substructures": []
+	},
+	"metatarsal_5": {
+		"name": "Metatarsal 5",
+		"description": "The metatarsal bones, or metatarsus are a group of five long bones in the foot, located between the tarsal bones of the hind- and mid-foot and the phalanges of the toes. Lacking individual names, the metatarsal bones are numbered from the medial side (the side of the great toe): the first, second, third, fourth, and fifth metatarsal (often depicted with Roman numerals). The metatarsals are analogous to the metacarpal bones of the hand. The lengths of the metatarsal bones in humans are, in descending order: second, third, fourth, fifth and first. They are numbered 1-5 from toe -> pinky toe.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Metatarsal_bones",
+		"location": "appendicular#extremity_inferior#foot#metatarsals",
+		"function": [
+			"foot structure/support"
+		],
+		"articulations": [
+			"metatarsal_4", "proximal_fphalange_5", "cuboid"
+		],
+		"substructures": []
 	},
 	"talus": {
 		"name": "talus",
 		"description": "The talus bone, astragalus, or ankle bone is one of the group of foot bones known as the tarsus. The tarsus forms the lower part of the ankle joint through its articulations with the lateral and medial malleoli of the two bones of the lower leg, the tibia and fibula. Within the tarsus, it articulates with the calcaneus below and navicular in front within the talocalcaneonavicular joint. Through these articulations, it transmits the entire weight of the body to the foot",
 		"wikiURL": "https://en.wikipedia.org/wiki/Talus_bone",
-		"location": "foot",
+		"location": "appendicular#extremity_inferior#foot",
 		"function": [
 			"foot structure",
 			"foot movement"
 		],
 		"articulations": [
-			""
+			"cuboid", "calcaneus", "navicular", "tibia", "fibula"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"navicular": {
 		"name": "navicular",
 		"description": "The navicular bone is a small bone found in the feet of most mammals.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Navicular_bone",
-		"location": "foot",
+		"location": "appendicular#extremity_inferior#foot",
 		"function": [
 			"foot structure",
 			"foot movement"
 		],
 		"articulations": [
-			""
+			"talus", "cuboid", "calcaneus", "cuneiform_medial", "cuneiform_intermediate", "cuneiform_lateral"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"calcaneus": {
 		"name": "calcaneus",
 		"description": "In humans, the calcaneus (from the Latin calcaneus or calcaneum, meaning heel) or heel bone is a bone of the tarsus of the footwhich constitutes the heel. In some other animals, it is the point of the hock.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Calcaneus",
-		"location": "foot",
+		"location": "appendicular#extremity_inferior#foot",
 		"function": [
 			"Botton foot structure",
 			"calf muscle attachment"
 		],
 		"articulations": [
-			""
+			"talus", "cuboid "
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"cuboid": {
 		"name": "cuboid",
 		"description": "In the human body, the cuboid bone is one of the seven tarsal bones of the foot.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Cuboid_bone",
-		"location": "foot",
+		"location": "appendicular#extremity_inferior#foot",
 		"function": [
 			"foot structure"
 		],
 		"articulations": [
-			""
+			"calcaneus", "talus", "navicular", "cuneiform_lateral"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
-	"cuneiform": {
-		"name": "cuneiform",
+	"cuneiform_medial": {
+		"name": "medial cuneiform",
 		"description": "One of three cuneiform bones in the foot. Gives foot structure.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Cuneiform_bones",
-		"location": "foot",
+		"location": "appendicular#extremity_inferior#foot",
 		"function": [
-			"foot structure"
+			"foot structure","kicking nubs in the head"
 		],
 		"articulations": [
-			""
+			"metatarsal_1","cuneiform_intermediate","navicular", "metatarsal_2"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
+	},
+	"cuneiform_intermediate": {
+		"name": "intermediate cuneiform",
+		"description": "One of three cuneiform bones in the foot. Gives foot structure.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Cuneiform_bones",
+		"location": "appendicular#extremity_inferior#foot",
+		"function": [
+			"foot structure","kicking nubs in the head"
+		],
+		"articulations": [
+			"metatarsal_2","cuneiform_medial","navicular", "cuneiform_lateral"
+		],
+		"substructures": []
+	},
+	"cuneiform_lateral": {
+		"name": "Lateral cuneiform",
+		"description": "One of three cuneiform bones in the foot. Gives foot structure.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Cuneiform_bones",
+		"location": "appendicular#extremity_inferior#foot",
+		"function": [
+			"foot structure","kicking nubs in the head"
+		],
+		"articulations": [
+			"metatarsal_2", "metatarsal_3","metatarsal_4","cuneiform_medial","navicular", "cuboid"
+		],
+		"substructures": []
+	},
+	"teeth": {
+		"name": "teeth",
+		"description": "The human teeth function to mechanically break down items of food by cutting and crushing them in preparation for swallowing and digesting. Humans have four types of teeth: incisors, canines, premolars, and molars, each with a specific function. The incisors cut the food, the canines tear the food and the molars and premolars crush the food. The roots of teeth are embedded in the maxilla (upper jaw) or the mandible (lower jaw) and are covered by gums. Teeth are made of multiple tissues of varying density and hardness.\nTeeth are among the most distinctive (and long-lasting) features of mammal species. Humans, like other mammals, are diphyodont, meaning that they develop two sets of teeth. The first set (called the 'baby', 'milk', 'primary', or 'deciduous' set) normally starts to appear at about six months of age, although some babies are born with one or more visible teeth, known as natal teeth. Normal tooth eruption at about six months is known as teething and can be painful.",
+		"wikiURL": "https://en.wikipedia.org/wiki/Human_tooth",
+		"location": "axial#skull",
+		"function": [
+			"mechanically break down items of food by cutting and crushing them in preparation for swallowing and digesting"
+		],
+		"articulations": [
+			"cranium","mandible"
+		],
+		"substructures": []
 	}
 }
