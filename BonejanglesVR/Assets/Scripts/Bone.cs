@@ -22,9 +22,13 @@ namespace com.EvolveVR.BonejanglesVR
 
         public Color boneHighlightColor;
 
+        public VRTK_ObjectTooltip nameTooltip;
+        public VRTK_ObjectTooltip functionTooltip;
+        public float distanceToDisplayTooltips = 0.7f;
+
+
         //delete
         public Text text; 
-
         // end delete
 
         void Awake() {
@@ -81,17 +85,10 @@ namespace com.EvolveVR.BonejanglesVR
             highlighter.thickness = 0.1f;
         }
 
-        // this is specifically because VRTK has some very annoying code that 
-        // makes my MeshCollider a trugger when I clearly dont want that 
-        private IEnumerator LateStart()
-        {
-            yield return new WaitForSeconds(0.2f);
-            meshCollider.enabled = true;
-            meshCollider.isTrigger = false;
-        }
-
         private void Start()
         {
+            VRDebug.Instance.Log("Start", 0);
+
             AddMyComponents();
 
             destinationPoint.DestinationMarkerEnter += OnPointerEnter;
@@ -104,22 +101,63 @@ namespace com.EvolveVR.BonejanglesVR
             SkeletonInfo.TryAddBone(boneInfo);
         }
 
+        // this is specifically because VRTK has some very annoying code that 
+        // makes my MeshCollider a trugger when I clearly dont want that 
+        private IEnumerator LateStart()
+        {
+            yield return new WaitForSeconds(0.2f);
+            meshCollider.enabled = true;
+            meshCollider.isTrigger = false;
+
+
+            if (nameTooltip != null && functionTooltip != null) {
+                nameTooltip.displayText = boneInfo.BoneName;
+                nameTooltip.gameObject.SetActive(false);
+                functionTooltip.displayText = boneInfo.FunctionDescription;
+                functionTooltip.gameObject.SetActive(false);
+            }
+        }
+
         private void Update()
         {
-            if ((leftControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.TouchpadPress) ||
-                rightControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.TouchpadPress)) &&
+            if (rightControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.TouchpadPress) &&
                 isBoneActive) {
                 transform.position = Vector3.Lerp(transform.position, rightControllerEvents.transform.position, 0.04f);
+            }
+
+            if (nameTooltip != null && functionTooltip != null)
+                TooltipRoutine();
+        }
+
+        private void TooltipRoutine()
+        {
+            if (isBoneActive) 
+            {
+                Transform t = VRTK_DeviceFinder.HeadsetTransform();
+                if (t != null) 
+                {
+                    float distance = (t.position - transform.position).magnitude;
+                    VRDebug.Instance.Log(distance.ToString(), 1);
+                    VRDebug.Instance.Log("Hellow worlds", 2);
+                    if (distance < distanceToDisplayTooltips) {
+                        nameTooltip.gameObject.SetActive(true);
+                        functionTooltip.gameObject.SetActive(true);
+                    }
+                }
+            }
+            else {
+                nameTooltip.gameObject.SetActive(false);
+                functionTooltip.gameObject.SetActive(false);
             }
         }
 
         private void OnPointerEnter(object o, DestinationMarkerEventArgs args) {
             isBoneActive = true;
 
-            // delete
+            // delete---------------------------------------Later
             if (text != null) {
-                text.text = boneInfo.BoneName + "\n";
-                text.text += boneInfo.FunctionDescription + "\n";
+                text.text = boneInfo.BoneName + "\n\n";
+                text.text += boneInfo.FunctionDescription + "\n\n";
                 text.text += boneInfo.WikiURL;
             }
         }

@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: 7bde7cfd0d7b39846b4927d02305cc12
+timeCreated: 1506296458
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: loPoly_blinds
+    100002: loPoly_boneJanglesStand
+    100004: loPoly_bookShelf
+    100006: loPoly_chairBack
+    100008: loPoly_chairGuest
+    100010: loPoly_chairStand
+    100012: loPoly_computerMonitor
+    100014: loPoly_computerTower
+    100016: loPoly_desk
+    100018: loPoly_deskCabinet
+    100020: loPoly_droid
+    100022: loPoly_keyboard
+    100024: loPoly_lamp
+    100026: loPoly_mouse
+    100028: loPoly_office
+    100030: loPoly_padOPaper
+    100032: loPoly_pictureFrame
+    100034: loPoly_planter
+    100036: loPoly_planter.001
+    100038: loPoly_shelf
+    100040: loPoly_wheel
+    100042: manScale
+    100044: //RootNode
+    400000: loPoly_blinds
+    400002: loPoly_boneJanglesStand
+    400004: loPoly_bookShelf
+    400006: loPoly_chairBack
+    400008: loPoly_chairGuest
+    400010: loPoly_chairStand
+    400012: loPoly_computerMonitor
+    400014: loPoly_computerTower
+    400016: loPoly_desk
+    400018: loPoly_deskCabinet
+    400020: loPoly_droid
+    400022: loPoly_keyboard
+    400024: loPoly_lamp
+    400026: loPoly_mouse
+    400028: loPoly_office
+    400030: loPoly_padOPaper
+    400032: loPoly_pictureFrame
+    400034: loPoly_planter
+    400036: loPoly_planter.001
+    400038: loPoly_shelf
+    400040: loPoly_wheel
+    400042: manScale
+    400044: //RootNode
+    2300000: loPoly_blinds
+    2300002: loPoly_boneJanglesStand
+    2300004: loPoly_bookShelf
+    2300006: loPoly_chairBack
+    2300008: loPoly_chairGuest
+    2300010: loPoly_chairStand
+    2300012: loPoly_computerMonitor
+    2300014: loPoly_computerTower
+    2300016: loPoly_desk
+    2300018: loPoly_deskCabinet
+    2300020: loPoly_droid
+    2300022: loPoly_keyboard
+    2300024: loPoly_lamp
+    2300026: loPoly_mouse
+    2300028: loPoly_office
+    2300030: loPoly_padOPaper
+    2300032: loPoly_pictureFrame
+    2300034: loPoly_planter
+    2300036: loPoly_planter.001
+    2300038: loPoly_shelf
+    2300040: loPoly_wheel
+    2300042: manScale
+    3300000: loPoly_blinds
+    3300002: loPoly_boneJanglesStand
+    3300004: loPoly_bookShelf
+    3300006: loPoly_chairBack
+    3300008: loPoly_chairGuest
+    3300010: loPoly_chairStand
+    3300012: loPoly_computerMonitor
+    3300014: loPoly_computerTower
+    3300016: loPoly_desk
+    3300018: loPoly_deskCabinet
+    3300020: loPoly_droid
+    3300022: loPoly_keyboard
+    3300024: loPoly_lamp
+    3300026: loPoly_mouse
+    3300028: loPoly_office
+    3300030: loPoly_padOPaper
+    3300032: loPoly_pictureFrame
+    3300034: loPoly_planter
+    3300036: loPoly_planter.001
+    3300038: loPoly_shelf
+    3300040: loPoly_wheel
+    3300042: manScale
+    4300000: loPoly_pictureFrame
+    4300002: loPoly_shelf
+    4300004: loPoly_blinds
+    4300006: loPoly_wheel
+    4300008: loPoly_droid
+    4300010: loPoly_planter.001
+    4300012: loPoly_chairGuest
+    4300014: loPoly_keyboard
+    4300016: loPoly_mouse
+    4300018: loPoly_padOPaper
+    4300020: loPoly_computerMonitor
+    4300022: loPoly_computerTower
+    4300024: loPoly_deskCabinet
+    4300026: loPoly_chairBack
+    4300028: loPoly_chairStand
+    4300030: loPoly_boneJanglesStand
+    4300032: loPoly_lamp
+    4300034: loPoly_planter
+    4300036: loPoly_bookShelf
+    4300038: loPoly_desk
+    4300040: loPoly_office
+    4300042: manScale
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
