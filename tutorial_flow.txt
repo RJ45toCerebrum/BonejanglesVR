@@ -1,0 +1,9 @@
+first time in the study session:
+
+a) show UI of the PULL bone mechanic until they do it (UP on the right controller touch pad)
+b) show the manipulation of bones with left controller (GRIP press controll)
+c) selection of bones to see info (Down on the right controller touch pad)
+d) UI sound to attract attention to the info board (Scalling / color / font the text is Crucially important)
+e) After Bone selection, sub-mesh highlighting
+
+thats about it!!
