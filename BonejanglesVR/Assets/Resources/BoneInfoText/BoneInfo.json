@@ -1,19 +1,20 @@
 {
 	"sternum": {
-		"name": "sternum",
+		"name": "Sternum",
 		"description": "The sternum or breastbone is a long flat bone shaped like a necktie located in the center of the chest. It connects to the ribs via cartilage, forming the front of the rib cage, and thus helps to protect the heart, lungs, and major blood vessels from injury. The sternum consists of three regions: the manubrium, the body, and the xiphoid process.\nThe word sternum originates from the Greek στέρνον, meaning chest.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Sternum",
 		"location": "axial#rib_cage",
 		"function": [
-			"provide structural supprt to rib cage",
+			"provide structural support to rib cage",
 			"ligament attachment for pectoralis muscles",
-			"protect internal organs such as lungs and heart"
+			"protect internal organs such as lungs and heart",
+			"blood production"
 		],
 		"articulations": [],
 		"substructures": [
 			"manubrium",
 			"body",
-			"xiphoid_process"
+			"xiphoid process"
 		]
 	},
 	"C1": {
@@ -22,8 +23,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Atlas_(anatomy)",
 		"location": "axial#spine#cervical",
 		"function": [
-			"provide support to the skull",
-			"more specialized for greater range of motion than most vertebrae."
+			"This vertebrae along with Axis (C2) allow the head to rotate",
+			"Spinal cord and brain stem protection",
+			"neck muscle attachment for head movement",
+			"skull support"
 		],
 		"articulations": ["cranium", "C2"],
 		"substructures": []
@@ -34,11 +37,13 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Axis_(anatomy)",
 		"location": "axial#spine#cervical",
 		"function": [
-			"Structure to the spine and very important for for supporting C1.",
-			"Specialized for allowing C1 a greater range of motion than most vertebrae."
+			"This vertebrae along with Atlas (C1) allow the head to rotate",
+			"Spinal cord and brain stem protection",
+			"neck muscle attachment for head movement",
+			"skull support"
 		],
 		"articulations": ["C1", "C3"],
-		"substructures": []
+		"substructures": ["odontoid process"]
 	},
 	"C3": {
 		"name": "C3",
@@ -46,8 +51,9 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Cervical_vertebrae",
 		"location":"axial#spine#cervical",
 		"function": [
-			"Support for head.",
-			"neck muscle attachment"
+			"Spinal cord and brain stem protection",
+			"neck muscle attachment for head movement",
+			"skull support"
 		],
 		"articulations": ["C2", "C4"],
 		"substructures": []
@@ -58,8 +64,9 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Cervical_vertebrae",
 		"location": "axial#spine#cervical",
 		"function": [
-			"Support for head.",
-			"neck muscle attachment"
+			"Spinal cord and brain stem protection",
+			"neck muscle attachment for head movement",
+			"skull support"
 		],
 		"articulations": ["C3", "C5"],
 		"substructures": []
@@ -70,8 +77,9 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Cervical_vertebrae",
 		"location": "axial#spine#cervical",
 		"function": [
-			"Support for head.",
-			"neck muscle attachment"
+			"Spinal cord and brain stem protection",
+			"neck muscle attachment for head movement",
+			"skull support"
 		],
 		"articulations": ["C4", "C6"],
 		"substructures": []
@@ -82,8 +90,9 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Cervical_vertebrae",
 		"location": "axial#spine#cervical",
 		"function": [
-			"Support for head.",
-			"neck muscle attachment"
+			"Spinal cord and brain stem protection",
+			"neck muscle attachment for head movement",
+			"skull support"
 		],
 		"articulations": ["C5", "C7"],
 		"substructures": []
@@ -94,8 +103,9 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Cervical_vertebrae",
 		"location": "axial#spine#cervical",
 		"function": [
-			"Support for head.",
-			"neck muscle attachment"
+			"Spinal cord and brain stem protection",
+			"neck muscle attachment for head movement",
+			"skull support"
 		],
 		"articulations": ["C6", "T1"],
 		"substructures": []
@@ -106,8 +116,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
 		"location": "axial#spine#thoracic",
 		"function": [
-			"Support for cervical vertebrae",
-			"support for ribs"
+			"Protection for the spinal cord",
+			"Support for ribs and vital organs",
+			"Only vertebrae that articulate with ribs",
+			"Weight distribution"
 		],
 		"articulations": [ "C7", "T2"],
 		"substructures": []
@@ -118,8 +130,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
 		"location": "axial#spine#thoracic",
 		"function": [
-			"Support for T1",
-			"Support for ribs"
+			"Protection for the spinal cord",
+			"Support for ribs and vital organs",
+			"Only vertebrae that articulate with ribs",
+			"Weight distribution"
 		],
 		"articulations": ["T1", "T3"],
 		"substructures": []
@@ -130,8 +144,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
 		"location": "axial#spine#thoracic",
 		"function": [
-			"Support for T2",
-			"support for ribs"
+			"Protection for the spinal cord",
+			"Support for ribs and vital organs",
+			"Only vertebrae that articulate with ribs",
+			"Weight distribution"
 		],
 		"articulations": [
 			"T2", "T4"
@@ -144,8 +160,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
 		"location": "axial#spine#thoracic",
 		"function": [
-			"Support for T3",
-			"support for ribs"
+			"Protection for the spinal cord",
+			"Support for ribs and vital organs",
+			"Only vertebrae that articulate with ribs",
+			"Weight distribution"
 		],
 		"articulations": [
 			"T3", "T5"
@@ -158,8 +176,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
 		"location": "axial#spine#thoracic",
 		"function": [
-			"Support for T4",
-			"support for ribs"
+			"Protection for the spinal cord",
+			"Support for ribs and vital organs",
+			"Only vertebrae that articulate with ribs",
+			"Weight distribution"
 		],
 		"articulations": [
 			"T4", "T6"
@@ -172,8 +192,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
 		"location": "axial#spine#thoracic",
 		"function": [
-			"Support for T5",
-			"support for ribs"
+			"Protection for the spinal cord",
+			"Support for ribs and vital organs",
+			"Only vertebrae that articulate with ribs",
+			"Weight distribution"
 		],
 		"articulations": [
 			"T5", "T7"
@@ -186,8 +208,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
 		"location": "axial#spine#thoracic",
 		"function": [
-			"Support for T6",
-			"support for ribs"
+			"Protection for the spinal cord",
+			"Support for ribs and vital organs",
+			"Only vertebrae that articulate with ribs",
+			"Weight distribution"
 		],
 		"articulations": [
 			"T6","T8"
@@ -200,8 +224,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
 		"location": "axial#spine#thoracic",
 		"function": [
-			"Support for T7",
-			"support for ribs"
+			"Protection for the spinal cord",
+			"Support for ribs and vital organs",
+			"Only vertebrae that articulate with ribs",
+			"Weight distribution"
 		],
 		"articulations": [
 			"T7", "T9"
@@ -214,8 +240,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
 		"location": "axial#spine#thoracic",
 		"function": [
-			"Support for T8",
-			"support for ribs"
+			"Protection for the spinal cord",
+			"Support for ribs and vital organs",
+			"Only vertebrae that articulate with ribs",
+			"Weight distribution"
 		],
 		"articulations": [
 			"T8", "T10"
@@ -228,8 +256,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
 		"location":"axial#spine#thoracic",
 		"function": [
-			"Support for T9",
-			"support for ribs"
+			"Protection for the spinal cord",
+			"Support for ribs and vital organs",
+			"Only vertebrae that articulate with ribs",
+			"Weight distribution"
 		],
 		"articulations": [
 			"T9", "T11"
@@ -242,8 +272,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
 		"location": "axial#spine#thoracic",
 		"function": [
-			"Support for T10",
-			"support for ribs"
+			"Protection for the spinal cord",
+			"Support for ribs and vital organs",
+			"Only vertebrae that articulate with ribs",
+			"Weight distribution"
 		],
 		"articulations": [
 			"T10", "T12"
@@ -256,8 +288,10 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Thoracic_vertebrae",
 		"location": "axial#spine#thoracic",
 		"function": [
-			"Support for T11",
-			"support for ribs"
+			"Protection for the spinal cord",
+			"Support for ribs and vital organs",
+			"Only vertebrae that articulate with ribs",
+			"Weight distribution"
 		],
 		"articulations": [
 			"T11", "L1"
@@ -270,9 +304,9 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Lumbar_vertebrae",
 		"location": "axial#spine#lumbar",
 		"function": [
-			"Support for Thoracic vertebrae",
-			"lower back muscle attachment",
-			"support of the upper body"
+			"Protection for the spinal cord"
+			"Weight distribution for walking upright. Lumbar vertebrae carry most of the upper bodies weight",
+			"Lower back muscle attachment"
 		],
 		"articulations": [
 			"T12", "L2"
@@ -285,9 +319,9 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Lumbar_vertebrae",
 		"location": "axial#spine#lumbar",
 		"function": [
-			"Support for Thoracic vertebrae",
-			"lower back muscle attachment",
-			"support of the upper body"
+			"Protection for the spinal cord"
+			"Weight distribution for walking upright. Lumbar vertebrae carry most of the upper bodies weight",
+			"Lower back muscle attachment"
 		],
 		"articulations": [
 			"L1", "L3"
@@ -300,9 +334,9 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Lumbar_vertebrae",
 		"location": "axial#spine#lumbar",
 		"function": [
-			"Support for Thoracic vertebrae",
-			"lower back muscle attachment",
-			"support of the upper body"
+			"Protection for the spinal cord"
+			"Weight distribution for walking upright. Lumbar vertebrae carry most of the upper bodies weight",
+			"Lower back muscle attachment"
 		],
 		"articulations": [
 			"L2", "L4"
@@ -315,9 +349,9 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Lumbar_vertebrae",
 		"location": "axial#spine#lumbar",
 		"function": [
-			"Support for Thoracic vertebrae",
-			"lower back muscle attachment",
-			"support of the upper body"
+			"Protection for the spinal cord"
+			"Weight distribution for walking upright. Lumbar vertebrae carry most of the upper bodies weight",
+			"Lower back muscle attachment"
 		],
 		"articulations": [
 			"L3", "L5"
@@ -330,9 +364,9 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Lumbar_vertebrae",
 		"location": "axial#spine#lumbar",
 		"function": [
-			"Support for Thoracic vertebrae",
-			"lower back muscle attachment",
-			"support of the upper body"
+			"Protection for the spinal cord"
+			"Weight distribution for walking upright. Lumbar vertebrae carry most of the upper bodies weight",
+			"Lower back muscle attachment"
 		],
 		"articulations": [
 			"L4", "sacrum"
@@ -340,13 +374,14 @@
 		"substructures": []
 	},
 	"sacrum": {
-		"name": "sacrum",
+		"name": "Sacrum",
 		"description": "The sacrum in human anatomy is a large, triangular bone at the base of the spine, that forms by the fusing of sacral vertebrae S1–S5, between 18 and 30 years of age.\nThe sacrum articulates (forms a joint with) with four other bones. It is situated at the upper, back part of the pelvic cavity, where it is anatomically insertedbetween the two hip bones (ilium). The two lateral projections of the sacrum are called the alae (wings), and articulate with the ilium at the L-shaped sacroiliac joints. The upper part of the sacrum connects with the last lumbar vertebra, and its lower part with the coccyx (tailbone) via the sacral and coccygeal cornua.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Sacrum",
 		"location": "axial#girdle_pelvic",
 		"function": [
-			"The sacrum is a complex structure providing support for the spine.",
-			"accommodation for the spinal nerves."
+			"The sacrum is a complex structure providing support for the spine / upper body",
+			"Accommodation for the spinal nerves. Hence the little holes",
+			"Pelvis support"
 		],
 		"articulations": [
 			"os_coxa","L5"
@@ -354,14 +389,14 @@
 		"substructures": []
 	},
 	"os_coxa": {
-		"name": "os_coxa / hip bone",
+		"name": "Hip Bone",
 		"description": "The hip bone (innominate bone, pelvic bone or coxal bone) is a large flat bone, constricted in the center and expanded above and below. In some vertebrates (including humans before puberty) it is composed of three bones: the ilium, ischium, and the pubis.\nThe two hip bones join at the pubic symphysis and together with the sacrum and coccyx (the pelvic part of the spine) comprise the skeletal component of the pelvis – the pelvic girdle which surrounds the pelvic cavity. They are connected to the sacrum, which is part of the axial skeleton, at the sacroiliac joint. Each hip bone is connected to the corresponding femur (thigh bone) (forming the primary connection between the bones of the lower limb and the axial skeleton) through the large ball and socket joint of the hip.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Hip_bone",
 		"location": "appendicular#girdle_pelvic",
 		"function": [
 			"supports upper body",
-			"form the primary connection between the bones of the lower limb and the axial skeleton.",
-			"provide connections for muscle and thus allowing lowe leg movement."
+			"form the primary connection between the bones of the lower limb and the axial skeleton",
+			"provide connections for muscle and thus allowing lower leg movement"
 		],
 		"articulations": [
 			"sacrum","femur"
@@ -376,18 +411,21 @@
 		"function": [
 			"Help expand lungs",
 			"protect lungs",
-			"muscle attachment"
+			"muscle attachment",
+			"Supporting structure for other organs",
+			"blood production"
 		],
 		"articulations": ["sternum"],
 		"substructures": ["sacrum", "false_rib"]
 	},
 	"floating_rib": {
 		"name": "Floating Rib",
-		"description": "ribs that DO NOT connect to the sacrum.",
+		"description": "ribs that DO NOT connect to the sacrum",
 		"wikiURL": "https://en.wikipedia.org/wiki/Rib",
 		"location": "axial#rib_cage",
 		"function": [
-			"protection of kidneys and organs near by"
+			"protection of kidneys and organs near by",
+			"blood production"
 		],
 		"articulations": [
 			"T11","T12"
@@ -395,14 +433,14 @@
 		"substructures": []
 	},
 	"cranium": {
-		"name": "cranium",
+		"name": "Cranium",
 		"description": "Makes up the hard bony structure around the brain. Main function is for protecting the brain from trauma.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Skull",
 		"location": "axial#skull",
 		"function": [
-			"Protection of the brain.",
-			"Protection of eyes.",
-			"Muscle attachment for jaw and neck."
+			"Protection of the brain",
+			"Protection of eyes",
+			"Muscle attachment for jaw and neck"
 		],
 		"articulations": [
 			"teeth","mandible", "C1"
@@ -410,13 +448,13 @@
 		"substructures": []
 	},
 	"mandible": {
-		"name": "mandible",
+		"name": "Mandible",
 		"description": "Mandible, aka the jaw, is the bone that is used for forming the mouth and allows for chewing.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Mandible",
 		"location": "axial#skull",
 		"function": [
-			"chewing of food. Provides a structure for muscle attachment that allows the chewing of food.",
-			"protection of inner mouth parts."
+			"Provides a structure for muscle attachment that allows the chewing of food",
+			"protection of inner mouth parts"
 		],
 		"articulations": [
 			"cranium","teeth"
@@ -424,14 +462,15 @@
 		"substructures": []
 	},
 	"clavicle": {
-		"name": "clavicle",
+		"name": "Clavicle",
 		"description": "In human anatomy, the clavicle or collarbone is a long bone that serves as a strutbetween the shoulder blade and the sternum or breastbone. There are two clavicles, one on the left and one on the right. The clavicle is the only long bone in the body that lies horizontally. Together with the shoulder blade it makes up the shoulder girdle. It is a palpable bone and in people who have less fat in this region, the location of the bone is clearly visible, as it creates a bulge in the skin. It receives its name from the Latin: clavicula (\"little key\") because the bone rotates along its axis like a key when the shoulder is abducted.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Clavicle",
 		"location": "appendicular#girdle_shoulder",
 		"function": [
-			"It serves as a rigid support from which the scapula and free limb suspended; an arrangement that keeps the upper limb away from the thorax so that the arm has maximum range of movement. Acting as a flexible, crane-like strut, it allows the scapula to move freely on the thoracic wall.",
-			"Covering the cervicoaxillary canal, it protects the neurovascular bundle that supplies the upper limb.",
-			"Transmits physical impacts from the upper limb to the axial skeleton."
+			"It serves as a rigid support from which the scapula",
+			"Protects nerve fibers and blood vessles that supply blood and nerve signal sto upper limbs",
+			"Transmits physical impacts from the upper limb to the axial skeleton",
+			"blood production"
 		],
 		"articulations": [
 			"scapula", "sternum"
@@ -445,7 +484,8 @@
 		"location": "appendicular#extremity_superior#arm#upper",
 		"function": [
 			"Structure to the arm",
-			"muscle attachment for arm movement."
+			"muscle attachment for arm movement",
+			"blood production"
 		],
 		"articulations": [
 			"scapula", "radius", "ulna"
@@ -453,26 +493,30 @@
 		"substructures": []
 	},
 	"scapula": {
-		"name": "scapula",
+		"name": "Scapula",
 		"description": "In anatomy, the scapula (plural scapulae or scapulas) or shoulder blade is the bone that connects the humerus (upper arm bone) with the clavicle (collar bone). Like their connected bones the scapulae are paired, with the scapula on the left side of the body being roughly a mirror image of the right scapula. In early Roman times, people thought the bone resembled a trowel, a small shovel. The shoulder blade is also called omo in Latin medical terminology.\nThe scapula forms the back of the shoulder girdle. In humans, it is a flat bone, roughly triangular in shape, placed on a posterolateral aspect of the thoracic cage.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Scapula",
 		"location": "appendicular#girdle_shoulder",
 		"function": [
-			"Many muscles attach to it for musle movement."
+			"Many muscles attach to it",
+			"arm movement",
+			"neck movement"
 		],
 		"articulations": [
-			""
+			"clavicle", "humerus"
 		],
 		"substructures": []
 	},
 	"ulna": {
-		"name": "ulna",
+		"name": "Ulna",
 		"description": "The ulna is one of the two long bones in the forearm (the other is the radius). It is on the side opposite the thumb, extends from the elbow to the wrist, and runs parallel to the radius, which it exceeds in length and size. In anatomical position, when the arms are down at the sides of the body and the palms of the hands face forward, the ulna is located at the side of the forearm closest to the body (the medial side). The bone may break due to excessive weight or impact",
 		"wikiURL": "https://en.wikipedia.org/wiki/Ulna",
 		"location": "appendicular#extremity_superior#arm#lower",
 		"function": [
+			"arm structure",
 			"arm movement",
-			"muscle attachment for hand muscles."
+			"muscle attachment for hand muscles",
+			"blood production"
 		],
 		"articulations": [
 			"humerus", "radius", "lunate", "triquetrum", "pisiform"
@@ -480,13 +524,15 @@
 		"substructures": []
 	},
 	"radius": {
-		"name": "radius",
+		"name": "Radius",
 		"description": "The radius or radial bone is one of the two large bones of the forearm, the other being the ulna. It extends from the lateral side of the elbow to the thumb side of the wrist and runs parallel to the ulna, which exceeds it in length and size. It is a long bone, prism-shaped and slightly curved longitudinally.\nThe radius is part of two joints: the elbow and the wrist. At the elbow, it joins with the capitulum of the humerus, and in a separate region, with the ulna at the radial notch. At the wrist, the radius forms a joint with the ulna bone.\nThe corresponding bone in the lower leg is the tibia.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Radius_(bone)",
 		"location": "appendicular#extremity_superior#arm#lower",
 		"function": [
 			"arm movement",
-			"muscle attachment for hand muscles."
+			"muscle attachment for hand muscles",
+			"tendon attachment for bicep and tricep flexion",
+			"blood production",
 		],
 		"articulations": [
 			"humerus", "scaphoid", "lunate", "radius", "trapezium"
@@ -494,15 +540,16 @@
 		"substructures": []
 	},
 	"patella": {
-		"name": "patella",
+		"name": "Patella",
 		"description": "The patella, also known as the kneecap or kneepan, is a thick, circular-triangular bone which articulates with the femur (thigh bone) and covers and protects the anterior articular surface of the knee joint. The patella is found in many tetrapods, such as mice, cats, and birds, but not in whales or most reptilesand amphibians such as snakes or frogs.\nIn humans, the patella is the largest sesamoid bone in the body. Babies are born with a patella of soft cartilage which begins to ossify into bone at about three years of age.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Patella",
 		"location": "appendicular#extremity_inferior#leg#lower",
 		"function": [
-			"The primary functional role of the patella is knee extension. The patella increases the leverage that the tendon can exert on the femur by increasing the angle at which it acts."
+			"The primary functional role of the patella is knee extension",
+			"covers and protects knee joint"
 		],
 		"articulations": [
-			""
+			"femur"
 		],
 		"substructures": []
 	},
@@ -513,7 +560,8 @@
 		"location": "appendicular#extremity_inferior#leg#lower",
 		"function": [
 			"Supports the Femur",
-			"Muscle attachment for calf and other muscle movement."
+			"Muscle attachment for calf and other muscle movement",
+			"Production of blood cells. Red as well as white"
 		],
 		"articulations": [
 			"fibula", "femur", "patella", "talus"
@@ -521,22 +569,20 @@
 		"substructures": []
 	},
 	"fibula": {
-		"name": "fibula",
+		"name": "Fibula",
 		"description": "The fibula or calf bone is a leg bone located on the lateral side of the tibia, with which it is connected above and below. It is the smaller of the two bones, and, in proportion to its length, the slenderest of all the long bones. Its upper extremity is small, placed toward the back of the head of the tibia, below the level of the knee joint, and excluded from the formation of this joint. Its lower extremity inclines a little forward, so as to be on a plane anterior to that of the upper end; it projects below the tibia, and forms the lateral part of the ankle-joint.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Fibula",
-		"location": "Leg Region",
+		"location": "appendicular#extremity_inferior#leg#lower",
 		"function": [
 			"Supports the Femur",
-			"Muscle attachment for calf and other muscle movement."
+			"Tibia support",
+			"Muscle attachment for calf and other muscle movement",
+			"Production of blood cells. Red as well as white"
 		],
 		"articulations": [
-			""
+			"tibia", "talus"
 		],
-		"substructures": [
-			"",
-			"",
-			""
-		]
+		"substructures": []
 	},
 	"femur": {
 		"name": "Femur",
@@ -545,15 +591,18 @@
 		"location": "appendicular#extremity_inferior#leg#upper",
 		"function": [
 			"Supports the Pelvis",
-			"Thigh muscle attachment"
+			"Thigh muscle attachment for leg movement",
+			"Production of blood cells. Red as well as white"
 		],
 		"articulations": [
 			"os_coxa", "patella", "tibia"
 		],
 		"substructures": []
 	},
+
+
 	"trapezoid": {
-		"name": "trapezoid",
+		"name": "Trapezoid",
 		"description": "The trapezoid bone (lesser multangular bone) is a carpal bone in tetrapods, including humans. It is the smallest bone in the distal row. It may be known by its wedge-shaped form, the broad end of the wedge constituting the dorsal, the narrow end the palmar surface; and by its having four articular facets touching each other, and separated by sharp edges. It is homologous with the \"second distal carpal\" of reptiles and amphibians.",
 		"wikiURL": "https://en.wikipedia.org/wiki/Trapezoid_bone",
 		"location": "appendicular#extremity_superior#hand#carpals",
@@ -1213,7 +1262,8 @@
 		"wikiURL": "https://en.wikipedia.org/wiki/Human_tooth",
 		"location": "axial#skull",
 		"function": [
-			"mechanically break down items of food by cutting and crushing them in preparation for swallowing and digesting"
+			"mechanically break down items of food by cutting and crushing them in preparation for swallowing and digesting",
+			"Weapons for our very distsnt ancestors. Before we would consider them apart of our species"
 		],
 		"articulations": [
 			"cranium","mandible"

@@ -11,9 +11,9 @@ public class VRDebug : MonoBehaviour
     public int numberOfEntries;
 
     private static VRDebug vrDebug;
-    private LogEntry[] logEntries;
-    private Text consoleText;
-    private Image backgroundPanel;
+    private static LogEntry[] logEntries;
+    private static Text consoleText;
+    private static Image backgroundPanel;
 
     public Color normalColor;
     public Color highlightColor;
@@ -60,11 +60,6 @@ public class VRDebug : MonoBehaviour
         }
     }
 
-
-    private void Start() {
-        //consoleText.text = "";
-    }
-
     private void OnPointerExit(object sender, DestinationMarkerEventArgs e) {
         backgroundPanel.color = normalColor;
     }
@@ -73,11 +68,11 @@ public class VRDebug : MonoBehaviour
         backgroundPanel.color = highlightColor;
     }
 
-    public void Log(string logMessage, int logNumber) {
+    public static void Log(string logMessage, int logNumber) {
         logEntries[logNumber].LogContent = logMessage;
     }
 
-    public void ClearLogs() {
+    public static void ClearLogs() {
         foreach(LogEntry le in logEntries) {
             le.LogContent = "";
         }

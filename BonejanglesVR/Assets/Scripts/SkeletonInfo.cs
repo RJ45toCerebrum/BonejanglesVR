@@ -12,6 +12,8 @@ namespace com.EvolveVR.BonejanglesVR
 	/// </summary>
 	public class SkeletonInfo : MonoBehaviour
 	{
+        private static SkeletonInfo skeleton;
+
         public enum Side { None, Left, Right };
 
 		private static TextAsset textBoneInfo;
@@ -23,9 +25,21 @@ namespace com.EvolveVR.BonejanglesVR
 		private static int numberOfBonesReported = 0;
 		private static bool isInitialized = false;
 
-		#region Unity Methods
-		private void Awake()
+        // selected bone means the user selected the bone by pressing down of the botton part of the touchpad
+        private static Bone selectedBone;
+        // the currentActiveBone is the bone that the user is currently manipulating
+        private static Bone currentActiveBone;
+        public delegate void SelectedBoneChange(Bone bone);
+        private static event SelectedBoneChange onBoneSelected;
+        private static int numSelectedBoneEventSubs = 0;
+
+        #region Unity Methods
+        private void Awake()
 		{
+            if (skeleton != null)
+                Destroy(gameObject);
+
+            skeleton = this;
 			textBoneInfo = Resources.Load<TextAsset> ("BoneInfoText/BoneInfo");
 			jsonBoneData = InitBoneData (textBoneInfo.text);
             boneInfoDictionary = new Dictionary<string, LinkedList<BoneInfo>>();
@@ -43,20 +57,42 @@ namespace com.EvolveVR.BonejanglesVR
 			}
 		}
 
-		public bool IsInitialized {
+        public static int NumberOfBonesRegistered
+        {
+            get
+            {
+                return boneInfoDictionary.Count;
+            }
+        }
+
+        public static bool IsInitialized {
 			get {
 				return isInitialized;
 			}
 		}
 
-		public static int NumberOfBonesRegistered {
-			get {
-				return boneInfoDictionary.Count;
-			}
-		}
+        public static Bone CurrentActiveBone
+        {
+            get { return currentActiveBone; }
+            set { currentActiveBone = value; }
+        }
 
-		#region METHODS
-		private JSONNode InitBoneData(string jsonStringBoneData)
+        public static Bone SelectedBone
+        {
+            get { return selectedBone; }
+            set
+            {
+                selectedBone = value;
+                if (numSelectedBoneEventSubs > 0)
+                    onBoneSelected(value);
+
+                if (value != null)
+                    value.SetBoneHighlight(true);
+            }
+        }
+
+        #region METHODS
+        private JSONNode InitBoneData(string jsonStringBoneData)
 		{
 			JSONNode boneData = JSON.Parse (jsonStringBoneData);
 			return boneData;
@@ -70,17 +106,26 @@ namespace com.EvolveVR.BonejanglesVR
 		public static BoneInfo GetBoneData(string boneName) 
 		{ 
             JSONArray articulationsJSONArr = jsonBoneData[boneName]["articulations"].AsArray;
-            string[] articulations = new string[articulationsJSONArr.Count];
-            for(int i = 0; i < articulations.Length; i++)
-                articulations[i] = articulationsJSONArr[i].Value;
+            JSONArray functionsJSONArr = jsonBoneData[boneName]["function"].AsArray;
+            string[] articulations = GetArrayFromJSON(articulationsJSONArr);
+            string[] functions = GetArrayFromJSON(functionsJSONArr);
 
             BoneInfo bone = new BoneInfo (jsonBoneData[boneName] ["name"], 
                                           jsonBoneData [boneName] ["description"], 
                                           jsonBoneData [boneName] ["wikiURL"],
-                                          articulations);
+                                          articulations,
+                                          functions);
 			return bone;
 		}
-			
+
+        private static string[] GetArrayFromJSON(JSONArray jsonArr)
+        {
+            string[] arr = new string[jsonArr.Count];
+            for(int i = 0; i < arr.Length; i++)
+                arr[i] = jsonArr[i].Value;
+            return arr;
+        }
+
         public static void TryAddBone(BoneInfo bone)
         {
             LinkedList<BoneInfo> boneList;
@@ -100,19 +145,8 @@ namespace com.EvolveVR.BonejanglesVR
 			//if (numberOfBonesReported == numberOfBonesInScene)
 			//	isInitialized = true;
         }
-
-		public LinkedList<BoneInfo> this[string key]
-		{
-			get 
-			{
-                LinkedList<BoneInfo> boneList;
-				if (boneInfoDictionary.TryGetValue (key, out boneList))
-					return boneList;
-				return null;
-			}
-		}
 	    
-        public BoneInfo GetBoneInfo(string name, Side side)
+        public static BoneInfo GetBoneInfo(string name, Side side)
         {
             if (boneInfoDictionary.ContainsKey(name)) 
             {
@@ -124,6 +158,14 @@ namespace com.EvolveVR.BonejanglesVR
             }
             return null;
         }
+
+        public static void SubSelectedBoneEvent(SelectedBoneChange callback)
+        {
+            if (callback != null) {
+                onBoneSelected += callback;
+                numSelectedBoneEventSubs++;
+            }
+        }
 		#endregion
     }
 		
@@ -133,18 +175,22 @@ namespace com.EvolveVR.BonejanglesVR
 	public class BoneInfo
 	{
 		private string boneName;
-		private string functionDescription;
+		private string description;
         private string wikiURL;
         private string[] articulations;
+        private string[] functions;
         private SkeletonInfo.Side side;
         private GameObject boneGO;
 
-		public BoneInfo(string _boneName, string _functionDescription, string _wikiURL, string[] _articulations)
+		public BoneInfo(string _boneName, string _description, 
+                        string _wikiURL, string[] _articulations,
+                        string[] _functions)
 		{
 			boneName = _boneName;
-			functionDescription = _functionDescription;
+			description = _description;
 			wikiURL = _wikiURL;
             articulations = _articulations;
+            functions = _functions;
         }
 
         public string BoneName
@@ -152,9 +198,9 @@ namespace com.EvolveVR.BonejanglesVR
             get { return boneName; }
         }
 
-        public string FunctionDescription
+        public string Description
         {
-            get{ return functionDescription;}
+            get{ return description;}
         }
 
         public string WikiURL
@@ -165,6 +211,11 @@ namespace com.EvolveVR.BonejanglesVR
         public string[] Articulations
         {
             get { return articulations; }
+        }
+
+        public string[] Functions
+        {
+            get { return functions; }
         }
 
         public GameObject BoneGameObject

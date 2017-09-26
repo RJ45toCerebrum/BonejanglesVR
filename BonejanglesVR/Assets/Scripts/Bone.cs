@@ -9,8 +9,7 @@ namespace com.EvolveVR.BonejanglesVR
 {
     public class Bone : MonoBehaviour
     {
-        MeshCollider meshCollider;
-        VRTK_InteractableObject interactableObject;
+        private VRTK_InteractableObject interactableObject;
 
         private VRTK_DestinationPoint destinationPoint;
         private VRTK_ControllerEvents leftControllerEvents;
@@ -21,28 +20,27 @@ namespace com.EvolveVR.BonejanglesVR
         private BoneInfo boneInfo;
 
         public Color boneHighlightColor;
-
+        public Color boneSelectedColor;
+        private VRTK_OutlineObjectCopyHighlighter boneHighlighter;
         public VRTK_ObjectTooltip nameTooltip;
-        public VRTK_ObjectTooltip functionTooltip;
         public float distanceToDisplayTooltips = 0.7f;
 
 
-        //delete
-        public Text text; 
-        // end delete
+        public BoneInfo BoneInfo
+        {
+            get { return boneInfo; }
+        }
+
 
         void Awake() {
             destinationPoint = GetComponent<VRTK_DestinationPoint>();
             leftControllerEvents = GameObject.FindGameObjectWithTag("LeftController").GetComponent<VRTK_ControllerEvents>();
             rightControllerEvents = GameObject.FindGameObjectWithTag("RightController").GetComponent<VRTK_ControllerEvents>();
-
-            // delete
-            text = GameObject.Find("BoneTextInfo").GetComponent<Text>();
         }
 
         private void AddMyComponents()
         {
-            meshCollider = gameObject.AddComponent<MeshCollider>();
+            MeshCollider meshCollider = gameObject.AddComponent<MeshCollider>();
             meshCollider.isTrigger = false;
             meshCollider.inflateMesh = true;
             meshCollider.convex = true;
@@ -78,18 +76,19 @@ namespace com.EvolveVR.BonejanglesVR
             fixedJoint.precisionGrab = true;
             fixedJoint.destroyImmediatelyOnThrow = false;
 
-            VRTK_OutlineObjectCopyHighlighter highlighter = gameObject.AddComponent<VRTK_OutlineObjectCopyHighlighter>();
-            highlighter.enabled = true;
-            highlighter.active = true;
-            highlighter.unhighlightOnDisable = true;
-            highlighter.thickness = 0.1f;
+            boneHighlighter = gameObject.AddComponent<VRTK_OutlineObjectCopyHighlighter>();
+            boneHighlighter.enabled = true;
+            boneHighlighter.active = true;
+            boneHighlighter.unhighlightOnDisable = true;
+            boneHighlighter.thickness = 0.1f;
         }
 
         private void Start()
-        {
-            VRDebug.Instance.Log("Start", 0);
-
+        { 
             AddMyComponents();
+            boneHighlighter.active = true;
+            boneHighlighter.unhighlightOnDisable = false;
+            boneHighlighter.Highlight(Color.red, float.MaxValue);
 
             destinationPoint.DestinationMarkerEnter += OnPointerEnter;
             destinationPoint.DestinationMarkerExit += OnPointerExit;
@@ -98,7 +97,7 @@ namespace com.EvolveVR.BonejanglesVR
             boneInfo = SkeletonInfo.GetBoneData(name);
             boneInfo.BoneGameObject = gameObject;
             boneInfo.Side = this.side;
-            SkeletonInfo.TryAddBone(boneInfo);
+            SkeletonInfo.TryAddBone(BoneInfo);
         }
 
         // this is specifically because VRTK has some very annoying code that 
@@ -106,28 +105,22 @@ namespace com.EvolveVR.BonejanglesVR
         private IEnumerator LateStart()
         {
             yield return new WaitForSeconds(0.2f);
-            meshCollider.enabled = true;
-            meshCollider.isTrigger = false;
+            MeshCollider mc = GetComponent<MeshCollider>();
+            mc.enabled = true;
+            mc.isTrigger = false;
 
-
-            if (nameTooltip != null && functionTooltip != null) {
-                nameTooltip.displayText = boneInfo.BoneName;
+            if (nameTooltip != null) {
+                nameTooltip.displayText = BoneInfo.BoneName;
                 nameTooltip.gameObject.SetActive(false);
-                functionTooltip.displayText = boneInfo.FunctionDescription;
-                functionTooltip.gameObject.SetActive(false);
             }
         }
 
         private void Update()
         {
-            if (rightControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.TouchpadPress) &&
-                isBoneActive) {
-                transform.position = Vector3.Lerp(transform.position, rightControllerEvents.transform.position, 0.04f);
-            }
-
-            if (nameTooltip != null && functionTooltip != null)
+            if (nameTooltip != null)
                 TooltipRoutine();
         }
+
 
         private void TooltipRoutine()
         {
@@ -137,32 +130,22 @@ namespace com.EvolveVR.BonejanglesVR
                 if (t != null) 
                 {
                     float distance = (t.position - transform.position).magnitude;
-                    VRDebug.Instance.Log(distance.ToString(), 1);
-                    VRDebug.Instance.Log("Hellow worlds", 2);
                     if (distance < distanceToDisplayTooltips) {
                         nameTooltip.gameObject.SetActive(true);
-                        functionTooltip.gameObject.SetActive(true);
                     }
                 }
             }
-            else {
+            else
                 nameTooltip.gameObject.SetActive(false);
-                functionTooltip.gameObject.SetActive(false);
-            }
         }
 
         private void OnPointerEnter(object o, DestinationMarkerEventArgs args) {
             isBoneActive = true;
-
-            // delete---------------------------------------Later
-            if (text != null) {
-                text.text = boneInfo.BoneName + "\n\n";
-                text.text += boneInfo.FunctionDescription + "\n\n";
-                text.text += boneInfo.WikiURL;
-            }
+            SkeletonInfo.CurrentActiveBone = this;
         }
         private void OnPointerExit(object o, DestinationMarkerEventArgs args) {
             isBoneActive = false;
+            SkeletonInfo.CurrentActiveBone = null;
         }
 
         private SkeletonInfo.Side InitSymmetricVariables()
@@ -178,6 +161,13 @@ namespace com.EvolveVR.BonejanglesVR
                 return SkeletonInfo.Side.Right;
 
             return SkeletonInfo.Side.None;
+        }
+
+        public void SetBoneHighlight(bool highlight) {
+            if (highlight)
+                boneHighlighter.Highlight(boneSelectedColor);
+            else
+                boneHighlighter.Unhighlight();
         }
     }
 }
