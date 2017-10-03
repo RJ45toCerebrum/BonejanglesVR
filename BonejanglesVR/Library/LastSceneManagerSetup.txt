@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/NonVR_Scenes/Test.unity
+- path: Assets/Scenes/VR_Scenes/SkeletonSnappingPrototype.unity
   isLoaded: 1
   isActive: 1
