@@ -23,12 +23,17 @@ namespace com.EvolveVR.BonejanglesVR
             Rigidbody rb = e.snappedObject.GetComponent<Rigidbody>();
             rb.useGravity = true;
             rb.isKinematic = false;
+            rb.drag = 1.5f;
+            rb.angularDrag = 0.2f;
             e.snappedObject.GetComponent<VRTK_InteractableObject>().enabled = true;
 
             // we only want to remove the connection IF the object was a valid one
             // this is because only valid objects add connections
-            if(e.snappedObject.name == validObjectName)
-                GameManager.Instance.RemoveConnection();
+            if (e.snappedObject.name == validObjectName) {
+                GameManager gm = GameManager.Instance;
+                if(gm)
+                    gm.RemoveConnection();
+            }
         }
 
         private void ObjectSnapped(object sender, SnapDropZoneEventArgs e)
@@ -36,7 +41,16 @@ namespace com.EvolveVR.BonejanglesVR
             if (e.snappedObject.name != validObjectName)
                 snapDropZone.ForceUnsnap();
             else
-                GameManager.Instance.AddConnection();
+            {
+                Rigidbody otherRB = e.snappedObject.GetComponent<Rigidbody>();
+                otherRB.drag = 10.0f;
+                otherRB.angularDrag = 10.0f;
+
+                GameManager gm = GameManager.Instance;
+                if (gm)
+                    gm.AddConnection();
+            }
+
         }
     }
 }
