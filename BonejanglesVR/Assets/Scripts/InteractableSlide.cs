@@ -7,6 +7,7 @@ namespace com.EvolveVR.BonejanglesVR
     {
         VRTK_ControllerEvents controllerEvent;
         VRTK_ControllerReference handRef;
+        VRTK_InteractGrab interactGrab;
         [Range(0.0f, 1.0f)]
         public float timeBetweenPulses;
         private float currentHapticTime;
@@ -15,6 +16,8 @@ namespace com.EvolveVR.BonejanglesVR
         bool firstClick = true;
         [Range(0, 1)]
         public float smoothingFactor = 0.2f;
+        [Range(0, 1)]
+        public float rotationSmoothFactor = 0.2f;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -28,11 +31,13 @@ namespace com.EvolveVR.BonejanglesVR
                         hand = VRTK_DeviceFinder.GetControllerRightHand();
                         controllerEvent = parent.GetComponent<VRTK_ControllerEvents>();
                         handRef = VRTK_ControllerReference.GetControllerReference(hand);
+                        interactGrab = parent.GetComponent<VRTK_InteractGrab>();
                     }
                     else if (parent.tag == "LeftController") {
                         hand = VRTK_DeviceFinder.GetControllerLeftHand();
                         controllerEvent = parent.GetComponent<VRTK_ControllerEvents>();
                         handRef = VRTK_ControllerReference.GetControllerReference(hand);
+                        interactGrab = parent.GetComponent<VRTK_InteractGrab>();
                     }
                     firstClick = true;
                 }
@@ -41,9 +46,9 @@ namespace com.EvolveVR.BonejanglesVR
 
         private void OnTriggerStay(Collider other)
         {
-            if (!hand)
+            if (!hand || interactGrab.GetGrabbedObject() != null)
                 return;
-
+            
             if (controllerEvent.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.TriggerClick)) {
                 if (!firstClick) {
                     Vector3 controllerPos = controllerEvent.transform.position;
@@ -51,7 +56,8 @@ namespace com.EvolveVR.BonejanglesVR
                     transform.position = Vector3.Lerp(transform.position, newPosition, smoothingFactor);
 
                     float dR = hand.transform.eulerAngles.y - lastHandRotationY;
-                    transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y + dR, 0);
+                    Quaternion newRotation = Quaternion.Euler(0, transform.eulerAngles.y + dR, 0);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, rotationSmoothFactor);
                     lastHandRotationY = hand.transform.eulerAngles.y;
 
                     currentHapticTime += Time.deltaTime;
