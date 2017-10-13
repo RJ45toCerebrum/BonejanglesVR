@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114541628395353730}
   - component: {fileID: 144582611336463906}
   m_Layer: 0
-  m_Name: root_SDZ
+  m_Name: cranium_SDZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,11 +143,10 @@ GameObject:
   - component: {fileID: 4861417452898330}
   - component: {fileID: 65991124240927336}
   - component: {fileID: 136643943360864766}
-  - component: {fileID: 65394092904258812}
   - component: {fileID: 54791575169928324}
-  - component: {fileID: 114919462871983072}
   - component: {fileID: 114438705581896388}
-  m_Layer: 0
+  - component: {fileID: 114840177651541140}
+  m_Layer: 9
   m_Name: SkeletonHanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +249,7 @@ Transform:
   m_GameObject: {fileID: 1552927133603838}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.14521497, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 4861417452898330}
   m_RootOrder: 1
@@ -262,7 +261,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1200229720090232}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 3.272, z: -1.315}
+  m_LocalPosition: {x: 0, y: 4.08, z: -1.315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4306621237224564}
@@ -343,7 +342,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1756630016244838}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.318, y: 0, z: 1.415}
+  m_LocalPosition: {x: 1.48, y: 0, z: 0.08}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 4558372207077318}
@@ -675,9 +674,9 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1756630016244838}
   serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 7
-  m_AngularDrag: 10
+  m_Mass: 30
+  m_Drag: 10
+  m_AngularDrag: 15
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -698,18 +697,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &65394092904258812
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1756630016244838}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2742174, y: 0.083664656, z: 0.2810076}
-  m_Center: {x: 0.008106669, y: 3.599947, z: -1.3509918}
 --- !u!65 &65847444727299768
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -732,8 +719,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0108557, y: 0.26072577, z: 1.912778}
-  m_Center: {x: 0.0045634806, y: -0.030346625, z: 0.016732365}
+  m_Size: {x: 0.39732158, y: 0.20503908, z: 0.41386965}
+  m_Center: {x: 0.017952323, y: 5, z: 0.50910443}
 --- !u!114 &114438705581896388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -761,6 +748,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   validObjectName: cranium
+  dragAmount: 12
+  angulerDragAmount: 20
+  parentNode: {fileID: 0}
+  modifySwingAngles: 0
 --- !u!114 &114545382492762780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -782,7 +773,7 @@ MonoBehaviour:
   validObjectListPolicy: {fileID: 114438705581896388}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
---- !u!114 &114919462871983072
+--- !u!114 &114840177651541140
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -793,8 +784,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fe3947b3f30cd459e2abc17c5e8dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenPulses: 0.67
-  smoothingFactor: 0.1
+  timeBetweenPulses: 0.4
+  smoothingFactor: 0.03
+  rotationSmoothFactor: 0.3
 --- !u!136 &136643943360864766
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -804,10 +796,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.2071391
-  m_Height: 4.079193
+  m_Radius: 0.21730992
+  m_Height: 3.4120727
   m_Direction: 1
-  m_Center: {x: 0.0010552071, y: 1.979338, z: -0.01286298}
+  m_Center: {x: 0.0010552071, y: 2.9092371, z: -0.015367381}
 --- !u!144 &144582611336463906
 CharacterJoint:
   m_ObjectHideFlags: 1
@@ -818,7 +810,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0.355, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.318, y: 1.4508001, z: 0.88899994}
+  m_ConnectedAnchor: {x: 1.48, y: 1.774, z: -0.44600004}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -851,4 +843,4 @@ CharacterJoint:
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 10

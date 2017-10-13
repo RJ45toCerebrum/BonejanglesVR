@@ -8,6 +8,13 @@ using SimpleJSON;
 
 namespace com.EvolveVR.BonejanglesVR
 {
+    /// <summary>
+    /// NOTE: Be very careful not to change the names of the Bones because
+    /// these are used to validate snappable objects / bones and to get 
+    /// references to downstream JointNodes in the Skeleton chain
+    /// </summary>
+
+    [RequireComponent(typeof(VRTK_SnapDropZone))]
     public class JointNode : MonoBehaviour
     {
         public const string ltlJSON = "ltl";
@@ -28,21 +35,27 @@ namespace com.EvolveVR.BonejanglesVR
         public string validObjectName;
 
         [Tooltip("This is the drag that is modified on the snapping rigidbody")]
+        // these are rigidbody settings for dealing with hanging skeleton
         public float dragAmount = 12.0f;
         public float angulerDragAmount = 20.0f;
+        private int originalSolverIters;
+        private int originalSolverExitVelIters;
 
         [SerializeField]
         private JointNode parentNode;
+        private JointNode[] childJointNodes;
         private bool isHanging = false;
         public bool modifySwingAngles = false;
 
-        public bool IsHanging
+
+        public bool IsSnapped
         {
-            get{ return isHanging; }
+            get { return snapDropZone.GetCurrentSnappedObject() != null; }
         }
 
         private void Awake()
         {
+            // initialize joint type
             if (GetComponent<CharacterJoint>() != null)
                 jointType = JointType.Character;
             else if (GetComponent<HingeJoint>() != null)
@@ -50,12 +63,20 @@ namespace com.EvolveVR.BonejanglesVR
             else
                 jointType = JointType.None;
 
+            // initialize snapdrop zone events
             snapDropZone = GetComponent<VRTK_SnapDropZone>();
-
             if (snapDropZone != null) {
                 snapDropZone.ObjectSnappedToDropZone += ObjectSnapped;
                 snapDropZone.ObjectUnsnappedFromDropZone += ObjectUnsnapped;
             }
+
+            // get ref to jointNodes of the snappable object; 
+            // for setting joint angles with already snapped together bones on the the skeleton hanger
+            GameObject snappableObject = GameObject.Find(validObjectName);
+            if (snappableObject)
+                childJointNodes = snappableObject.GetComponentsInChildren<JointNode>(); 
+            else
+                Debug.LogErrorFormat("Unable to find the snappable object {0} in the scene", validObjectName);
 
             StartCoroutine(LateStart());
         }
@@ -96,10 +117,13 @@ namespace com.EvolveVR.BonejanglesVR
             rb.isKinematic = false;
             rb.drag = 1.5f;
             rb.angularDrag = 0.2f;
+            rb.solverIterations = originalSolverIters;
+            rb.solverVelocityIterations = originalSolverExitVelIters;
+            rb.maxAngularVelocity = 7;
+            rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
+
             e.snappedObject.GetComponent<VRTK_InteractableObject>().enabled = true;
-            this.isHanging = false;
-            if(modifySwingAngles)
-                HangingJointAngleModification(false);
+            SetIsHanging(false);
 
             // we only want to remove the connection IF the object was a valid one
             // this is because only valid objects add connections
@@ -119,30 +143,36 @@ namespace com.EvolveVR.BonejanglesVR
             }
             else 
             {
-                Rigidbody otherRB = e.snappedObject.GetComponent<Rigidbody>();
-                otherRB.drag = dragAmount;
-                otherRB.angularDrag = angulerDragAmount;
-
-                GameManager gm = GameManager.Instance;
-                if (gm)
-                    gm.AddConnection();
+                // set rigibody values
+                Rigidbody rb = e.snappedObject.GetComponent<Rigidbody>();
+                originalSolverIters = rb.solverIterations;
+                originalSolverExitVelIters = rb.solverVelocityIterations;
+                rb.drag = dragAmount;
+                rb.angularDrag = angulerDragAmount;
+                rb.solverIterations = 40;
+                rb.solverVelocityIterations = 40;
+                rb.maxAngularVelocity = 2.7f;
+                rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
 
                 VRTK_ControllerHaptics.TriggerHapticPulse(leftControllerReference, 1.0f, 0.035f, 0.02f);
                 VRTK_ControllerHaptics.TriggerHapticPulse(rightControllerReference, 1.0f, 0.035f, 0.02f);
 
-                if (parentNode && parentNode.IsHanging) {
-                    this.isHanging = true;
-                    if (modifySwingAngles)
-                        HangingJointAngleModification(true);
-                }
+                if (parentNode && parentNode.IsHanging())
+                    SetIsHanging(true);
 
-                VRDebug.Log("Is hanging: " + this.isHanging, 0);
+                // velocity manager can be used to mk sure the velocity
+
+                GameManager gm = GameManager.Instance;
+                if (gm)
+                    gm.AddConnection();
             }
-
         }
 
-        private void HangingJointAngleModification(bool isHanging)
+        private void ModifyJointRotationAngles()
         {
+            if (!modifySwingAngles)
+                return;
+
             Func<float, SoftJointLimit > jl = (v) =>
             {
                 SoftJointLimit sjl = new SoftJointLimit();
@@ -157,14 +187,12 @@ namespace com.EvolveVR.BonejanglesVR
                 case JointType.Character:
                     CharacterJoint cj = GetComponent<CharacterJoint>();
                     if (isHanging) {
-                        VRDebug.Log("Angles values reduced", 1);
                         cj.highTwistLimit = jl(jointInfo[htlJSON].AsFloat / 5);
                         cj.lowTwistLimit = jl(jointInfo[ltlJSON].AsFloat / 5);
                         cj.swing1Limit = jl(jointInfo[s1lJSON].AsFloat / 5);
                         cj.swing2Limit = jl(jointInfo[s2lJSON].AsFloat / 5);
                     }
                     else {
-                        VRDebug.Log("Setting values back", 2);
                         cj.highTwistLimit = jl(jointInfo[htlJSON].AsFloat);
                         cj.lowTwistLimit = jl(jointInfo[ltlJSON].AsFloat);
                         cj.swing1Limit = jl(jointInfo[s1lJSON].AsFloat);
@@ -175,12 +203,10 @@ namespace com.EvolveVR.BonejanglesVR
                     HingeJoint hj = GetComponent<HingeJoint>();
                     JointLimits jointLim = hj.limits;
                     if (isHanging) {
-                        VRDebug.Log("Angles values reduced", 1);
                         jointLim.min = jointInfo[minJSON].AsFloat / 5;
                         jointLim.max = jointInfo[maxJSON].AsFloat / 5;
                     }
                     else {
-                        VRDebug.Log("Setting values back", 2);
                         jointLim.min = jointInfo[minJSON].AsFloat;
                         jointLim.max = jointInfo[maxJSON].AsFloat;
                     }
@@ -198,6 +224,22 @@ namespace com.EvolveVR.BonejanglesVR
 
                 yield return new WaitForSeconds(0.15f);
             }  
+        }
+
+        private void SetIsHanging(bool value)
+        {
+            VRDebug.Log("Hanging From " + name, 0);
+            isHanging = value;
+            ModifyJointRotationAngles();
+            foreach (JointNode jn in childJointNodes) {
+                if (jn.IsSnapped)
+                    jn.SetIsHanging(value);
+            }
+        }
+
+        private bool IsHanging()
+        {
+            return isHanging;
         }
     }
 }

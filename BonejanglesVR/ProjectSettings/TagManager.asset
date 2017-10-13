@@ -8,6 +8,7 @@ TagManager:
   - RightController
   - Bone
   - Skeleton
+  - WhiteBoard
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - Bone
   - SkeletonHanger
-  - 
+  - WhiteBoard
   - 
   - 
   - 
