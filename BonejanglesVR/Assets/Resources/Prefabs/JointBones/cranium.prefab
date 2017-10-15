@@ -213,7 +213,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1271231735044924}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.6171124, y: 0.021443486, z: 0.19707692}
+  m_LocalPosition: {x: 0.952, y: 0.005, z: 0.206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4293145116355492}
@@ -669,7 +669,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1271231735044924}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 6
   m_Drag: 2
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -687,7 +687,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.035, z: -0.05}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.6676286, y: 0.073599994, z: -0.34832305}
+  m_ConnectedAnchor: {x: 1.0025163, y: 0.057156507, z: -0.3394}
   m_UseSpring: 1
   m_Spring:
     spring: 30
@@ -709,7 +709,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 5
+  m_MassScale: 10
   m_ConnectedMassScale: 2
 --- !u!65 &65269281573049338
 BoxCollider:
@@ -906,7 +906,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0.06, z: -0.015}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.6676286, y: 0.054999996, z: -0.33962306}
+  m_ConnectedAnchor: {x: 1.0025163, y: 0.03855651, z: -0.33069998}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -938,5 +938,5 @@ CharacterJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 0
-  m_MassScale: 5
+  m_MassScale: 10
   m_ConnectedMassScale: 2

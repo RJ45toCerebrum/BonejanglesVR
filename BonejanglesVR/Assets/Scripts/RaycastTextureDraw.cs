@@ -6,6 +6,8 @@ namespace com.EvolveVR.BonejanglesVR
     [RequireComponent(typeof(MeshCollider), typeof(Renderer))]
     public class RaycastTextureDraw : MonoBehaviour
     {
+        public enum FilterType {Name, Tag};
+
         private MeshCollider meshCollider;
         private Texture2D objectTexture;
         private Texture2D originalTexture;
@@ -15,6 +17,10 @@ namespace com.EvolveVR.BonejanglesVR
         public int blockSize;
         private Color[] drawColorBlock;
         private Color[] eraseColorBlock;
+
+        [Tooltip("SenderInfo and allowedSenderFilter is used to filter who is allowed to draw into texture")]
+        public string senderInfo;
+        public FilterType allowedSenderFilter = FilterType.Name;
 
         private void Awake()
         {
@@ -66,17 +72,23 @@ namespace com.EvolveVR.BonejanglesVR
             }
         }
 
-        public void Draw(object sender, DestinationMarkerEventArgs args)
+        public void Draw(GameObject sender, RaycastHit hit)
         {
-            if(args.target == transform) 
-            {
-                Vector2 pixelUV = args.raycastHit.textureCoord;
-                pixelUV.x *= objectTexture.width;
-                pixelUV.y *= objectTexture.height;
-                if(objectTexture.width - pixelUV.x > blockSize && objectTexture.height - pixelUV.y > blockSize)
-                    objectTexture.SetPixels((int)pixelUV.x, (int)pixelUV.y, blockSize, blockSize, drawColorBlock);
-                objectTexture.Apply();
+            if(allowedSenderFilter == FilterType.Name) {
+                if (sender.name != senderInfo)
+                    return;
             }
+            else {
+                if (sender.tag != senderInfo)
+                    return;
+            }
+
+            Vector2 pixelUV = hit.textureCoord;
+            pixelUV.x *= objectTexture.width;
+            pixelUV.y *= objectTexture.height;
+            if(objectTexture.width - pixelUV.x > blockSize && objectTexture.height - pixelUV.y > blockSize)
+                objectTexture.SetPixels((int)pixelUV.x, (int)pixelUV.y, blockSize, blockSize, drawColorBlock);
+            objectTexture.Apply();
         }
     }
 }

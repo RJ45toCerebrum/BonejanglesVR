@@ -149,7 +149,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1918559164186956}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.707, y: -0.146, z: 0.247}
+  m_LocalPosition: {x: -1.707, y: -0.116, z: 0.247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4873510099164316}
@@ -338,7 +338,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1918559164186956}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 6
   m_Drag: 2
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -356,7 +356,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.015, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.6013839, y: -0.084443465, z: -0.09759995}
+  m_ConnectedAnchor: {x: -1.6013839, y: -0.054443464, z: -0.09759995}
   m_UseSpring: 0
   m_Spring:
     spring: 100000000
@@ -378,7 +378,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 5
+  m_MassScale: 10
   m_ConnectedMassScale: 2
 --- !u!65 &65854277915984682
 BoxCollider:

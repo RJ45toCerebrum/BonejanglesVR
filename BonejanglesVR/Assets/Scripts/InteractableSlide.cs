@@ -1,39 +1,73 @@
 ﻿using UnityEngine;
 using VRTK;
+using System.Collections.Generic;
 
 namespace com.EvolveVR.BonejanglesVR
 {
-    public class InteractableSlide : MonoBehaviour
+    public abstract class InteractableSlide : MonoBehaviour
     {
-        VRTK_ControllerEvents controllerEvent;
-        VRTK_ControllerReference handRef;
-        VRTK_InteractGrab interactGrab;
+        public string leftControllerTag = "LeftController";
+        public string rightControllerTag = "RightController";
+
+        protected VRTK_ControllerEvents controllerEvent;
+        protected VRTK_ControllerReference handRef;
+        protected VRTK_InteractGrab interactGrab;
         [Range(0.0f, 1.0f)]
         public float timeBetweenPulses;
-        private float currentHapticTime;
-        GameObject hand;
-        float lastHandRotationY = 0;
-        bool firstClick = true;
+        protected float currentHapticTime;
+        protected GameObject hand;
+        protected bool firstClick = true;
+        protected bool isInteracting = false;
+
         [Range(0, 1)]
         public float smoothingFactor = 0.2f;
-        [Range(0, 1)]
-        public float rotationSmoothFactor = 0.2f;
+
+        public Collider[] ignoreColliders;
+        private HashSet<Collider> collidersToIgnore;
+
+
+        public bool IsInteracting
+        {
+            get
+            {
+                if (controllerEvent != null) {
+                    if (controllerEvent.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.TriggerClick))
+                        return true;
+                }
+                return false;
+            }
+        }
+
+        public Vector3 InteractingHandPosition
+        {
+            get { return hand.transform.position; }
+        }
+
+        protected virtual void Start()
+        {
+            collidersToIgnore = new HashSet<Collider>();
+            foreach (Collider ic in ignoreColliders)
+                collidersToIgnore.Add(ic);
+        }
 
         private void OnTriggerEnter(Collider other)
         {
+            if (collidersToIgnore.Contains(other))
+                return;
+
             Transform parent = other.transform.parent;
             if (parent) 
             {
                 parent = parent.parent;
                 if (parent) 
                 {
-                    if (parent.tag == "RightController") {
+                    if (parent.tag == rightControllerTag) {
                         hand = VRTK_DeviceFinder.GetControllerRightHand();
                         controllerEvent = parent.GetComponent<VRTK_ControllerEvents>();
                         handRef = VRTK_ControllerReference.GetControllerReference(hand);
                         interactGrab = parent.GetComponent<VRTK_InteractGrab>();
                     }
-                    else if (parent.tag == "LeftController") {
+                    else if (parent.tag == leftControllerTag) {
                         hand = VRTK_DeviceFinder.GetControllerLeftHand();
                         controllerEvent = parent.GetComponent<VRTK_ControllerEvents>();
                         handRef = VRTK_ControllerReference.GetControllerReference(hand);
@@ -46,33 +80,22 @@ namespace com.EvolveVR.BonejanglesVR
 
         private void OnTriggerStay(Collider other)
         {
-            if (!hand || interactGrab.GetGrabbedObject() != null)
+            if (!hand || collidersToIgnore.Contains(other) || interactGrab.GetGrabbedObject() != null)
                 return;
-            
+
             if (controllerEvent.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.TriggerClick)) {
                 if (!firstClick) {
-                    Vector3 controllerPos = controllerEvent.transform.position;
-                    Vector3 newPosition = new Vector3(controllerPos.x, transform.position.y, controllerPos.z);
-                    transform.position = Vector3.Lerp(transform.position, newPosition, smoothingFactor);
-
-                    float dR = hand.transform.eulerAngles.y - lastHandRotationY;
-                    Quaternion newRotation = Quaternion.Euler(0, transform.eulerAngles.y + dR, 0);
-                    transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, rotationSmoothFactor);
-                    lastHandRotationY = hand.transform.eulerAngles.y;
-
-                    currentHapticTime += Time.deltaTime;
-                    if (currentHapticTime > timeBetweenPulses) {
-                        VRTK_ControllerHaptics.TriggerHapticPulse(handRef, 0.3f);
-                        currentHapticTime = Time.deltaTime;
-                    }
+                    OnInteraction(other);
                 }
                 else {
-                    lastHandRotationY = hand.transform.eulerAngles.y;
                     firstClick = false;
+                    OnInitialTriggerInteraction(other);
                 }
             }
-            else
+            else {
                 firstClick = true;
+                OnInteractionStopped(other);
+            }
         }
 
         private void OnTriggerExit(Collider other)
@@ -80,6 +103,13 @@ namespace com.EvolveVR.BonejanglesVR
             controllerEvent = null;
             hand = null;
             firstClick = true;
+            OnInteractionStopped(other);
         }
+
+        protected virtual void OnInitialTriggerInteraction(Collider other) {}
+
+        protected abstract void OnInteraction(Collider other);
+
+        protected virtual void OnInteractionStopped(Collider other) {}
     }
 }
