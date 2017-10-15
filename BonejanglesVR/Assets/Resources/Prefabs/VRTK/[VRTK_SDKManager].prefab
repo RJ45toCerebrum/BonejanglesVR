@@ -2003,10 +2003,8 @@ MonoBehaviour:
   activeScriptingDefineSymbolsWithoutSDKClasses:
   - symbol: VRTK_DEFINE_SDK_OCULUS_AVATAR
     buildTargetGroupName: Standalone
-  scriptAliasLeftController: {fileID: 1337663797299834, guid: 34347bea0df33284ca1f2433d4354ccb,
-    type: 2}
-  scriptAliasRightController: {fileID: 1887735369705658, guid: 34347bea0df33284ca1f2433d4354ccb,
-    type: 2}
+  scriptAliasLeftController: {fileID: 0}
+  scriptAliasRightController: {fileID: 0}
   autoManageVRSettings: 1
   autoLoadSetup: 1
   setups:

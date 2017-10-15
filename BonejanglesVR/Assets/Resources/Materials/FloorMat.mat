@@ -68,7 +68,7 @@ Material:
     - _MKEditorShowDissolveBehavior: 0
     - _MKEditorShowLightBehavior: 1
     - _MKEditorShowMainBehavior: 1
-    - _MKEditorShowOutlineBehavior: 0
+    - _MKEditorShowOutlineBehavior: 1
     - _MKEditorShowReflectionBehavior: 0
     - _MKEditorShowRenderBehavior: 0
     - _MKEditorShowRimBehavior: 1
@@ -79,7 +79,7 @@ Material:
     - _Metallic: 0.629
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineSize: 0.02
+    - _OutlineSize: 0.001
     - _Parallax: 0.02
     - _RimIntensity: 0
     - _RimSize: 3

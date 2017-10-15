@@ -9,6 +9,7 @@ TagManager:
   - Bone
   - Skeleton
   - WhiteBoard
+  - Key
   layers:
   - Default
   - TransparentFX

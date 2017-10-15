@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 221}
   m_MaxSize: {x: 12008, y: 4021}
   vertical: 0
-  controlID: 26837
+  controlID: 21973
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   - {fileID: 12}
   - {fileID: 13}
   m_Selected: 0
-  m_LastSelected: 3
+  m_LastSelected: 1
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -293,28 +293,28 @@ MonoBehaviour:
     height: 606
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c829e7ff
-    m_LastClickedID: -1627704
-    m_ExpandedIDs: 8821e7ffca29e7ffcc29e7ff82cae7ff6810e8ffe45ae8ff085be8ff3e8ce8ff408ce8ff428ce8ff86a8e8ff54d4e8ffe4dfe8fffe14e9ff8cb8e9ff90b8e9ffa4ede9fff4eee9ffccf4e9ff9238eaff166deaff14fcffff00000000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: f008e3ffec60ecfffa9eecffe0eaedff72a0f1ff78a0f1ff98e4faff4ce8faffd4ebfaffe2fefaff268dfcff288dfcffa299fcffbaaafdffbcaafdff8c99ffff0ec3ffff4ef3ffff14fcffff000000009e4f00000e500000d650000014510000c278000038790000da7d0000c27e00009c7f00001280000068ee0000721e01004e1f01003a250100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Chair
-      m_OriginalName: Chair
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -1627710
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
   m_ExpandedScenes:
-  - Main
+  - TestMechanics
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -345,14 +345,14 @@ MonoBehaviour:
     width: 732
     height: 606
   m_SceneLighting: 1
-  lastFramingTime: 10710.660107665928
+  lastFramingTime: 13484.698928883745
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.5304727, y: 0.34613425, z: 3.1834235}
+    m_Target: {x: -4.6550627, y: 0.33635545, z: 3.2978518}
     speed: 2
-    m_Value: {x: -0.5304727, y: 0.34613425, z: 3.1834235}
+    m_Value: {x: -4.6550627, y: 0.33635545, z: 3.2978518}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -375,13 +375,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.12309946, y: 0.392568, z: -0.05304648, w: 0.9103172}
+    m_Target: {x: 0.14187033, y: -0.4598039, z: 0.075526655, w: 0.87351686}
     speed: 2
-    m_Value: {x: 0.12305307, y: 0.39242002, z: -0.053026486, w: 0.9099741}
+    m_Value: {x: -0.14187033, y: 0.4598039, z: -0.075526655, w: -0.8735168}
   m_Size:
-    m_Target: 4.73451
+    m_Target: 2.6485221
     speed: 2
-    m_Value: 4.73451
+    m_Value: 2.6485221
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -456,19 +456,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources/Materials
+    - Assets/Resources/Models/Key/Models
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Materials
+  - Assets/Resources/Models/Key/Models
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Tyler\OneDrive\Documents\Github\BonejanglesVR\BonejanglesVR
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 262a0000
-    m_LastClickedID: 10790
-    m_ExpandedIDs: 0000000058290000cc290000642a0000782a0000cc2a0000e82a0000022b0000c02c0000002d0000362d0000422d00008c2d0000142e0000942e0000da2e00000a3000003a30000050300000b4300000be3000007a3100007c3100002c3200002e32000034320000663d0000683d00006a3d00006c3d00006e3d0000703d0000ffffff7f
+    m_SelectedIDs: 90130100
+    m_LastClickedID: 70544
+    m_ExpandedIDs: 00000000522900005e2a00008a2a0000e42a0000002b00001a2b0000d62c0000182d0000582d0000662d0000b22d0000382e0000b82e0000fe2e000038300000663000007c300000e0300000ea3000006a310000ee3100009e320000a0320000a6320000f4370000f6370000f8370000fa370000fc370000fe37000092130100a6130100ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -496,7 +496,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000058290000cc290000642a0000782a0000cc2a0000e82a0000022b0000c02c0000002d0000362d0000422d00008c2d0000142e0000942e0000da2e00000a3000003a30000050300000b4300000be3000007a3100007c3100002c3200002e32000034320000663d0000683d00006a3d00006c3d00006e3d0000703d0000ffffff7f
+    m_ExpandedIDs: 00000000522900005e2a00008a2a0000e42a0000002b00001a2b0000d62c0000182d0000582d0000662d0000b22d0000382e0000b82e0000fe2e000038300000663000007c300000e0300000ea3000006a310000ee3100009e320000a0320000a6320000f4370000f6370000f8370000fa370000fc370000fe37000092130100a6130100ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -521,10 +521,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 2c36e5ff
-    m_LastClickedInstanceID: -1755604
+    m_SelectedInstanceIDs: ea60ecff
+    m_LastClickedInstanceID: -1285910
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: b27c0000662b0000a22c0000
+    m_ExpandedInstanceIDs: b27c0000662b0000a22c000094130100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
