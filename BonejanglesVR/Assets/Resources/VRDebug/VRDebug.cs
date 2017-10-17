@@ -12,7 +12,6 @@ public class VRDebug : MonoBehaviour
 
     private static VRDebug vrDebug;
     private static LogEntry[] logEntries;
-    private static Text consoleText;
     private static Image backgroundPanel;
 
     public Color normalColor;
@@ -29,7 +28,6 @@ public class VRDebug : MonoBehaviour
             Destroy(gameObject);
 
         vrDebug = this;
-        consoleText = GetComponentInChildren<Text>();
         backgroundPanel = GetComponentInChildren<Image>();
 
         VRTK_DestinationPoint point = GetComponent<VRTK_DestinationPoint>();

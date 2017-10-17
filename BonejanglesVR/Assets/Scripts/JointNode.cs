@@ -76,7 +76,7 @@ namespace com.EvolveVR.BonejanglesVR
             if (snappableObject)
                 childJointNodes = snappableObject.GetComponentsInChildren<JointNode>(); 
             else
-                Debug.LogErrorFormat("Unable to find the snappable object {0} in the scene", validObjectName);
+                Debug.LogWarningFormat("Unable to find the snappable object {0} in the scene", validObjectName);
 
             StartCoroutine(LateStart());
         }
@@ -228,12 +228,14 @@ namespace com.EvolveVR.BonejanglesVR
 
         private void SetIsHanging(bool value)
         {
-            VRDebug.Log("Hanging From " + name, 0);
             isHanging = value;
             ModifyJointRotationAngles();
-            foreach (JointNode jn in childJointNodes) {
-                if (jn.IsSnapped)
-                    jn.SetIsHanging(value);
+            if (childJointNodes != null) 
+            {
+                foreach (JointNode jn in childJointNodes) {
+                    if (jn.IsSnapped)
+                        jn.SetIsHanging(value);
+                }
             }
         }
 

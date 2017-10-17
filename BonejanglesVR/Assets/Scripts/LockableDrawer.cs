@@ -9,20 +9,29 @@ namespace com.EvolveVR.BonejanglesVR
     [RequireComponent( typeof(ConfigurableJoint), typeof(VRTK_SpringJointGrabAttach))]
     public class LockableDrawer : VRTK_InteractableObject
     {
+        public enum RotationAxis { X, Y, Z};
+
         private bool isLocked;
         // this means that can you lock or unlock it; this is needed because 
         // I need a period of time where the key cannot interact with it
         private bool isLockable = true;
+        [Header("Drawer specific")]
         public bool lockOnStart = true;
         public Material lockMaterial;
-        public Transform closedPosition;
         public Color lockColor;
         public Color unlockColor;
-        private ConfigurableJoint configJoint;
         private Rigidbody rb;
 
+
+        private GameObject hand;
+        private VRTK_InteractableObject keyIO;
+        private bool keyInLock = false;
         private Quaternion startRotation;
-        private float lastXRotation;
+        private Quaternion lastRotation;
+        public float startAngle;
+        public float endValue;
+        public RotationAxis rotationAxis;
+        public Transform keyInPlaceTransform;
         
         public bool IsLocked
         {
@@ -31,26 +40,57 @@ namespace com.EvolveVR.BonejanglesVR
 
         protected override void Awake() {
             base.Awake();
-            configJoint = GetComponent<ConfigurableJoint>();
             rb = GetComponent<Rigidbody>();
             SetLockState(lockOnStart);
         }
 
-        private void OnTriggerEnter(Collider other) {
-            if (other.tag == "Key" && !IsGrabbed() && isLockable)
-                startRotation = other.transform.rotation;
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "Key" && !IsGrabbed() && isLockable) 
+            {
+                keyIO = other.GetComponent<VRTK_InteractableObject>();
+                hand = keyIO.GetGrabbingObject();
+                // this means the key likely fell from whne user was using a diff drawer above it
+                if(!hand) {
+                    keyIO = null;
+                    return;
+                }
+                startRotation = hand.transform.rotation;
+                lastRotation = startRotation;
+
+                StartCoroutine(SetKeyInLock(other.transform));
+            }
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if(other.tag == "Key" && !IsGrabbed() && isLockable) 
+            // this checks the hands rotation
+            if (other.tag == "Key" && !IsGrabbed() && isLockable && hand != null && keyInLock) 
             {
-                Quaternion relative = Quaternion.Inverse(startRotation) * other.transform.rotation;
-                VRDebug.Log(relative.eulerAngles.y.ToString(), 0);
-                if (relative.eulerAngles.y > 50 && relative.eulerAngles.y < 60) {
-                    SetLockState(!isLocked);
-                    VRDebug.Log("Seting state", 0);
+                // get the relative rotation from the starting rotation; Quaternion magic
+                Quaternion relativeRotation = Quaternion.Inverse(startRotation) * hand.transform.rotation;
+                bool isBetweenAngles = false;
+                float dTheta = 0;
+                if (rotationAxis == RotationAxis.X) {
+                    isBetweenAngles = relativeRotation.eulerAngles.x > startAngle && relativeRotation.eulerAngles.x < endValue;
+                    dTheta = relativeRotation.eulerAngles.x - lastRotation.eulerAngles.x;
                 }
+                else if (rotationAxis == RotationAxis.Y) {
+                    isBetweenAngles = relativeRotation.eulerAngles.y > startAngle && relativeRotation.eulerAngles.y < endValue;
+                    dTheta = relativeRotation.eulerAngles.y - lastRotation.eulerAngles.y;
+                }
+                else { 
+                    isBetweenAngles = relativeRotation.eulerAngles.z > startAngle && relativeRotation.eulerAngles.z < endValue;
+                    dTheta = relativeRotation.eulerAngles.z - lastRotation.eulerAngles.z;
+                }
+
+                // rotate the key
+                other.transform.Rotate(keyInPlaceTransform.forward, -dTheta);
+
+                if (isBetweenAngles)
+                    SetLockState(!isLocked);
+
+                lastRotation = relativeRotation;
             }
         }
 
@@ -60,7 +100,8 @@ namespace com.EvolveVR.BonejanglesVR
                 return;
 
             isLocked = state;
-            if (isLocked) {
+            if (isLocked) 
+            {
                 lockMaterial.color = lockColor;
                 rb.isKinematic = true;
                 isGrabbable = false;
@@ -71,16 +112,32 @@ namespace com.EvolveVR.BonejanglesVR
                 rb.isKinematic = false;
             }
 
-            StartCoroutine(LockState(1.5f));
+            SetKeyState(true);
+            StartCoroutine(LockState(1.0f));
+
+            hand = null;
+            keyIO = null;
+            startRotation = Quaternion.identity;
+            keyInLock = false;
         }
 
-        private IEnumerator CloseDrawerRoutine()
+        private void SetKeyState(bool state)
         {
-            Vector3 offset = (closedPosition.position - transform.position);
-            while(offset.sqrMagnitude > 0.00f)  {
-                transform.position = Vector3.Lerp(transform.position, closedPosition.position, 0.1f);
-                offset = (closedPosition.position - transform.position);
-                yield return null;
+            if (!keyIO)
+                return;
+
+            keyIO.ForceStopInteracting();
+            keyIO.ForceStopSecondaryGrabInteraction();
+            keyIO.enabled = state;
+
+            Rigidbody keyRB = keyIO.GetComponent<Rigidbody>();
+            if (state) {
+                keyRB.useGravity = true;
+                keyRB.isKinematic = false;
+            }
+            else {
+                keyRB.useGravity = false;
+                keyRB.isKinematic = true;
             }
         }
 
@@ -89,6 +146,15 @@ namespace com.EvolveVR.BonejanglesVR
             isLockable = false;
             yield return new WaitForSeconds(seconds);
             isLockable = true;
+        }
+
+        private IEnumerator SetKeyInLock(Transform keyTransform)
+        {
+            SetKeyState(false);
+            keyIO.transform.position = keyInPlaceTransform.position;
+            keyIO.transform.rotation = keyInPlaceTransform.rotation;
+            keyInLock = true;
+            yield return null;
         }
     }
 }

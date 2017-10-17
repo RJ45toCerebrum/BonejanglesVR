@@ -10,6 +10,7 @@ TagManager:
   - Skeleton
   - WhiteBoard
   - Key
+  - Lego
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,9 @@ namespace com.EvolveVR.BonejanglesVR
         public Transform upperRight;
         public Transform upperLeft;
         private Vector3 mousePadCenter;
+        public bool flipCursorDirections = false;
+        public bool invertY = false;
+        public bool invertX = false;
 
         private float width;
         private float height;
@@ -37,9 +40,7 @@ namespace com.EvolveVR.BonejanglesVR
             width = widthVector.magnitude;
             Vector3 heightVector = (upperLeft.position - lowerLeft.position);
             height = heightVector.magnitude;
-            mousePadCenter = new Vector3(lowerLeft.position.x - width / 2,
-                                         lowerLeft.position.y,
-                                         lowerLeft.position.z - height / 2);
+            mousePadCenter = lowerLeft.position + widthVector / 2 + heightVector / 2;
 
             uiCursor.localPosition = new Vector3(0, 0, -0.01f);
 
@@ -56,12 +57,9 @@ namespace com.EvolveVR.BonejanglesVR
 
         private void OnMouseClick(object sender, InteractableObjectEventArgs e)
         {
-            VRDebug.Log("MouseUsed", 0);
             if(IsCursorOverlap(buttonRectTransform)) {
-                VRDebug.Log("Mouse Click", 1);
+                DeleteCode();
             }
-            else
-                VRDebug.Log("", 1);
         }
 
         private IEnumerator InitGrabMechanic()
@@ -69,12 +67,8 @@ namespace com.EvolveVR.BonejanglesVR
             Renderer rend = GetComponent<Renderer>();
             rend.enabled = false;
             yield return new WaitForEndOfFrame();
-            Debug.Log("End of frame Mouse Grabbed");
-            Vector3 newPos = new Vector3();
-            newPos.x = lowerLeft.position.x - width / 2;
-            newPos.y = lowerLeft.position.y;
-            newPos.z = lowerLeft.position.z - height / 2;
-            transform.position = newPos;
+
+            transform.position = mousePadCenter;
             rend.enabled = true;
         }
 
@@ -93,9 +87,16 @@ namespace com.EvolveVR.BonejanglesVR
             if (!mouseObject.IsGrabbed())
                 return;
 
-            Vector2 relativeMouesPosition = GetMousePadPosition();
-            uiCursor.localPosition = relativeMouesPosition;
+            Vector2 relativeMousePosition = GetMousePadPosition();
+            Vector2 cursorPosition = new Vector2(relativeMousePosition.x, relativeMousePosition.y);
+            if (flipCursorDirections)
+                cursorPosition = new Vector2(relativeMousePosition.y, relativeMousePosition.x);
+            if (invertX)
+                cursorPosition.x *= -1;
+            if (invertY)
+                cursorPosition.y *= -1;
 
+            uiCursor.localPosition = cursorPosition;
             if (IsCursorOverlap(buttonRectTransform))
                 EventSystem.current.SetSelectedGameObject(button.gameObject);
             else
@@ -119,6 +120,13 @@ namespace com.EvolveVR.BonejanglesVR
                 return true;
 
             return false;
+        }
+
+        private void DeleteCode()
+        {
+            GameObject textGO= GameObject.Find("MonitorResultsText");
+            Text t = textGO.GetComponent<Text>();
+            t.text = "Virus Downloaded...";
         }
     }
 }

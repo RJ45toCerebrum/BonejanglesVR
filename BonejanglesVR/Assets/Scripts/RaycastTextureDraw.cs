@@ -8,7 +8,6 @@ namespace com.EvolveVR.BonejanglesVR
     {
         public enum FilterType {Name, Tag};
 
-        private MeshCollider meshCollider;
         private Texture2D objectTexture;
         private Texture2D originalTexture;
         private Renderer rend;
@@ -24,7 +23,6 @@ namespace com.EvolveVR.BonejanglesVR
 
         private void Awake()
         {
-            meshCollider = GetComponent<MeshCollider>();
             rend = GetComponent<Renderer>();
             if (rend.sharedMaterial == null || rend.sharedMaterial.mainTexture == null) {
                 Debug.LogError("The renderer must have a main texture with proper format applied. " +
