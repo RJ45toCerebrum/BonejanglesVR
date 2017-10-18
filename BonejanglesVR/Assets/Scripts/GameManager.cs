@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace com.EvolveVR.BonejanglesVR
 {
@@ -7,7 +8,10 @@ namespace com.EvolveVR.BonejanglesVR
         private static GameManager gm;
 
         private int curNumBonesConnected;
-        public const int totalNumConnections = 25;
+        private JointNode[] joints;
+
+        // delete later
+        public GameObject gameOverMessage;
 
         public static GameManager Instance
         {
@@ -25,14 +29,28 @@ namespace com.EvolveVR.BonejanglesVR
                 Destroy(this);
 
             gm = this;
+            joints = FindObjectsOfType<JointNode>();
+        }
+
+        private void Start() {
+            gameOverMessage.SetActive(false);
         }
 
         public void AddConnection()
         {
             curNumBonesConnected++;
-            if(curNumBonesConnected == totalNumConnections) {
-                Debug.LogError("Implement end game code");
+            if(AllBonesCorrectlyConnected()) {
+                gameOverMessage.SetActive(true);
             }
+        }
+
+        private bool AllBonesCorrectlyConnected()
+        {
+            foreach(JointNode joint in joints) {
+                if (joint.Connection != JointNode.ConnectionType.Correct)
+                    return false;
+            }
+            return true;   
         }
 
         public void RemoveConnection()

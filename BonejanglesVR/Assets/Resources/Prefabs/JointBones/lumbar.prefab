@@ -272,7 +272,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1425739314700170}
-  m_Mesh: {fileID: 4300000, guid: a99730b48dbf12342a757b4d4a004c2b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 8c5e1ae099c74fd48ae9d0eaa8d87b03, type: 3}
 --- !u!33 &33433972707000666
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -437,7 +437,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0.021, z: 0}
   m_Axis: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.8505162, y: 0.012056515, z: 0.9110001}
+  m_ConnectedAnchor: {x: 0.8505162, y: 0.1805, z: 0.9110001}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:

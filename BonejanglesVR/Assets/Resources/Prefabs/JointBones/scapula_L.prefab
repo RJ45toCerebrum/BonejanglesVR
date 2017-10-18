@@ -437,7 +437,7 @@ CharacterJoint:
   m_Anchor: {x: 0.005, y: 0, z: -0.02}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.4946491, y: 0.3655565, z: 0.030100822}
+  m_ConnectedAnchor: {x: -0.4946491, y: 0.534, z: 0.030100822}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:

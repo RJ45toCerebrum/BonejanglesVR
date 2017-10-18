@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65761340459520374}
   - component: {fileID: 54262292813065686}
   - component: {fileID: 114153920773184312}
-  - component: {fileID: 114373009679987074}
+  - component: {fileID: 114698266366782782}
   m_Layer: 8
   m_Name: hand_R
   m_TagString: Bone
@@ -132,7 +132,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114373009679987074}
+  grabAttachMechanicScript: {fileID: 114698266366782782}
   secondaryGrabActionScript: {fileID: 0}
   isUsable: 0
   holdButtonToUse: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
---- !u!114 &114373009679987074
+--- !u!114 &114698266366782782
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -158,5 +158,5 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
-  destroyImmediatelyOnThrow: 0
+  destroyImmediatelyOnThrow: 1
   breakForce: 1500

@@ -26,7 +26,9 @@ namespace com.EvolveVR.BonejanglesVR
         public const string jtypeJSON = "jtype";
 
         public enum JointType { Character, Hinge, None};
+        public enum ConnectionType { NotConnected, Correct, Incorrect };
         private JointType jointType = JointType.Character;
+        private ConnectionType connectionType = ConnectionType.NotConnected;
         private JSONNode jointInfo;
 
         private static VRTK_ControllerReference leftControllerReference;
@@ -51,6 +53,11 @@ namespace com.EvolveVR.BonejanglesVR
         public bool IsSnapped
         {
             get { return snapDropZone.GetCurrentSnappedObject() != null; }
+        }
+
+        public ConnectionType Connection
+        {
+            get{return connectionType; }
         }
 
         private void Awake()
@@ -125,6 +132,7 @@ namespace com.EvolveVR.BonejanglesVR
             e.snappedObject.GetComponent<VRTK_InteractableObject>().enabled = true;
             SetIsHanging(false);
 
+            connectionType = ConnectionType.NotConnected;
             // we only want to remove the connection IF the object was a valid one
             // this is because only valid objects add connections
             if (e.snappedObject.name == validObjectName) {
@@ -161,7 +169,7 @@ namespace com.EvolveVR.BonejanglesVR
                     SetIsHanging(true);
 
                 // velocity manager can be used to mk sure the velocity
-
+                connectionType = ConnectionType.Correct;
                 GameManager gm = GameManager.Instance;
                 if (gm)
                     gm.AddConnection();

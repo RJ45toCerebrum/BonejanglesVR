@@ -34,7 +34,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4255239829033370
 Transform:
   m_ObjectHideFlags: 1
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21cd0a741fe168b45940c200f80f06f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   lowerLeft: {fileID: 0}
   lowerRight: {fileID: 0}
   upperRight: {fileID: 0}
@@ -134,6 +135,7 @@ MonoBehaviour:
   invertX: 0
   uiCursor: {fileID: 0}
   buttonRectTransform: {fileID: 0}
+  timeBetweenPulses: 0
 --- !u!114 &114331486178206970
 MonoBehaviour:
   m_ObjectHideFlags: 1

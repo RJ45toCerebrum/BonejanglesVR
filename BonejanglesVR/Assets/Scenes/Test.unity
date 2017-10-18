@@ -237,25 +237,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1205047673541688, guid: 764a24e86f5ac8842b41a8f6cf94530f, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114092767385103324, guid: 764a24e86f5ac8842b41a8f6cf94530f,
-        type: 2}
-      propertyPath: centroidPrimitive
-      value: 
-      objectReference: {fileID: 1439618302}
-    - target: {fileID: 114092767385103324, guid: 764a24e86f5ac8842b41a8f6cf94530f,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114092767385103324, guid: 764a24e86f5ac8842b41a8f6cf94530f,
-        type: 2}
-      propertyPath: debugMode
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 764a24e86f5ac8842b41a8f6cf94530f, type: 2}
   m_IsPrefabParent: 0
@@ -593,7 +574,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 785882819}
   m_LocalRotation: {x: -0, y: 0.61379653, z: -0, w: 0.7894643}
-  m_LocalPosition: {x: 0.0454, y: 0.0678, z: 0.0714}
+  m_LocalPosition: {x: 0.0327, y: 0.0653, z: 0.0607}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1814207741}
@@ -721,11 +702,6 @@ Transform:
   m_Father: {fileID: 1251145712}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1006228471 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4073236516865748, guid: 764a24e86f5ac8842b41a8f6cf94530f,
-    type: 2}
-  m_PrefabInternal: {fileID: 573757313}
 --- !u!1 &1239799565
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,34 +908,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1251145712}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1439618302
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1439618303}
-  m_Layer: 0
-  m_Name: CentroidPrimitive
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1439618303
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1439618302}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1006228471}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1500491538
 GameObject:

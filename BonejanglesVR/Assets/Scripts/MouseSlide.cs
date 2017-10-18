@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using VRTK;
 using System.Collections;
 using UnityEngine.UI;
@@ -7,10 +6,12 @@ using UnityEngine.EventSystems;
 
 namespace com.EvolveVR.BonejanglesVR
 {
-
     public class MouseSlide : MonoBehaviour
     {
-        VRTK_InteractableObject mouseObject;
+        [SerializeField]
+        private GameManager gameManager;
+
+        private VRTK_InteractableObject mouseInteractable;
 
         public Transform lowerLeft;
         public Transform lowerRight;
@@ -30,8 +31,13 @@ namespace com.EvolveVR.BonejanglesVR
         private Button button;
         private Vector3 lastPosition;
 
+        [Range(0.0f, 1.0f)]
+        public float timeBetweenPulses;
+        protected float currentHapticTime;
+        private VRTK_ControllerReference handRef;
+
         private void Awake() {
-            mouseObject = GetComponent<VRTK_InteractableObject>();
+            mouseInteractable = GetComponent<VRTK_InteractableObject>();
         }
 
         private void Start()
@@ -44,14 +50,16 @@ namespace com.EvolveVR.BonejanglesVR
 
             uiCursor.localPosition = new Vector3(0, 0, -0.01f);
 
-            mouseObject.InteractableObjectGrabbed += MouseGrabbed;
-            mouseObject.InteractableObjectUsed += OnMouseClick;
+            mouseInteractable.InteractableObjectGrabbed += MouseGrabbed;
+            mouseInteractable.InteractableObjectUsed += OnMouseClick;
 
             button = buttonRectTransform.GetComponent<Button>();
         }
 
         private void MouseGrabbed(object sender, InteractableObjectEventArgs e) {
             Debug.Log("On Mouse Grabbed");
+
+            handRef = VRTK_ControllerReference.GetControllerReference(mouseInteractable.GetGrabbingObject());
             StartCoroutine(InitGrabMechanic());
         }
 
@@ -64,12 +72,16 @@ namespace com.EvolveVR.BonejanglesVR
 
         private IEnumerator InitGrabMechanic()
         {
-            Renderer rend = GetComponent<Renderer>();
-            rend.enabled = false;
+            Renderer[] rends = GetComponentsInChildren<Renderer>();
+            foreach(Renderer r in rends)
+                r.enabled = false;
+
             yield return new WaitForEndOfFrame();
 
             transform.position = mousePadCenter;
-            rend.enabled = true;
+
+            foreach (Renderer r in rends)
+                r.enabled = true;
         }
 
         private Vector2 GetMousePadPosition()
@@ -84,7 +96,7 @@ namespace com.EvolveVR.BonejanglesVR
 
         private void Update()
         {
-            if (!mouseObject.IsGrabbed())
+            if (!mouseInteractable.IsGrabbed())
                 return;
 
             Vector2 relativeMousePosition = GetMousePadPosition();
@@ -101,6 +113,8 @@ namespace com.EvolveVR.BonejanglesVR
                 EventSystem.current.SetSelectedGameObject(button.gameObject);
             else
                 EventSystem.current.SetSelectedGameObject(null);
+
+            Haptics();
         }   
 
         private bool IsCursorOverlap(RectTransform rectT)
@@ -120,6 +134,15 @@ namespace com.EvolveVR.BonejanglesVR
                 return true;
 
             return false;
+        }
+
+        private void Haptics()
+        {
+            currentHapticTime += Time.deltaTime;
+            if (currentHapticTime > timeBetweenPulses) {
+                VRTK_ControllerHaptics.TriggerHapticPulse(handRef, 0.3f);
+                currentHapticTime = Time.deltaTime;
+            }
         }
 
         private void DeleteCode()

@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e58c40b5e54c934481b319dfe077f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfEntries: 3
+  numberOfEntries: 8
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &114535443836523562
