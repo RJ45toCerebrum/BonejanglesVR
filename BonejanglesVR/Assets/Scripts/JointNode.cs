@@ -85,6 +85,7 @@ namespace com.EvolveVR.BonejanglesVR
             else
                 Debug.LogWarningFormat("Unable to find the snappable object {0} in the scene", validObjectName);
 
+            InitParentJointNode();
             StartCoroutine(LateStart());
         }
 
@@ -116,6 +117,18 @@ namespace com.EvolveVR.BonejanglesVR
             rightControllerReference = VRTK_ControllerReference.GetControllerReference(SDK_BaseController.ControllerHand.Right);
         }
 
+        private void InitParentJointNode()
+        {
+            GameObject parentJointNodeGO = GameObject.Find(transform.parent.name + "_SDZ");
+            if (parentJointNodeGO != null) {
+                JointNode jn = parentJointNodeGO.GetComponent<JointNode>();
+                parentNode = jn;
+            }
+            else {
+                parentNode = null;
+                Debug.LogWarning("Not able to find the parent joint node for " + name);
+            }
+        }
 
         private void ObjectUnsnapped(object sender, SnapDropZoneEventArgs e)
         {

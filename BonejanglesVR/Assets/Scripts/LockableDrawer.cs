@@ -55,6 +55,7 @@ namespace com.EvolveVR.BonejanglesVR
                     keyIO = null;
                     return;
                 }
+                
                 startRotation = hand.transform.rotation;
                 lastRotation = startRotation;
 
@@ -114,6 +115,8 @@ namespace com.EvolveVR.BonejanglesVR
 
             SetKeyState(true);
             StartCoroutine(LockState(1.0f));
+            if(keyIO)
+                keyIO.enabled = true;
 
             hand = null;
             keyIO = null;
@@ -154,6 +157,8 @@ namespace com.EvolveVR.BonejanglesVR
             keyIO.transform.position = keyInPlaceTransform.position;
             keyIO.transform.rotation = keyInPlaceTransform.rotation;
             keyInLock = true;
+
+            isGrabbable = false;
             yield return null;
         }
     }
