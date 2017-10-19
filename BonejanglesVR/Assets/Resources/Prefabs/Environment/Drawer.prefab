@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 33211097720637906}
   - component: {fileID: 23523847989901930}
   - component: {fileID: 65504573610411890}
+  - component: {fileID: 65103559367085220}
   - component: {fileID: 114510225075177042}
   m_Layer: 0
   m_Name: Drawer
@@ -155,13 +156,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643545400221998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.069, y: 0, z: -3.155}
+  m_LocalPosition: {x: 2.077, y: 0, z: -3.155}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4713761093760640}
   - {fileID: 4513174410708346}
   m_Father: {fileID: 4581884625921144}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4513174410708346
 Transform:
@@ -183,7 +184,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1138886454649208}
   m_LocalRotation: {x: -0.49512416, y: -0.5048289, z: -0.5048288, w: 0.49512413}
-  m_LocalPosition: {x: 0.4835, y: 0.062, z: -0.1639}
+  m_LocalPosition: {x: 0.5397, y: 0.062, z: -0.1633}
   m_LocalScale: {x: 0.71903044, y: 0.70000064, z: 0.25088012}
   m_Children: []
   m_Father: {fileID: 4675566167253640}
@@ -199,8 +200,8 @@ Transform:
   m_LocalPosition: {x: -1.928, y: 0.005, z: -2.928}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4675566167253640}
   - {fileID: 4124407250037036}
+  - {fileID: 4675566167253640}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -44.397003, z: 0}
@@ -217,7 +218,7 @@ Transform:
   - {fileID: 4799033241732120}
   - {fileID: 4520013088406558}
   m_Father: {fileID: 4581884625921144}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4713761093760640
 Transform:
@@ -482,6 +483,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.09282717, y: 0.07992214, z: 0.071208}
   m_Center: {x: 0.45350736, y: 0.062335394, z: -0.15832391}
+--- !u!65 &65103559367085220
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581115399082022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03898275, y: 0.6092352, z: 0.5841615}
+  m_Center: {x: -0.3764354, y: 0.34313336, z: -0.0000023013736}
 --- !u!65 &65319751664476326
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -492,8 +505,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6645154, y: 0.15593894, z: 0.028821051}
-  m_Center: {x: 0.028932929, y: 0.038525514, z: 0.24855721}
+  m_Size: {x: 0.7251657, y: 0.15593894, z: 0.028820992}
+  m_Center: {x: -0.0013922896, y: 0.038525514, z: 0.24855715}
 --- !u!65 &65349696155436420
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -552,8 +565,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6665147, y: 0.030046597, z: 0.44412148}
-  m_Center: {x: 0.03242001, y: -0.024420656, z: -0.0023663938}
+  m_Size: {x: 0.7286438, y: 0.030046597, z: 0.44412148}
+  m_Center: {x: 0.0013554842, y: -0.024420656, z: -0.0023663938}
 --- !u!65 &65751551653181348
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -576,8 +589,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.65225905, y: 0.15593894, z: 0.025085032}
-  m_Center: {x: 0.03392756, y: 0.038525514, z: -0.25042576}
+  m_Size: {x: 0.72536284, y: 0.15593894, z: 0.025085032}
+  m_Center: {x: -0.002624215, y: 0.038525514, z: -0.25042576}
 --- !u!65 &65881462588071496
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -763,7 +776,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.443135, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1.7576385, y: 0.448135, z: -3.734756}
+  m_ConnectedAnchor: {x: 1.7633545, y: 0.448135, z: -3.7291589}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 1
@@ -805,8 +818,8 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 10
+    positionSpring: 1
+    positionDamper: 1
     maximumForce: 3.4028233e+38
   m_YDrive:
     serializedVersion: 3
@@ -899,8 +912,8 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 3
-    positionSpring: 100
-    positionDamper: 20
+    positionSpring: 0
+    positionDamper: 0
     maximumForce: 3.4028233e+38
   m_YDrive:
     serializedVersion: 3

@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 65712154277094422}
   - component: {fileID: 54925419747408744}
   - component: {fileID: 114493054555276058}
-  - component: {fileID: 114239858533737886}
+  - component: {fileID: 114102339873652504}
   m_Layer: 8
   m_Name: fibula_R
   m_TagString: Bone
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 65651625639233156}
   - component: {fileID: 54526987275983444}
   - component: {fileID: 114346248568278268}
-  - component: {fileID: 114869516154915154}
+  - component: {fileID: 114396113036431820}
   m_Layer: 8
   m_Name: fibula_L
   m_TagString: Bone
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 54908464779357628}
   - component: {fileID: 65008927655621756}
   - component: {fileID: 114551083165700810}
-  - component: {fileID: 114266060075172014}
+  - component: {fileID: 114693810347366532}
   m_Layer: 8
   m_Name: thoracic
   m_TagString: Bone
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 65127308194315744}
   - component: {fileID: 54184106417258114}
   - component: {fileID: 114310399670299092}
-  - component: {fileID: 114188962466385540}
+  - component: {fileID: 114666613994810058}
   m_Layer: 8
   m_Name: scapula_L
   m_TagString: Bone
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 65019811826687242}
   - component: {fileID: 54442901752111322}
   - component: {fileID: 114550270838174680}
-  - component: {fileID: 114392130584423916}
+  - component: {fileID: 114952628318349532}
   m_Layer: 8
   m_Name: ribcage
   m_TagString: Bone
@@ -278,8 +278,8 @@ GameObject:
   - component: {fileID: 23044529257340124}
   - component: {fileID: 54121535484679344}
   - component: {fileID: 114486906873633362}
-  - component: {fileID: 114079214191431756}
   - component: {fileID: 65895654859664500}
+  - component: {fileID: 114109214191273030}
   m_Layer: 8
   m_Name: foot_L
   m_TagString: Bone
@@ -476,8 +476,8 @@ GameObject:
   - component: {fileID: 23121816156606070}
   - component: {fileID: 54425871934618584}
   - component: {fileID: 114260921211945038}
-  - component: {fileID: 114805631405577860}
   - component: {fileID: 65391901267365464}
+  - component: {fileID: 114844166242556320}
   m_Layer: 8
   m_Name: foot_R
   m_TagString: Bone
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 65094135238357622}
   - component: {fileID: 54407665324636940}
   - component: {fileID: 114880837748242168}
-  - component: {fileID: 114374689377141242}
+  - component: {fileID: 114459934681345754}
   m_Layer: 8
   m_Name: scapula_R
   m_TagString: Bone
@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 65375900674355402}
   - component: {fileID: 54999102111478450}
   - component: {fileID: 114987476258472600}
-  - component: {fileID: 114032128727985260}
+  - component: {fileID: 114694361773002028}
   m_Layer: 8
   m_Name: hand_L
   m_TagString: Bone
@@ -699,8 +699,8 @@ GameObject:
   - component: {fileID: 23223379582036972}
   - component: {fileID: 54770808521247388}
   - component: {fileID: 114053728351694100}
-  - component: {fileID: 114364526173630828}
   - component: {fileID: 65785069862492660}
+  - component: {fileID: 114433721244687262}
   m_Layer: 8
   m_Name: humerus_L
   m_TagString: Bone
@@ -854,8 +854,8 @@ GameObject:
   - component: {fileID: 23819323382363028}
   - component: {fileID: 54824042416965532}
   - component: {fileID: 114386720033848176}
-  - component: {fileID: 114307285745553340}
   - component: {fileID: 65610949367899502}
+  - component: {fileID: 114282372574427616}
   m_Layer: 8
   m_Name: tibia_R
   m_TagString: Bone
@@ -957,9 +957,9 @@ GameObject:
   - component: {fileID: 65499266023414908}
   - component: {fileID: 54836252028738172}
   - component: {fileID: 114594469927414496}
-  - component: {fileID: 114210210375193370}
   - component: {fileID: 65791646209489952}
   - component: {fileID: 65522536496353836}
+  - component: {fileID: 114355048672184162}
   m_Layer: 8
   m_Name: hip
   m_TagString: Bone
@@ -1227,8 +1227,8 @@ GameObject:
   - component: {fileID: 4996259748014420}
   - component: {fileID: 54882486606916176}
   - component: {fileID: 114720452377120766}
-  - component: {fileID: 114584409316786688}
   - component: {fileID: 65837647393966936}
+  - component: {fileID: 114677656717856672}
   m_Layer: 8
   m_Name: femur_R
   m_TagString: Bone
@@ -1463,7 +1463,7 @@ GameObject:
   - component: {fileID: 65853786530476998}
   - component: {fileID: 54958882375724608}
   - component: {fileID: 114744206679714352}
-  - component: {fileID: 114846636528283090}
+  - component: {fileID: 114039474244866916}
   m_Layer: 8
   m_Name: lumbar
   m_TagString: Bone
@@ -1498,8 +1498,8 @@ GameObject:
   - component: {fileID: 23967242858225414}
   - component: {fileID: 54027616421868710}
   - component: {fileID: 114517426724865348}
-  - component: {fileID: 114077802793826774}
   - component: {fileID: 65996710955003338}
+  - component: {fileID: 114826871995776286}
   m_Layer: 8
   m_Name: radius_R
   m_TagString: Bone
@@ -1625,10 +1625,10 @@ GameObject:
   - component: {fileID: 65907177718049864}
   - component: {fileID: 54867116823871324}
   - component: {fileID: 114796832990656844}
-  - component: {fileID: 114496559900132190}
   - component: {fileID: 114538850303639334}
   - component: {fileID: 114670317400487888}
   - component: {fileID: 114313998819832828}
+  - component: {fileID: 114504416483253258}
   m_Layer: 8
   m_Name: cranium
   m_TagString: Bone
@@ -1732,8 +1732,8 @@ GameObject:
   - component: {fileID: 4652893641239088}
   - component: {fileID: 54057945982704084}
   - component: {fileID: 114345272012113688}
-  - component: {fileID: 114470819056813608}
   - component: {fileID: 65908070562917390}
+  - component: {fileID: 114381632140560866}
   m_Layer: 8
   m_Name: femur_L
   m_TagString: Bone
@@ -1847,8 +1847,8 @@ GameObject:
   - component: {fileID: 23175001086360096}
   - component: {fileID: 54064169183749678}
   - component: {fileID: 114883811210335530}
-  - component: {fileID: 114131739541411312}
   - component: {fileID: 65012565159131564}
+  - component: {fileID: 114607351467363790}
   m_Layer: 8
   m_Name: humerus_R
   m_TagString: Bone
@@ -1886,7 +1886,7 @@ GameObject:
   - component: {fileID: 65562541054452808}
   - component: {fileID: 54263526769334412}
   - component: {fileID: 114065668634698588}
-  - component: {fileID: 114343002719060004}
+  - component: {fileID: 114554757645463434}
   m_Layer: 8
   m_Name: hand_R
   m_TagString: Bone
@@ -1907,7 +1907,7 @@ GameObject:
   - component: {fileID: 136094587326000474}
   - component: {fileID: 54970453865176006}
   - component: {fileID: 114896353942443418}
-  - component: {fileID: 114908864387931022}
+  - component: {fileID: 114044415305929400}
   m_Layer: 8
   m_Name: cervical
   m_TagString: Bone
@@ -1944,8 +1944,8 @@ GameObject:
   - component: {fileID: 23892515330725946}
   - component: {fileID: 54625526281173380}
   - component: {fileID: 114478797717341082}
-  - component: {fileID: 114338048617886732}
   - component: {fileID: 65160949472034940}
+  - component: {fileID: 114428951255910800}
   m_Layer: 8
   m_Name: radius_L
   m_TagString: Bone
@@ -2132,8 +2132,8 @@ GameObject:
   - component: {fileID: 23279414960684288}
   - component: {fileID: 54975861516071386}
   - component: {fileID: 114058560030493858}
-  - component: {fileID: 114287222361275144}
   - component: {fileID: 65319039746869462}
+  - component: {fileID: 114310127938877680}
   m_Layer: 8
   m_Name: tibia_L
   m_TagString: Bone
@@ -2261,8 +2261,8 @@ GameObject:
   - component: {fileID: 23341635234569054}
   - component: {fileID: 54029671757208188}
   - component: {fileID: 114957015609536244}
-  - component: {fileID: 114761594870976818}
   - component: {fileID: 65183471050121216}
+  - component: {fileID: 114242892828745760}
   m_Layer: 8
   m_Name: ulna_R
   m_TagString: Bone
@@ -2320,7 +2320,7 @@ GameObject:
   - component: {fileID: 54237815329703746}
   - component: {fileID: 114844339776503378}
   - component: {fileID: 65751830271830934}
-  - component: {fileID: 114805429214710462}
+  - component: {fileID: 114883403547008402}
   m_Layer: 8
   m_Name: sacrum
   m_TagString: Bone
@@ -2357,8 +2357,8 @@ GameObject:
   - component: {fileID: 23721355957374556}
   - component: {fileID: 54857304409470674}
   - component: {fileID: 114171265502734360}
-  - component: {fileID: 114754367076572138}
   - component: {fileID: 65380689158890318}
+  - component: {fileID: 114893146708901440}
   m_Layer: 8
   m_Name: ulna_L
   m_TagString: Bone
@@ -2379,7 +2379,7 @@ GameObject:
   - component: {fileID: 65670037810805768}
   - component: {fileID: 54696823905037638}
   - component: {fileID: 114221314075984140}
-  - component: {fileID: 114824671596808726}
+  - component: {fileID: 114721113151066446}
   m_Layer: 8
   m_Name: mandible
   m_TagString: Bone
@@ -8950,25 +8950,44 @@ MonoBehaviour:
   validObjectListPolicy: {fileID: 114670317400487888}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
---- !u!114 &114032128727985260
+--- !u!114 &114039474244866916
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1243034270727808}
+  m_GameObject: {fileID: 1609362415811308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
+  throwMultiplier: 1
   onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
+--- !u!114 &114044415305929400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729455136936228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114053728351694100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8990,7 +9009,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114364526173630828}
+  grabAttachMechanicScript: {fileID: 114433721244687262}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -9020,7 +9039,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114287222361275144}
+  grabAttachMechanicScript: {fileID: 114310127938877680}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -9071,7 +9090,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114343002719060004}
+  grabAttachMechanicScript: {fileID: 114554757645463434}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -9080,26 +9099,26 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
---- !u!114 &114077802793826774
+--- !u!114 &114102339873652504
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1623101113021150}
+  m_GameObject: {fileID: 1038435661033642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
+  throwMultiplier: 1
   onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
---- !u!114 &114079214191431756
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
+--- !u!114 &114109214191273030
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -9107,36 +9126,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1107586364576480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
+  throwMultiplier: 1
   onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
---- !u!114 &114131739541411312
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1722955070844764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114135599949788650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9253,7 +9253,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114754367076572138}
+  grabAttachMechanicScript: {fileID: 114893146708901440}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -9262,44 +9262,6 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
---- !u!114 &114188962466385540
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1075795645507626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
---- !u!114 &114210210375193370
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1338067497418700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
 --- !u!114 &114221314075984140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9321,7 +9283,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114824671596808726}
+  grabAttachMechanicScript: {fileID: 114721113151066446}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -9330,25 +9292,6 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
---- !u!114 &114239858533737886
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1038435661033642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
 --- !u!114 &114240254135548878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9386,6 +9329,25 @@ MonoBehaviour:
   validObjectListPolicy: {fileID: 114670317400487888}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
+--- !u!114 &114242892828745760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867534073725522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114260921211945038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9407,7 +9369,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114805631405577860}
+  grabAttachMechanicScript: {fileID: 114844166242556320}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -9437,25 +9399,6 @@ MonoBehaviour:
   validObjectListPolicy: {fileID: 114670317400487888}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
---- !u!114 &114266060075172014
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1060332809596420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
 --- !u!114 &114273642135543180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9472,25 +9415,25 @@ MonoBehaviour:
   angulerDragAmount: 20
   parentNode: {fileID: 114927410347391424}
   modifySwingAngles: 0
---- !u!114 &114287222361275144
+--- !u!114 &114282372574427616
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1814913926219638}
+  m_GameObject: {fileID: 1308356367865154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
+  throwMultiplier: 1
   onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114292332160487006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9507,25 +9450,6 @@ MonoBehaviour:
   angulerDragAmount: 20
   parentNode: {fileID: 114009534944209958}
   modifySwingAngles: 0
---- !u!114 &114307285745553340
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1308356367865154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
 --- !u!114 &114309439128285574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9542,6 +9466,25 @@ MonoBehaviour:
   angulerDragAmount: 1
   parentNode: {fileID: 114461858710865842}
   modifySwingAngles: 0
+--- !u!114 &114310127938877680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1814913926219638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114310399670299092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9563,7 +9506,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114188962466385540}
+  grabAttachMechanicScript: {fileID: 114666613994810058}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -9623,44 +9566,6 @@ MonoBehaviour:
   angulerDragAmount: 1
   parentNode: {fileID: 114826334007129286}
   modifySwingAngles: 0
---- !u!114 &114338048617886732
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1743717452569166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
---- !u!114 &114343002719060004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1724041583809142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
 --- !u!114 &114345272012113688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9682,10 +9587,10 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114470819056813608}
+  grabAttachMechanicScript: {fileID: 114381632140560866}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
-  holdButtonToUse: 1
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0
@@ -9712,15 +9617,34 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114869516154915154}
+  grabAttachMechanicScript: {fileID: 114396113036431820}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
-  holdButtonToUse: 1
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!114 &114355048672184162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1338067497418700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 0
+  breakForce: 3000
 --- !u!114 &114358317563427878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9763,44 +9687,25 @@ MonoBehaviour:
   validObjectListPolicy: {fileID: 114670317400487888}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
---- !u!114 &114364526173630828
+--- !u!114 &114381632140560866
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1245096906081270}
+  m_GameObject: {fileID: 1698217611817008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
+  throwMultiplier: 1
   onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
---- !u!114 &114374689377141242
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1223186455964824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114382065348927674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9843,7 +9748,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114307285745553340}
+  grabAttachMechanicScript: {fileID: 114282372574427616}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -9873,25 +9778,6 @@ MonoBehaviour:
   validObjectListPolicy: {fileID: 114670317400487888}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
---- !u!114 &114392130584423916
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1104956675476990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 3000
 --- !u!114 &114392561153240716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9908,6 +9794,25 @@ MonoBehaviour:
   angulerDragAmount: 1
   parentNode: {fileID: 114840211874177706}
   modifySwingAngles: 0
+--- !u!114 &114396113036431820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1051422802231810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114411702354898228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9929,6 +9834,63 @@ MonoBehaviour:
   validObjectListPolicy: {fileID: 114670317400487888}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
+--- !u!114 &114428951255910800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1743717452569166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
+--- !u!114 &114433721244687262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245096906081270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
+--- !u!114 &114459934681345754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1223186455964824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114461858710865842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9945,25 +9907,6 @@ MonoBehaviour:
   angulerDragAmount: 1
   parentNode: {fileID: 114708679382388852}
   modifySwingAngles: 1
---- !u!114 &114470819056813608
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1698217611817008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
 --- !u!114 &114478797717341082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9985,7 +9928,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114338048617886732}
+  grabAttachMechanicScript: {fileID: 114428951255910800}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -10031,10 +9974,10 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114079214191431756}
+  grabAttachMechanicScript: {fileID: 114109214191273030}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
-  holdButtonToUse: 1
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0
@@ -10061,7 +10004,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114239858533737886}
+  grabAttachMechanicScript: {fileID: 114102339873652504}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -10070,7 +10013,7 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
---- !u!114 &114496559900132190
+--- !u!114 &114504416483253258
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -10078,16 +10021,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1661441832329006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
+  throwMultiplier: 1
   onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
+  destroyImmediatelyOnThrow: 1
   breakForce: 3000
 --- !u!114 &114517426724865348
 MonoBehaviour:
@@ -10110,7 +10053,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114077802793826774}
+  grabAttachMechanicScript: {fileID: 114826871995776286}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -10188,7 +10131,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114392130584423916}
+  grabAttachMechanicScript: {fileID: 114952628318349532}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -10218,15 +10161,34 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114266060075172014}
+  grabAttachMechanicScript: {fileID: 114693810347366532}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
-  holdButtonToUse: 1
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!114 &114554757645463434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724041583809142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114563323723223584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10269,25 +10231,6 @@ MonoBehaviour:
   validObjectListPolicy: {fileID: 114670317400487888}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
---- !u!114 &114584409316786688
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1514584720758388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
 --- !u!114 &114594469927414496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10309,7 +10252,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114210210375193370}
+  grabAttachMechanicScript: {fileID: 114355048672184162}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 1
@@ -10339,6 +10282,25 @@ MonoBehaviour:
   validObjectListPolicy: {fileID: 114670317400487888}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
+--- !u!114 &114607351467363790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722955070844764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114622112368887892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10418,6 +10380,25 @@ MonoBehaviour:
   angulerDragAmount: 1
   parentNode: {fileID: 114461858710865842}
   modifySwingAngles: 0
+--- !u!114 &114666613994810058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1075795645507626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 0
+  breakForce: 3000
 --- !u!114 &114670317400487888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10433,6 +10414,63 @@ MonoBehaviour:
   checkType: 1
   identifiers:
   - Bone
+--- !u!114 &114677656717856672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1514584720758388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
+--- !u!114 &114693810347366532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1060332809596420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
+--- !u!114 &114694361773002028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1243034270727808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114702240962236280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10491,15 +10529,34 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114584409316786688}
+  grabAttachMechanicScript: {fileID: 114677656717856672}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
-  holdButtonToUse: 1
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!114 &114721113151066446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1904826264237922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 0
+  breakForce: 3000
 --- !u!114 &114740637654815044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10542,34 +10599,15 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114846636528283090}
+  grabAttachMechanicScript: {fileID: 114039474244866916}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
-  holdButtonToUse: 1
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
---- !u!114 &114754367076572138
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1903059563989942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
 --- !u!114 &114755601383802158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10586,25 +10624,6 @@ MonoBehaviour:
   angulerDragAmount: 20
   parentNode: {fileID: 114392561153240716}
   modifySwingAngles: 0
---- !u!114 &114761594870976818
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1867534073725522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
 --- !u!114 &114768682451401984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10658,7 +10677,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114496559900132190}
+  grabAttachMechanicScript: {fileID: 114504416483253258}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -10683,63 +10702,6 @@ MonoBehaviour:
   angulerDragAmount: 20
   parentNode: {fileID: 114917279147071932}
   modifySwingAngles: 0
---- !u!114 &114805429214710462
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1889217968180308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
---- !u!114 &114805631405577860
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1190408434690294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
---- !u!114 &114824671596808726
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1904826264237922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
 --- !u!114 &114826334007129286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10756,6 +10718,25 @@ MonoBehaviour:
   angulerDragAmount: 1
   parentNode: {fileID: 114334397093864372}
   modifySwingAngles: 0
+--- !u!114 &114826871995776286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1623101113021150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114828922807785512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10793,6 +10774,25 @@ MonoBehaviour:
   angulerDragAmount: 1
   parentNode: {fileID: 114874091744115556}
   modifySwingAngles: 1
+--- !u!114 &114844166242556320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1190408434690294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114844339776503378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10814,7 +10814,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114805429214710462}
+  grabAttachMechanicScript: {fileID: 114883403547008402}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -10823,44 +10823,6 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
---- !u!114 &114846636528283090
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1609362415811308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
---- !u!114 &114869516154915154
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1051422802231810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
 --- !u!114 &114874091744115556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10919,7 +10881,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114374689377141242}
+  grabAttachMechanicScript: {fileID: 114459934681345754}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 1
@@ -10928,6 +10890,25 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!114 &114883403547008402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889217968180308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114883811210335530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10949,7 +10930,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114131739541411312}
+  grabAttachMechanicScript: {fileID: 114607351467363790}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 1
@@ -10974,6 +10955,25 @@ MonoBehaviour:
   angulerDragAmount: 20
   parentNode: {fileID: 0}
   modifySwingAngles: 0
+--- !u!114 &114893146708901440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903059563989942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 3000
 --- !u!114 &114896353942443418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10995,7 +10995,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114908864387931022}
+  grabAttachMechanicScript: {fileID: 114044415305929400}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -11025,25 +11025,6 @@ MonoBehaviour:
   validObjectListPolicy: {fileID: 114670317400487888}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
---- !u!114 &114908864387931022
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729455136936228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1.3
-  onGrabCollisionDelay: 0.3
-  destroyImmediatelyOnThrow: 0
-  breakForce: 1500
 --- !u!114 &114917279147071932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11092,6 +11073,25 @@ MonoBehaviour:
   angulerDragAmount: 20
   parentNode: {fileID: 114768682451401984}
   modifySwingAngles: 0
+--- !u!114 &114952628318349532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104956675476990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4a0b4d07e16f49a0feda6d1dd867c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0.3
+  destroyImmediatelyOnThrow: 0
+  breakForce: 3000
 --- !u!114 &114957015609536244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11113,7 +11113,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114761594870976818}
+  grabAttachMechanicScript: {fileID: 114242892828745760}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0
@@ -11143,7 +11143,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114032128727985260}
+  grabAttachMechanicScript: {fileID: 114694361773002028}
   secondaryGrabActionScript: {fileID: 114538850303639334}
   isUsable: 0
   holdButtonToUse: 0

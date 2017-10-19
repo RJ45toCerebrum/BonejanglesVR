@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.IO;
 using System;
+using System.Collections.Generic;
 using SimpleJSON;
 
 
@@ -17,6 +18,7 @@ namespace com.EvolveVR.BonejanglesVR
     [RequireComponent(typeof(VRTK_SnapDropZone))]
     public class JointNode : MonoBehaviour
     {
+        // ltl --> lowTwistLimit on joint    s1l --> swing 1 limit   and so on
         public const string ltlJSON = "ltl";
         public const string htlJSON = "htl";
         public const string s1lJSON = "s1l";
@@ -43,6 +45,7 @@ namespace com.EvolveVR.BonejanglesVR
         private int originalSolverIters;
         private int originalSolverExitVelIters;
 
+        // variables associated with recursive actions
         [SerializeField]
         private JointNode parentNode;
         private JointNode[] childJointNodes;
@@ -60,6 +63,12 @@ namespace com.EvolveVR.BonejanglesVR
             get{return connectionType; }
         }
 
+        public JointType GetJointType
+        {
+            get { return jointType; }
+        }
+
+
         private void Awake()
         {
             // initialize joint type
@@ -71,11 +80,7 @@ namespace com.EvolveVR.BonejanglesVR
                 jointType = JointType.None;
 
             // initialize snapdrop zone events
-            snapDropZone = GetComponent<VRTK_SnapDropZone>();
-            if (snapDropZone != null) {
-                snapDropZone.ObjectSnappedToDropZone += ObjectSnapped;
-                snapDropZone.ObjectUnsnappedFromDropZone += ObjectUnsnapped;
-            }
+            InitSnappingEvents();
 
             // get ref to jointNodes of the snappable object; 
             // for setting joint angles with already snapped together bones on the the skeleton hanger
@@ -128,6 +133,18 @@ namespace com.EvolveVR.BonejanglesVR
                 parentNode = null;
                 Debug.LogWarning("Not able to find the parent joint node for " + name);
             }
+        }
+
+        private void InitSnappingEvents()
+        {
+            // initialize snapdrop zone events
+            snapDropZone = GetComponent<VRTK_SnapDropZone>();
+            if (snapDropZone != null) {
+                snapDropZone.ObjectSnappedToDropZone += ObjectSnapped;
+                snapDropZone.ObjectUnsnappedFromDropZone += ObjectUnsnapped;
+            }
+            else
+                Debug.LogError("JointNode with no SnapDropZone from " + name);
         }
 
         private void ObjectUnsnapped(object sender, SnapDropZoneEventArgs e)
@@ -263,6 +280,30 @@ namespace com.EvolveVR.BonejanglesVR
         private bool IsHanging()
         {
             return isHanging;
+        }
+
+        // Returns an array of connected bones that are connected NOT including the one passed in
+        public GameObject[] GetConnectedBones(JointNode joint)
+        {
+            List<GameObject> jointGOs = new List<GameObject>();
+            ConnectedBones(ref jointGOs);
+            return jointGOs.ToArray();
+        }
+
+        /// <summary>
+        /// Use GetConnectedBones() rather than this because that one is easier to use
+        /// </summary>
+        /// <param name="connBones"></param>
+        public void ConnectedBones(ref List<GameObject> connBones)
+        {
+            GameObject bone = snapDropZone.GetCurrentSnappedObject();
+            if (bone != null) 
+            {
+                if(jointType != JointType.None)
+                    connBones.Add(bone);
+                foreach(JointNode jn in childJointNodes)
+                    jn.ConnectedBones(ref connBones);
+            }
         }
     }
 }
