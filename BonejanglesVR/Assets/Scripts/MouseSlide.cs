@@ -35,6 +35,7 @@ namespace com.EvolveVR.BonejanglesVR
         public float timeBetweenPulses;
         protected float currentHapticTime;
         private VRTK_ControllerReference handRef;
+        private VRTK_Pointer pointer;
 
         private void Awake() {
             mouseInteractable = GetComponent<VRTK_InteractableObject>();
@@ -52,15 +53,28 @@ namespace com.EvolveVR.BonejanglesVR
 
             mouseInteractable.InteractableObjectGrabbed += MouseGrabbed;
             mouseInteractable.InteractableObjectUsed += OnMouseClick;
+            mouseInteractable.InteractableObjectUngrabbed += MouseUngrabbed;
 
             button = buttonRectTransform.GetComponent<Button>();
         }
 
-        private void MouseGrabbed(object sender, InteractableObjectEventArgs e) {
-            Debug.Log("On Mouse Grabbed");
-
+        private void MouseGrabbed(object sender, InteractableObjectEventArgs e)
+        {
             handRef = VRTK_ControllerReference.GetControllerReference(mouseInteractable.GetGrabbingObject());
+
+            GameObject handGO = null;
+            if (handRef.hand == SDK_BaseController.ControllerHand.Left)
+                handGO = GameObject.Find("LeftController");
+            else
+                handGO = GameObject.Find("RightController");
+
+            pointer = handGO.GetComponent<VRTK_Pointer>();
+
             StartCoroutine(InitGrabMechanic());
+        }
+
+        private void MouseUngrabbed(object sender, InteractableObjectEventArgs e) {
+            ControllerPointerSwitch(true);
         }
 
         private void OnMouseClick(object sender, InteractableObjectEventArgs e)
@@ -72,6 +86,8 @@ namespace com.EvolveVR.BonejanglesVR
 
         private IEnumerator InitGrabMechanic()
         {
+            ControllerPointerSwitch(false);
+
             Renderer[] rends = GetComponentsInChildren<Renderer>();
             foreach(Renderer r in rends)
                 r.enabled = false;
@@ -79,7 +95,6 @@ namespace com.EvolveVR.BonejanglesVR
             yield return new WaitForEndOfFrame();
 
             transform.position = mousePadCenter;
-
             foreach (Renderer r in rends)
                 r.enabled = true;
         }
@@ -143,6 +158,16 @@ namespace com.EvolveVR.BonejanglesVR
                 VRTK_ControllerHaptics.TriggerHapticPulse(handRef, 0.3f);
                 currentHapticTime = Time.deltaTime;
             }
+        }
+
+        private void ControllerPointerSwitch(bool state)
+        {
+            if (!pointer)
+                return;
+
+            pointer.enableTeleport = state;
+            VRTK_StraightPointerRenderer spr = pointer.GetComponent<VRTK_StraightPointerRenderer>();
+            spr.enabled = state;
         }
 
         private void DeleteCode()

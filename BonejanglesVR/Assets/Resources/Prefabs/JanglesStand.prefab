@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1181490482040534
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,11 +40,8 @@ GameObject:
   - component: {fileID: 23602760332963626}
   - component: {fileID: 136398642667835332}
   - component: {fileID: 54152442739832784}
-  - component: {fileID: 114693933806604560}
-  - component: {fileID: 114883212990404928}
-  - component: {fileID: 145496144277598610}
   - component: {fileID: 114082578064408304}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: JanglesStand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,14 +106,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1543542548429424}
-  m_LocalRotation: {x: 0.000000021217494, y: 0.23989317, z: -0.000000005243032, w: -0.9707993}
-  m_LocalPosition: {x: -0.004, y: 1.83, z: 0.201}
+  m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: -0.025, y: 1.83, z: 0.177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4577161381985804}
   m_Father: {fileID: 4828377549397516}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 332.24, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!4 &4131354680151026
 Transform:
   m_ObjectHideFlags: 1
@@ -164,15 +161,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1181490482040534}
-  m_LocalRotation: {x: 0.000000021855694, y: -0.00000004371139, z: 1.0165751e-15,
-    w: 1}
-  m_LocalPosition: {x: 0.391, y: 0.109, z: -2.817}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0.63, y: 0.109, z: -2.872}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4113725710056336}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!23 &23349985484758916
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -376,60 +372,10 @@ MonoBehaviour:
   applyScalingOnSnap: 0
   cloneNewOnUnsnap: 0
   highlightColor: {r: 0.4392157, g: 1, b: 0.56078434, a: 1}
-  highlightAlwaysActive: 0
+  highlightAlwaysActive: 1
   validObjectListPolicy: {fileID: 0}
   displayDropZoneInEditor: 1
   defaultSnappedObject: {fileID: 0}
---- !u!114 &114693933806604560
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1181490482040534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disableWhenIdle: 1
-  touchHighlightColor: {r: 0.98919874, g: 1, b: 0.26551723, a: 0.441}
-  allowedTouchControllers: 0
-  ignoredColliders:
-  - {fileID: 0}
-  isGrabbable: 1
-  holdButtonToGrab: 1
-  stayGrabbedOnTeleport: 0
-  validDrop: 1
-  grabOverrideButton: 0
-  allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114883212990404928}
-  secondaryGrabActionScript: {fileID: 0}
-  isUsable: 0
-  holdButtonToUse: 1
-  useOnlyIfGrabbed: 0
-  pointerActivatesUseAction: 0
-  useOverrideButton: 0
-  allowedUseControllers: 0
-  usingState: 0
---- !u!114 &114883212990404928
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1181490482040534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27465973bccbe248a7d38b55e91f315, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 1
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
-  destroyImmediatelyOnThrow: 1
-  customJoint: {fileID: 145496144277598610}
 --- !u!136 &136398642667835332
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -453,7 +399,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0.3, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.387, y: 2.239, z: -2.616}
+  m_ConnectedAnchor: {x: 0.7374802, y: 2.239, z: -2.7291644}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -487,25 +433,3 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 10
---- !u!145 &145496144277598610
-SpringJoint:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1181490482040534}
-  m_ConnectedBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 2.1468127, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.391, y: 2.2558126, z: -2.817}
-  serializedVersion: 2
-  m_Spring: 100
-  m_Damper: 40
-  m_MinDistance: 0
-  m_MaxDistance: 0
-  m_Tolerance: 0.025
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1

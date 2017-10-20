@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 64574645503488460}
   - component: {fileID: 23381307634133696}
   - component: {fileID: 114327436492962338}
+  - component: {fileID: 114192765024956294}
   m_Layer: 10
   m_Name: WhiteBoard
   m_TagString: WhiteBoard
@@ -67,9 +68,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1331603207570498}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 2.48, y: 1.628, z: -1.79}
-  m_LocalScale: {x: 0.12137439, y: 0.2, z: 0.195}
+  m_LocalScale: {x: 0.12137451, y: 0.20000024, z: 0.195}
   m_Children:
   - {fileID: 4010483512974048}
   m_Father: {fileID: 0}
@@ -159,7 +160,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1331603207570498}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3e43f348634a7384e977bfe33dbe2e07, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -179,6 +180,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.06541489, y: 0.025818335, z: 2.0000095}
   m_Center: {x: -0.046829082, y: -0.6450569, z: -0.000000102207785}
+--- !u!114 &114192765024956294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1331603207570498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c09d289a68da44aa1c080e4efab43e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114327436492962338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37336a7b5da9d24eb8dd661d6c898c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawingColor: {r: 1, g: 0, b: 0, a: 1}
-  blockSize: 12
+  drawingColor: {r: 0, g: 0, b: 0, a: 1}
+  blockSize: 10
   senderInfo: MarkerTip
   allowedSenderFilter: 0

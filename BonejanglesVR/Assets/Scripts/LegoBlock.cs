@@ -87,7 +87,6 @@ namespace com.EvolveVR.BonejanglesVR
             if(otherProngsWithinRange.Count == minNumAllowedProngs)  {
                 if (AreProngsAdjacent()) {
                     AnchorLego();
-                    VRDebug.Log("pERFORM ANCHOR", 0);
                 }
             }
         }

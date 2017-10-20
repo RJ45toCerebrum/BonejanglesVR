@@ -87,6 +87,9 @@ GameObject:
   - component: {fileID: 114238068874755896}
   - component: {fileID: 114715581804567066}
   - component: {fileID: 114583027430586542}
+  - component: {fileID: 114526360019094974}
+  - component: {fileID: 114312616423091770}
+  - component: {fileID: 114052509489354754}
   m_Layer: 0
   m_Name: LegoBlock
   m_TagString: Lego
@@ -341,16 +344,16 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1205047673541688}
-  m_LocalRotation: {x: -0, y: -0.081625395, z: -0, w: 0.9966631}
-  m_LocalPosition: {x: 0.181, y: 0.0593, z: -2.666}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: -0.0337359, y: -0.86406887, z: -3.3618102}
+  m_LocalScale: {x: 1.3886962, y: 1.0546412, z: 1.4404451}
   m_Children:
   - {fileID: 4946498045943382}
   - {fileID: 4698148697244182}
   - {fileID: 4513990972603584}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -9.364, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!4 &4078931747952478
 Transform:
   m_ObjectHideFlags: 1
@@ -614,7 +617,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: bbd46f41d75498b4d86e56e3283dc0d2, type: 2}
+  - {fileID: 2100000, guid: 4aed130549a116543be03518af346c95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -694,6 +697,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.118754804, y: 0.026155546, z: 0.21879259}
   m_Center: {x: 0.0011269152, y: 0.015644468, z: 0.00082825124}
+--- !u!114 &114052509489354754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1205047673541688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c09d289a68da44aa1c080e4efab43e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114092767385103324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -772,6 +786,28 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!114 &114312616423091770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1205047673541688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c09d289a68da44aa1c080e4efab43e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114526360019094974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1205047673541688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c09d289a68da44aa1c080e4efab43e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114583027430586542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -799,6 +835,6 @@ MonoBehaviour:
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
-  onGrabCollisionDelay: 0
+  onGrabCollisionDelay: 0.3
   destroyImmediatelyOnThrow: 1
   breakForce: 1500
