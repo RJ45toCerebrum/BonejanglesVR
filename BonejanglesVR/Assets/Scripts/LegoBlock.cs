@@ -52,7 +52,7 @@ namespace com.EvolveVR.BonejanglesVR
             boxCollider = GetComponent<BoxCollider>();
         }
 
-        private void Start(){
+        private void Start() {
             blockTriggerEvent.SubOnTriggerEnterEvent(OnBlockEnter);
             blockTriggerEvent.SubOnTriggerStayEvent(OnBlockStay);
             blockTriggerEvent.SubOnTriggerExitEvent(OnBlockExit);
@@ -75,7 +75,8 @@ namespace com.EvolveVR.BonejanglesVR
             myProngsInRange.Clear();
 
             Transform[] otherBottomProngs = otherLegoBlock.BottomProngs;
-            for(int i = 0; i < otherBottomProngs.Length; i++) {
+            for(int i = 0; i < otherBottomProngs.Length; i++) 
+            {
                 Transform closestProngTransform = ClosestProng(topProngs[i].position, otherBottomProngs);
                 float distance = (topProngs[i].position - closestProngTransform.position).magnitude;
                 if (distance < maxProngDistance) 
