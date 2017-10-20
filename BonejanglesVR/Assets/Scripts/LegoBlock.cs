@@ -11,9 +11,10 @@ namespace com.EvolveVR.BonejanglesVR
 
         // dont forget about the weird trigger problem; this is why im doing this
         public GeneralTriggerEvent blockTriggerEvent;
-        private float maxProngDistance = 0.025f;
-        public const int minNumAllowedProngs = 4;
-        public const int maxNumAllowedProng = 6;
+        private float maxProngDistance = 0.04f;
+        public const int normalProngNumber = 4;
+        public const int minProngNumber = 2;
+        
 
         public Transform[] topProngs;
         public Transform[] bottomProngs;
@@ -24,7 +25,9 @@ namespace com.EvolveVR.BonejanglesVR
         private List<Transform> myProngsInRange;
 
         public bool isAnchored = false;
+        public float breakForce = 500f;
         public const float floorHeight = 0.01f;
+        private BoxCollider boxCollider;
 
 
         public Transform[] BottomProngs
@@ -46,6 +49,7 @@ namespace com.EvolveVR.BonejanglesVR
 
         private void Awake() {
             thisLegoInteractble = GetComponent<VRTK_InteractableObject>();
+            boxCollider = GetComponent<BoxCollider>();
         }
 
         private void Start(){
@@ -56,6 +60,7 @@ namespace com.EvolveVR.BonejanglesVR
             otherProngsWithinRange = new List<Transform>();
             myProngsInRange = new List<Transform>();
         }
+
 
         private void OnBlockEnter(Collider other){
             otherLegoBlock = other.GetComponent<LegoBlock>();
@@ -84,8 +89,9 @@ namespace com.EvolveVR.BonejanglesVR
             }
 
             // after we add all of the prongs within range; we need to see if they are of the correct numbers
-            if(otherProngsWithinRange.Count == minNumAllowedProngs)  {
-                if (AreProngsAdjacent()) {
+            if(otherProngsWithinRange.Count == normalProngNumber || otherProngsWithinRange.Count == minProngNumber)  
+            {
+                if (AreProngsAdjacent(otherProngsWithinRange.Count)) {
                     AnchorLego();
                 }
             }
@@ -97,21 +103,64 @@ namespace com.EvolveVR.BonejanglesVR
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.tag == "Floor")
+            if (collision.gameObject.tag == "Floor") 
+            {
+                Collider[] cs = Physics.OverlapBox(transform.position, boxCollider.size, transform.rotation);
+                foreach(Collider c in cs)  {
+                    if(c.tag == "Lego" && c != boxCollider)
+                        return;
+                }
+
                 AnchorLegoToFloor();
+            }
         }
 
-        private bool AreProngsAdjacent()
+        private bool AreProngsAdjacent(int numProngs)
         {
+            if(numProngs == minProngNumber)
+                return AdjacencySnakeMethod(numProngs) || AdjacencyLinearMethod();
+
+            return AdjacencySnakeMethod(numProngs);
+        }
+
+        // uses the snake method to check if adjacent
+        private bool AdjacencySnakeMethod(int numProngs)
+        {
+            // snake method
             bool firstProngEncountered = false;
             int j = 0;
-            for(int i = 0; j < minNumAllowedProngs; i++) 
-            {
+            for (int i = 0; j < numProngs; i++) {
                 if (topProngs[i] == myProngsInRange[j]) {
                     firstProngEncountered = true;
                     j++;
                 }
                 else if (firstProngEncountered)
+                    return false;
+            }
+
+            return true;
+        }
+
+        // uses the Linear method to check adjacency
+        private bool AdjacencyLinearMethod()
+        {
+            // topProngs and myProngsWithinRange
+            bool firstProngEncounteredLeft = false;
+            bool firstProngEncounteredRight = false;
+            int j = 0;
+
+            // check the left top prongs; i --> 0, 2, 4, 6  k --> 1, 3, 5, 7
+            for (int i = 0, k = 1; (j < 2 && k < topProngs.Length && i < topProngs.Length); i+=2, k+=2)
+            {
+                if (topProngs[i] == myProngsInRange[j] && !firstProngEncounteredRight) {
+                    firstProngEncounteredLeft = true;
+                    j++;
+                }
+                else if (topProngs[k] == myProngsInRange[j] && !firstProngEncounteredLeft) {
+                    firstProngEncounteredRight = true;
+                    j++;
+                }
+                else if (firstProngEncounteredLeft || firstProngEncounteredRight)
                     return false;
             }
 
@@ -169,14 +218,12 @@ namespace com.EvolveVR.BonejanglesVR
 
             // After block is oriented, we need to fixed it into place and make it ungrbbable for now
             // later Ill fix this
-            otherLegoBlock.gameObject.AddComponent<FixedJoint>();
+            FixedJoint fj = otherLegoBlock.gameObject.AddComponent<FixedJoint>();
+            fj.breakForce = breakForce;
             otherLegoBlock.LegoInteractable.enabled = false;
             otherLegoBlock.IsAnchored = true;
 
             blockTriggerEvent.AddIgnoreCollider(otherLegoBlock.GetComponent<Collider>());
-
-            // delete later
-            debugMode = false;
         }
 
         private void AnchorLegoToFloor()
@@ -187,6 +234,7 @@ namespace com.EvolveVR.BonejanglesVR
             OrientTransform(transform);
             transform.position = new Vector3(transform.position.x, floorHeight, transform.position.z);
             FixedJoint fixedJoint = gameObject.AddComponent<FixedJoint>();
+            fixedJoint.breakForce = breakForce;
             thisLegoInteractble.enabled = false;
             isAnchored = true;
         }
@@ -226,6 +274,10 @@ namespace com.EvolveVR.BonejanglesVR
                 return -(Mathf.Abs(v) - remainder);
             else
                 return v + multiple - remainder;
+        }
+
+        private void OnJointBreak(float breakForce) {
+            isAnchored = false;
         }
     }
 }

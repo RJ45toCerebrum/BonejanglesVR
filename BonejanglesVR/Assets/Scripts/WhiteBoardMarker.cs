@@ -10,15 +10,7 @@ namespace com.EvolveVR.BonejanglesVR
         public Transform raycastTransform;
         public RaycastTextureDraw whiteBoard;
         public Renderer markerRenderer;
-        public Transform grabPoint;
 
-        private Rigidbody rb;
-        private ConfigurableJoint joint;
-
-        private void Awake() {
-            rb = interactableObject.GetComponent<Rigidbody>();
-            JointBreakRelay relay = interactableObject.GetComponent<JointBreakRelay>();
-        }
 
         private void Start()
         {
@@ -28,22 +20,8 @@ namespace com.EvolveVR.BonejanglesVR
             markerRenderer.material.color = whiteBoard.drawingColor;
         }
 
-        //private void OnTriggerEnter(Collider other)
-        //{
-        //    if (other.tag == "WhiteBoard") 
-        //    {
-        //        joint = interactableObject.GetComponent<ConfigurableJoint>();
-        //        joint.xMotion = ConfigurableJointMotion.Limited;
-        //        SoftJointLimit sj = joint.linearLimit;
-        //        sj.limit = 0.05f;
-        //        JointDrive drive = joint.xDrive;
-        //        drive.positionSpring = 100;
-        //    }
-        //}
-
         private void OnTriggerStay(Collider other)
         {
-            VRDebug.Log("Staying " + other.name, 0);
             if (other.tag == "WhiteBoard") 
             {
                 RaycastHit hit;
