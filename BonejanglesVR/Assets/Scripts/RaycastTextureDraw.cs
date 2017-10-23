@@ -12,7 +12,8 @@ namespace com.EvolveVR.BonejanglesVR
         private Texture2D originalTexture;
         private Renderer rend;
 
-        public Color drawingColor;
+        [SerializeField]
+        private Color drawingColor;
         public int blockSize;
         private Color[] drawColorBlock;
         private Color[] eraseColorBlock;
@@ -20,6 +21,12 @@ namespace com.EvolveVR.BonejanglesVR
         [Tooltip("SenderInfo and allowedSenderFilter is used to filter who is allowed to draw into texture")]
         public string senderInfo;
         public FilterType allowedSenderFilter = FilterType.Name;
+
+        public Color DrawingColor
+        {
+            get { return drawingColor; }
+        }
+
 
         private void Awake()
         {
@@ -38,7 +45,7 @@ namespace com.EvolveVR.BonejanglesVR
             if (clonedTexture) {
                 rend.material.mainTexture = clonedTexture;
                 objectTexture = clonedTexture;
-                InitColorBlocks();
+                SetColorBlock(drawingColor);
             }
             else
                 enabled = false;
@@ -48,6 +55,7 @@ namespace com.EvolveVR.BonejanglesVR
             // trigger cleanup
             objectTexture = null;
         }
+
 
         public Texture2D CloneTexture(Texture2D tex, TextureFormat format = TextureFormat.RGBA32, bool mipMap = false)
         {
@@ -59,13 +67,13 @@ namespace com.EvolveVR.BonejanglesVR
             return newTex;
         }
 
-        private void InitColorBlocks()
+        public void SetColorBlock(Color color)
         {
             drawColorBlock = new Color[blockSize*blockSize];
             eraseColorBlock = new Color[blockSize * blockSize];
             Color eColor = Color.white;
             for(int i = 0; i < drawColorBlock.Length; i++) {
-                drawColorBlock[i] = drawingColor;
+                drawColorBlock[i] = color;
                 eraseColorBlock[i] = eColor;
             }
         }

@@ -10,6 +10,8 @@ namespace com.EvolveVR.BonejanglesVR
         public Transform raycastTransform;
         public RaycastTextureDraw whiteBoard;
         public Renderer markerRenderer;
+        public GameObject radialMenuLeftHand;
+        public GameObject radialMenuRightHand;
 
 
         private void Start()
@@ -17,7 +19,27 @@ namespace com.EvolveVR.BonejanglesVR
             if (!whiteBoard)
                 enabled = false;
 
-            markerRenderer.material.color = whiteBoard.drawingColor;
+            markerRenderer.material.color = whiteBoard.DrawingColor;
+            interactableObject.InteractableObjectGrabbed += Grabbed;
+            interactableObject.InteractableObjectUngrabbed += Ungrabbed;
+        }
+
+        private void Ungrabbed(object sender, InteractableObjectEventArgs e)
+        {
+            if (radialMenuLeftHand)
+                radialMenuLeftHand.SetActive(false);
+            if(radialMenuRightHand)
+                radialMenuRightHand.SetActive(false);
+
+            VRTK_Pointer pointer = e.interactingObject.GetComponent<VRTK_Pointer>();
+            pointer.enabled = false;
+        }
+
+        private void Grabbed(object sender, InteractableObjectEventArgs e) {
+            VRTK_Pointer pointer = e.interactingObject.GetComponent<VRTK_Pointer>();
+            pointer.enabled = false;
+            radialMenuLeftHand.SetActive(true);
+            radialMenuRightHand.SetActive(true);
         }
 
         private void OnTriggerStay(Collider other)
@@ -31,5 +53,25 @@ namespace com.EvolveVR.BonejanglesVR
             }
         }
 
+
+        public void BlackButtonClicked() {
+            markerRenderer.material.color = Color.black;
+            whiteBoard.SetColorBlock(Color.black);
+        }
+
+        public void GreenButtonClicked() {
+            markerRenderer.material.color = Color.green;
+            whiteBoard.SetColorBlock(Color.green);
+        }
+
+        public void RedButtonClicked() {
+            markerRenderer.material.color = Color.red;
+            whiteBoard.SetColorBlock(Color.red);
+        }
+
+        public void BlueButtonClicked() {
+            markerRenderer.material.color = Color.blue;
+            whiteBoard.SetColorBlock(Color.blue);
+        }
     }
 }

@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 114457619946258404}
   - component: {fileID: 114085945886982516}
   - component: {fileID: 114502473227009594}
+  - component: {fileID: 114549245610114926}
+  - component: {fileID: 114099119421398814}
   m_Layer: 0
   m_Name: LeftController
   m_TagString: Untagged
@@ -40,6 +42,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4219262603968864}
   - component: {fileID: 114194204533488152}
+  - component: {fileID: 114164436847879300}
+  - component: {fileID: 114900415737341084}
+  - component: {fileID: 114591881823786392}
+  - component: {fileID: 114184698890999952}
+  - component: {fileID: 114296689290881528}
   m_Layer: 0
   m_Name: PlayArea
   m_TagString: Untagged
@@ -74,6 +81,9 @@ GameObject:
   - component: {fileID: 114646655327159556}
   - component: {fileID: 114208910763550312}
   - component: {fileID: 114076689444641232}
+  - component: {fileID: 114254534494668698}
+  - component: {fileID: 114133803131354498}
+  - component: {fileID: 114079531522771060}
   m_Layer: 0
   m_Name: RightController
   m_TagString: Untagged
@@ -151,6 +161,17 @@ MonoBehaviour:
   controllerEvents: {fileID: 114186413131457362}
   interactTouch: {fileID: 114208910763550312}
   interactGrab: {fileID: 114646655327159556}
+--- !u!114 &114079531522771060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887735369705658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24437809aceb47e4e89e935d47331182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114085945886982516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,8 +188,77 @@ MonoBehaviour:
   throwMultiplier: 1.3
   createRigidBodyWhenNotTouching: 0
   controllerAttachPoint: {fileID: 0}
-  controllerEvents: {fileID: 0}
-  interactTouch: {fileID: 0}
+  controllerEvents: {fileID: 114772448291979158}
+  interactTouch: {fileID: 114502473227009594}
+--- !u!114 &114099119421398814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337663797299834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24437809aceb47e4e89e935d47331182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114133803131354498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887735369705658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec704cceb26f6f49b6c900fc83d8d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableTeleport: 1
+  targetListPolicy: {fileID: 0}
+  pointerRenderer: {fileID: 114254534494668698}
+  activationButton: 10
+  holdButtonToActivate: 1
+  activateOnEnable: 0
+  activationDelay: 0
+  selectionButton: 10
+  selectOnPress: 0
+  selectionDelay: 0
+  selectAfterHoverDuration: 0
+  interactWithObjects: 0
+  grabToPointerTip: 0
+  controller: {fileID: 114186413131457362}
+  interactUse: {fileID: 114076689444641232}
+  customOrigin: {fileID: 0}
+--- !u!114 &114164436847879300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357666367503290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  operation: 0
+  checkType: 3
+  identifiers:
+  - ExcludeTeleport
+--- !u!114 &114184698890999952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357666367503290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057015237f68bd74d9c6c6c28ea347e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreTriggerColliders: 0
+  colliderRadius: 0.1
+  targetListPolicy: {fileID: 114296689290881528}
+  headsetColliding: 0
+  collidingWith: {fileID: 0}
 --- !u!114 &114186413131457362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -232,7 +322,7 @@ MonoBehaviour:
   blinkTransitionSpeed: 0.6
   distanceBlinkDelay: 0
   headsetPositionCompensation: 1
-  targetListPolicy: {fileID: 0}
+  targetListPolicy: {fileID: 114164436847879300}
   navMeshLimitDistance: 0
 --- !u!114 &114208910763550312
 MonoBehaviour:
@@ -246,6 +336,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customColliderContainer: {fileID: 0}
+--- !u!114 &114254534494668698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887735369705658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc65878c7102524bb8c2bcfbefff497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playareaCursor: {fileID: 0}
+  directionIndicator: {fileID: 0}
+  customRaycast: {fileID: 0}
+  layersToIgnore:
+    serializedVersion: 2
+    m_Bits: 4
+  pointerOriginSmoothingSettings:
+    smoothsPosition: 0
+    maxAllowedPerFrameDistanceDifference: 0.003
+    smoothsRotation: 0
+    maxAllowedPerFrameAngleDifference: 1.5
+  validCollisionColor: {r: 0, g: 0.49803922, b: 0, a: 1}
+  invalidCollisionColor: {r: 0.8, g: 0, b: 0, a: 1}
+  tracerVisibility: 0
+  cursorVisibility: 0
+  maximumLength: 100
+  scaleFactor: 0.002
+  cursorScaleMultiplier: 25
+  cursorMatchTargetRotation: 0
+  cursorDistanceRescale: 0
+  maximumCursorScale: {x: Infinity, y: Infinity, z: Infinity}
+  customTracer: {fileID: 0}
+  customCursor: {fileID: 0}
+--- !u!114 &114296689290881528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357666367503290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  operation: 1
+  checkType: 3
+  identifiers:
+  - ExcludeTeleport
 --- !u!114 &114388881893122340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,7 +409,7 @@ MonoBehaviour:
   selectAfterHoverDuration: 0
   interactWithObjects: 0
   grabToPointerTip: 0
-  controller: {fileID: 0}
+  controller: {fileID: 114772448291979158}
   interactUse: {fileID: 0}
   customOrigin: {fileID: 0}
 --- !u!114 &114457619946258404
@@ -319,6 +458,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customColliderContainer: {fileID: 0}
+--- !u!114 &114549245610114926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337663797299834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65eb64f0f2fd6d64faddbcf5d7d3bdbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useButton: 3
+  controllerEvents: {fileID: 114772448291979158}
+  interactTouch: {fileID: 114502473227009594}
+  interactGrab: {fileID: 114085945886982516}
+--- !u!114 &114591881823786392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357666367503290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44596d094d0946345a7fc6688ba9c06c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114646655327159556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -385,3 +550,19 @@ MonoBehaviour:
   uiClickPressed: 0
   menuPressed: 0
   controllerVisible: 1
+--- !u!114 &114900415737341084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357666367503290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b4bc319f4966f4faedb4f429f7c9c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeTillFade: 0
+  blinkTransitionSpeed: 0.2
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  headsetCollision: {fileID: 114184698890999952}
+  headsetFade: {fileID: 114591881823786392}

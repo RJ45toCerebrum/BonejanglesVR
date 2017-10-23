@@ -12,6 +12,7 @@ namespace com.EvolveVR.BonejanglesVR
 
         // delete later
         public GameObject gameOverMessage;
+        public AudioSource endGameAudioQueuePlaceholder;
 
         public static GameManager Instance
         {
@@ -39,9 +40,8 @@ namespace com.EvolveVR.BonejanglesVR
         public void AddConnection()
         {
             curNumBonesConnected++;
-            if(AllBonesCorrectlyConnected()) {
-                gameOverMessage.SetActive(true);
-            }
+            if(AllBonesCorrectlyConnected())
+                EndGame();
         }
 
         private bool AllBonesCorrectlyConnected()
@@ -56,6 +56,12 @@ namespace com.EvolveVR.BonejanglesVR
         public void RemoveConnection()
         {
             curNumBonesConnected--;
+        }
+
+        private void EndGame()
+        {
+            gameOverMessage.SetActive(true);
+            endGameAudioQueuePlaceholder.Play();
         }
     }
 }

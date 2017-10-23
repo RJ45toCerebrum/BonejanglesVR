@@ -17,11 +17,9 @@ namespace com.EvolveVR.BonejanglesVR
         private bool isLockable = true;
         [Header("Drawer specific")]
         public bool lockOnStart = true;
-        public Material lockMaterial;
-        public Color lockColor;
-        public Color unlockColor;
         private Rigidbody rb;
 
+        public AudioSource audioSource;
 
         private GameObject hand;
         private VRTK_InteractableObject keyIO;
@@ -103,12 +101,13 @@ namespace com.EvolveVR.BonejanglesVR
             isLocked = state;
             if (isLocked) 
             {
-                lockMaterial.color = lockColor;
+                touchHighlightColor = Color.red;
                 rb.isKinematic = true;
                 isGrabbable = false;
             }
-            else {
-                lockMaterial.color = unlockColor;
+            else 
+            {
+                touchHighlightColor = Color.green;
                 isGrabbable = true;
                 rb.isKinematic = false;
             }
@@ -160,6 +159,7 @@ namespace com.EvolveVR.BonejanglesVR
 
             isGrabbable = false;
             yield return null;
+            audioSource.Play();
         }
     }
 }

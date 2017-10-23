@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using VRTK;
+using VRTK.GrabAttachMechanics;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -8,9 +9,6 @@ namespace com.EvolveVR.BonejanglesVR
 {
     public class MouseSlide : MonoBehaviour
     {
-        [SerializeField]
-        private GameManager gameManager;
-
         private VRTK_InteractableObject mouseInteractable;
 
         public Transform lowerLeft;
@@ -26,9 +24,9 @@ namespace com.EvolveVR.BonejanglesVR
         private float height;
         private Vector3 monitorDiagnal;
 
+        public AudioSource audioSource;
         public RectTransform uiCursor;
-        public RectTransform buttonRectTransform;
-        private Button button;
+        public RectTransform[] buttonRectTransforms;
         private Vector3 lastPosition;
 
         [Range(0.0f, 1.0f)]
@@ -39,6 +37,7 @@ namespace com.EvolveVR.BonejanglesVR
 
         private void Awake() {
             mouseInteractable = GetComponent<VRTK_InteractableObject>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         private void Start()
@@ -54,8 +53,6 @@ namespace com.EvolveVR.BonejanglesVR
             mouseInteractable.InteractableObjectGrabbed += MouseGrabbed;
             mouseInteractable.InteractableObjectUsed += OnMouseClick;
             mouseInteractable.InteractableObjectUngrabbed += MouseUngrabbed;
-
-            button = buttonRectTransform.GetComponent<Button>();
         }
 
         private void MouseGrabbed(object sender, InteractableObjectEventArgs e)
@@ -79,8 +76,12 @@ namespace com.EvolveVR.BonejanglesVR
 
         private void OnMouseClick(object sender, InteractableObjectEventArgs e)
         {
-            if(IsCursorOverlap(buttonRectTransform)) {
-                DeleteCode();
+            RectTransform rt = GetOverlappingRT();
+            if (rt) {
+                Button button = rt.GetComponent<Button>();
+                button.onClick.Invoke();
+                audioSource.time = 3.3f;
+                audioSource.Play();
             }
         }
 
@@ -124,8 +125,15 @@ namespace com.EvolveVR.BonejanglesVR
                 cursorPosition.y *= -1;
 
             uiCursor.localPosition = cursorPosition;
-            if (IsCursorOverlap(buttonRectTransform))
-                EventSystem.current.SetSelectedGameObject(button.gameObject);
+            RectTransform rt = GetOverlappingRT();
+            if (rt) 
+            {
+                Button b = rt.GetComponent<Button>();
+                if (b) {
+                    EventSystem.current.SetSelectedGameObject(b.gameObject);
+                    b.Select();
+                }
+            }
             else
                 EventSystem.current.SetSelectedGameObject(null);
 
@@ -134,13 +142,13 @@ namespace com.EvolveVR.BonejanglesVR
 
         private bool IsCursorOverlap(RectTransform rectT)
         {
-            float localWidth = buttonRectTransform.rect.height * buttonRectTransform.localScale.y;
-            float xMin = buttonRectTransform.localPosition.x - localWidth / 2;
-            float xMax = buttonRectTransform.localPosition.x + localWidth / 2;
+            float localWidth = rectT.rect.height * rectT.localScale.y;
+            float xMin = rectT.localPosition.x - localWidth / 2;
+            float xMax = rectT.localPosition.x + localWidth / 2;
 
-            float localHeight = buttonRectTransform.rect.height * buttonRectTransform.localScale.y;
-            float yMin = buttonRectTransform.localPosition.y - localHeight / 2;
-            float yMax = buttonRectTransform.localPosition.y + localHeight / 2;
+            float localHeight = rectT.rect.height * rectT.localScale.y;
+            float yMin = rectT.localPosition.y - localHeight / 2;
+            float yMax = rectT.localPosition.y + localHeight / 2;
 
             bool xInRange = uiCursor.localPosition.x > xMin && uiCursor.localPosition.x < xMax;
             bool yInRange = uiCursor.localPosition.y > yMin && uiCursor.localPosition.y < yMax;
@@ -149,6 +157,16 @@ namespace com.EvolveVR.BonejanglesVR
                 return true;
 
             return false;
+        }
+
+        private RectTransform GetOverlappingRT()
+        {
+            foreach (RectTransform rt in buttonRectTransforms)  {
+                if (IsCursorOverlap(rt))
+                    return rt;
+            }
+
+            return null;
         }
 
         private void Haptics()
@@ -170,11 +188,13 @@ namespace com.EvolveVR.BonejanglesVR
             spr.enabled = state;
         }
 
-        private void DeleteCode()
-        {
-            GameObject textGO= GameObject.Find("MonitorResultsText");
-            Text t = textGO.GetComponent<Text>();
-            t.text = "Virus Downloaded...";
+        public void OnGameStart() {
+            mouseInteractable.ForceStopInteracting();
+            mouseInteractable.grabAttachMechanicScript = null;
+            Destroy(GetComponent<VRTK_CustomJointGrabAttach>());
+            Destroy(GetComponent<SpringJoint>());
+            Destroy(mouseInteractable);
+            Destroy(this);
         }
     }
 }
