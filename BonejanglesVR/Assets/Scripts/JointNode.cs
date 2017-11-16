@@ -179,10 +179,12 @@ namespace com.EvolveVR.BonejanglesVR
         {
 			if (e.snappedObject.name == validObjectName) {
 				MeshRenderer mr = GetComponentInChildren<MeshRenderer> ();
+				mr.enabled = true;
 				mr.material.color = Color.green;
-			} else {
+			} 
+			else {
 				MeshRenderer mr = GetComponentInChildren<MeshRenderer> ();
-				mr.material.color = Color.red;
+				mr.enabled = false;
 			}
         }
 

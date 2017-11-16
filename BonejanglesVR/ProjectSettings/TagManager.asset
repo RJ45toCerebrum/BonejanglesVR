@@ -12,6 +12,7 @@ TagManager:
   - Key
   - Lego
   - Floor
+  - BoneTrigger
   layers:
   - Default
   - TransparentFX
