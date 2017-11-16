@@ -1,0 +1,1047 @@
+fileFormatVersion: 2
+guid: 5c747b03aa1212044ab050ca92daa5f0
+timeCreated: 1509165528
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: ChamferBox001
+    100002: ChamferBox002
+    100004: ChamferBox003
+    100006: ChamferBox004
+    100008: ChamferBox005
+    100010: ChamferBox007
+    100012: ChamferBox008
+    100014: ChamferBox009
+    100016: ChamferBox010
+    100018: ChamferBox011
+    100020: ChamferBox012
+    100022: ChamferBox013
+    100024: ChamferBox014
+    100026: ChamferBox015
+    100028: ChamferBox016
+    100030: ChamferBox017
+    100032: ChamferBox018
+    100034: ChamferBox019
+    100036: ChamferBox021
+    100038: ChamferBox022
+    100040: ChamferBox023
+    100042: ChamferBox024
+    100044: ChamferBox025
+    100046: ChamferBox026
+    100048: ChamferBox027
+    100050: ChamferBox028
+    100052: ChamferBox029
+    100054: ChamferBox030
+    100056: ChamferBox031
+    100058: ChamferBox032
+    100060: ChamferBox033
+    100062: ChamferBox035
+    100064: ChamferBox036
+    100066: ChamferBox037
+    100068: ChamferBox038
+    100070: ChamferBox039
+    100072: ChamferBox040
+    100074: ChamferBox041
+    100076: ChamferBox042
+    100078: ChamferBox043
+    100080: ChamferBox044
+    100082: ChamferBox045
+    100084: ChamferBox046
+    100086: ChamferBox047
+    100088: ChamferBox048
+    100090: ChamferBox049
+    100092: ChamferBox050
+    100094: ChamferBox052
+    100096: ChamferBox054
+    100098: ChamferBox056
+    100100: ChamferBox057
+    100102: ChamferBox058
+    100104: ChamferBox059
+    100106: ChamferBox060
+    100108: ChamferBox061
+    100110: ChamferBox063
+    100112: ChamferBox064
+    100114: ChamferBox066
+    100116: ChamferBox067
+    100118: ChamferBox068
+    100120: ChamferBox069
+    100122: ChamferBox070
+    100124: ChamferBox071
+    100126: ChamferBox072
+    100128: ChamferBox073
+    100130: ChamferBox074
+    100132: ChamferBox075
+    100134: ChamferBox076
+    100136: ChamferBox077
+    100138: ChamferBox078
+    100140: ChamferBox079
+    100142: ChamferBox080
+    100144: ChamferBox081
+    100146: ChamferBox082
+    100148: ChamferBox083
+    100150: ChamferBox084
+    100152: ChamferBox085
+    100154: ChamferBox086
+    100156: ChamferBox087
+    100158: ChamferBox088
+    100160: ChamferBox089
+    100162: ChamferBox090
+    100164: ChamferBox091
+    100166: ChamferBox092
+    100168: ChamferBox094
+    100170: ChamferBox095
+    100172: ChamferBox096
+    100174: ChamferBox097
+    100176: ChamferBox098
+    100178: ChamferBox099
+    100180: ChamferBox100
+    100182: ChamferBox101
+    100184: ChamferBox102
+    100186: ChamferBox103
+    100188: ChamferBox104
+    100190: ChamferBox105
+    100192: ChamferBox106
+    100194: ChamferBox107
+    100196: ChamferBox108
+    100198: ChamferBox109
+    100200: Cube_1
+    100202: Cube_10
+    100204: Cube_11
+    100206: Cube_12
+    100208: Cube_13
+    100210: Cube_14
+    100212: Cube_15
+    100214: Cube_16
+    100216: Cube_17
+    100218: Cube_18
+    100220: Cube_19
+    100222: Cube_2
+    100224: Cube_20
+    100226: Cube_21
+    100228: Cube_22
+    100230: Cube_23
+    100232: Cube_24
+    100234: Cube_25
+    100236: Cube_26
+    100238: Cube_3
+    100240: Cube_4
+    100242: Cube_5
+    100244: Cube_6
+    100246: Cube_7
+    100248: Cube_8
+    100250: Cube_9
+    100252: //RootNode
+    100254: Blue
+    100256: Blue 1
+    100258: Blue 2
+    100260: Blue 3
+    100262: Blue 4
+    100264: Blue 5
+    100266: Blue 6
+    100268: Blue 7
+    100270: Blue 8
+    100272: Center
+    100274: Center 1
+    100276: Center 10
+    100278: Center 11
+    100280: Center 12
+    100282: Center 13
+    100284: Center 14
+    100286: Center 15
+    100288: Center 16
+    100290: Center 17
+    100292: Center 18
+    100294: Center 19
+    100296: Center 2
+    100298: Center 20
+    100300: Center 21
+    100302: Center 22
+    100304: Center 23
+    100306: Center 24
+    100308: Center 3
+    100310: Center 4
+    100312: Center 5
+    100314: Center 6
+    100316: Center 7
+    100318: Center 8
+    100320: Center 9
+    100322: Cetner
+    100324: Cube_11_Face
+    100326: Cube_14_Face
+    100328: Cube_16_face
+    100330: Cube_22_face
+    100332: Cube_5_Face
+    100334: Green
+    100336: Green 1
+    100338: Green 2
+    100340: Green 3
+    100342: Green 4
+    100344: Green 5
+    100346: Green 6
+    100348: Green 7
+    100350: Green 8
+    100352: Orange
+    100354: Orange 1
+    100356: Orange 2
+    100358: Orange 3
+    100360: Orange 4
+    100362: Orange 5
+    100364: Orange 6
+    100366: Orange 7
+    100368: Orange 8
+    100370: Red
+    100372: Red 1
+    100374: Red 2
+    100376: Red 3
+    100378: Red 4
+    100380: Red 5
+    100382: Red 6
+    100384: Red 7
+    100386: Red 8
+    100388: White
+    100390: White 1
+    100392: White 2
+    100394: White 3
+    100396: White 4
+    100398: White 5
+    100400: White 6
+    100402: White 7
+    100404: White 8
+    100406: Yellow
+    100408: Yellow 1
+    100410: Yellow 2
+    100412: Yellow 3
+    100414: Yellow 4
+    100416: Yellow 5
+    100418: Yellow 6
+    100420: Yellow 7
+    100422: Yellow 8
+    400000: ChamferBox001
+    400002: ChamferBox002
+    400004: ChamferBox003
+    400006: ChamferBox004
+    400008: ChamferBox005
+    400010: ChamferBox007
+    400012: ChamferBox008
+    400014: ChamferBox009
+    400016: ChamferBox010
+    400018: ChamferBox011
+    400020: ChamferBox012
+    400022: ChamferBox013
+    400024: ChamferBox014
+    400026: ChamferBox015
+    400028: ChamferBox016
+    400030: ChamferBox017
+    400032: ChamferBox018
+    400034: ChamferBox019
+    400036: ChamferBox021
+    400038: ChamferBox022
+    400040: ChamferBox023
+    400042: ChamferBox024
+    400044: ChamferBox025
+    400046: ChamferBox026
+    400048: ChamferBox027
+    400050: ChamferBox028
+    400052: ChamferBox029
+    400054: ChamferBox030
+    400056: ChamferBox031
+    400058: ChamferBox032
+    400060: ChamferBox033
+    400062: ChamferBox035
+    400064: ChamferBox036
+    400066: ChamferBox037
+    400068: ChamferBox038
+    400070: ChamferBox039
+    400072: ChamferBox040
+    400074: ChamferBox041
+    400076: ChamferBox042
+    400078: ChamferBox043
+    400080: ChamferBox044
+    400082: ChamferBox045
+    400084: ChamferBox046
+    400086: ChamferBox047
+    400088: ChamferBox048
+    400090: ChamferBox049
+    400092: ChamferBox050
+    400094: ChamferBox052
+    400096: ChamferBox054
+    400098: ChamferBox056
+    400100: ChamferBox057
+    400102: ChamferBox058
+    400104: ChamferBox059
+    400106: ChamferBox060
+    400108: ChamferBox061
+    400110: ChamferBox063
+    400112: ChamferBox064
+    400114: ChamferBox066
+    400116: ChamferBox067
+    400118: ChamferBox068
+    400120: ChamferBox069
+    400122: ChamferBox070
+    400124: ChamferBox071
+    400126: ChamferBox072
+    400128: ChamferBox073
+    400130: ChamferBox074
+    400132: ChamferBox075
+    400134: ChamferBox076
+    400136: ChamferBox077
+    400138: ChamferBox078
+    400140: ChamferBox079
+    400142: ChamferBox080
+    400144: ChamferBox081
+    400146: ChamferBox082
+    400148: ChamferBox083
+    400150: ChamferBox084
+    400152: ChamferBox085
+    400154: ChamferBox086
+    400156: ChamferBox087
+    400158: ChamferBox088
+    400160: ChamferBox089
+    400162: ChamferBox090
+    400164: ChamferBox091
+    400166: ChamferBox092
+    400168: ChamferBox094
+    400170: ChamferBox095
+    400172: ChamferBox096
+    400174: ChamferBox097
+    400176: ChamferBox098
+    400178: ChamferBox099
+    400180: ChamferBox100
+    400182: ChamferBox101
+    400184: ChamferBox102
+    400186: ChamferBox103
+    400188: ChamferBox104
+    400190: ChamferBox105
+    400192: ChamferBox106
+    400194: ChamferBox107
+    400196: ChamferBox108
+    400198: ChamferBox109
+    400200: Cube_1
+    400202: Cube_10
+    400204: Cube_11
+    400206: Cube_12
+    400208: Cube_13
+    400210: Cube_14
+    400212: Cube_15
+    400214: Cube_16
+    400216: Cube_17
+    400218: Cube_18
+    400220: Cube_19
+    400222: Cube_2
+    400224: Cube_20
+    400226: Cube_21
+    400228: Cube_22
+    400230: Cube_23
+    400232: Cube_24
+    400234: Cube_25
+    400236: Cube_26
+    400238: Cube_3
+    400240: Cube_4
+    400242: Cube_5
+    400244: Cube_6
+    400246: Cube_7
+    400248: Cube_8
+    400250: Cube_9
+    400252: //RootNode
+    400254: Blue
+    400256: Blue 1
+    400258: Blue 2
+    400260: Blue 3
+    400262: Blue 4
+    400264: Blue 5
+    400266: Blue 6
+    400268: Blue 7
+    400270: Blue 8
+    400272: Center
+    400274: Center 1
+    400276: Center 10
+    400278: Center 11
+    400280: Center 12
+    400282: Center 13
+    400284: Center 14
+    400286: Center 15
+    400288: Center 16
+    400290: Center 17
+    400292: Center 18
+    400294: Center 19
+    400296: Center 2
+    400298: Center 20
+    400300: Center 21
+    400302: Center 22
+    400304: Center 23
+    400306: Center 24
+    400308: Center 3
+    400310: Center 4
+    400312: Center 5
+    400314: Center 6
+    400316: Center 7
+    400318: Center 8
+    400320: Center 9
+    400322: Cetner
+    400324: Cube_11_Face
+    400326: Cube_14_Face
+    400328: Cube_16_face
+    400330: Cube_22_face
+    400332: Cube_5_Face
+    400334: Green
+    400336: Green 1
+    400338: Green 2
+    400340: Green 3
+    400342: Green 4
+    400344: Green 5
+    400346: Green 6
+    400348: Green 7
+    400350: Green 8
+    400352: Orange
+    400354: Orange 1
+    400356: Orange 2
+    400358: Orange 3
+    400360: Orange 4
+    400362: Orange 5
+    400364: Orange 6
+    400366: Orange 7
+    400368: Orange 8
+    400370: Red
+    400372: Red 1
+    400374: Red 2
+    400376: Red 3
+    400378: Red 4
+    400380: Red 5
+    400382: Red 6
+    400384: Red 7
+    400386: Red 8
+    400388: White
+    400390: White 1
+    400392: White 2
+    400394: White 3
+    400396: White 4
+    400398: White 5
+    400400: White 6
+    400402: White 7
+    400404: White 8
+    400406: Yellow
+    400408: Yellow 1
+    400410: Yellow 2
+    400412: Yellow 3
+    400414: Yellow 4
+    400416: Yellow 5
+    400418: Yellow 6
+    400420: Yellow 7
+    400422: Yellow 8
+    2300000: ChamferBox001
+    2300002: ChamferBox002
+    2300004: ChamferBox003
+    2300006: ChamferBox004
+    2300008: ChamferBox005
+    2300010: ChamferBox007
+    2300012: ChamferBox008
+    2300014: ChamferBox009
+    2300016: ChamferBox010
+    2300018: ChamferBox011
+    2300020: ChamferBox012
+    2300022: ChamferBox013
+    2300024: ChamferBox014
+    2300026: ChamferBox015
+    2300028: ChamferBox016
+    2300030: ChamferBox017
+    2300032: ChamferBox018
+    2300034: ChamferBox019
+    2300036: ChamferBox021
+    2300038: ChamferBox022
+    2300040: ChamferBox023
+    2300042: ChamferBox024
+    2300044: ChamferBox025
+    2300046: ChamferBox026
+    2300048: ChamferBox027
+    2300050: ChamferBox028
+    2300052: ChamferBox029
+    2300054: ChamferBox030
+    2300056: ChamferBox031
+    2300058: ChamferBox032
+    2300060: ChamferBox033
+    2300062: ChamferBox035
+    2300064: ChamferBox036
+    2300066: ChamferBox037
+    2300068: ChamferBox038
+    2300070: ChamferBox039
+    2300072: ChamferBox040
+    2300074: ChamferBox041
+    2300076: ChamferBox042
+    2300078: ChamferBox043
+    2300080: ChamferBox044
+    2300082: ChamferBox045
+    2300084: ChamferBox046
+    2300086: ChamferBox047
+    2300088: ChamferBox048
+    2300090: ChamferBox049
+    2300092: ChamferBox050
+    2300094: ChamferBox052
+    2300096: ChamferBox054
+    2300098: ChamferBox056
+    2300100: ChamferBox057
+    2300102: ChamferBox058
+    2300104: ChamferBox059
+    2300106: ChamferBox060
+    2300108: ChamferBox061
+    2300110: ChamferBox063
+    2300112: ChamferBox064
+    2300114: ChamferBox066
+    2300116: ChamferBox067
+    2300118: ChamferBox068
+    2300120: ChamferBox069
+    2300122: ChamferBox070
+    2300124: ChamferBox071
+    2300126: ChamferBox072
+    2300128: ChamferBox073
+    2300130: ChamferBox074
+    2300132: ChamferBox075
+    2300134: ChamferBox076
+    2300136: ChamferBox077
+    2300138: ChamferBox078
+    2300140: ChamferBox079
+    2300142: ChamferBox080
+    2300144: ChamferBox081
+    2300146: ChamferBox082
+    2300148: ChamferBox083
+    2300150: ChamferBox084
+    2300152: ChamferBox085
+    2300154: ChamferBox086
+    2300156: ChamferBox087
+    2300158: ChamferBox088
+    2300160: ChamferBox089
+    2300162: ChamferBox090
+    2300164: ChamferBox091
+    2300166: ChamferBox092
+    2300168: ChamferBox094
+    2300170: ChamferBox095
+    2300172: ChamferBox096
+    2300174: ChamferBox097
+    2300176: ChamferBox098
+    2300178: ChamferBox099
+    2300180: ChamferBox100
+    2300182: ChamferBox101
+    2300184: ChamferBox102
+    2300186: ChamferBox103
+    2300188: ChamferBox104
+    2300190: ChamferBox105
+    2300192: ChamferBox106
+    2300194: ChamferBox107
+    2300196: ChamferBox108
+    2300198: ChamferBox109
+    2300200: Blue
+    2300202: Blue 1
+    2300204: Blue 2
+    2300206: Blue 3
+    2300208: Blue 4
+    2300210: Blue 5
+    2300212: Blue 6
+    2300214: Blue 7
+    2300216: Blue 8
+    2300218: Center
+    2300220: Center 1
+    2300222: Center 10
+    2300224: Center 11
+    2300226: Center 12
+    2300228: Center 13
+    2300230: Center 14
+    2300232: Center 15
+    2300234: Center 16
+    2300236: Center 17
+    2300238: Center 18
+    2300240: Center 19
+    2300242: Center 2
+    2300244: Center 20
+    2300246: Center 21
+    2300248: Center 22
+    2300250: Center 23
+    2300252: Center 24
+    2300254: Center 3
+    2300256: Center 4
+    2300258: Center 5
+    2300260: Center 6
+    2300262: Center 7
+    2300264: Center 8
+    2300266: Center 9
+    2300268: Cetner
+    2300270: Green
+    2300272: Green 1
+    2300274: Green 2
+    2300276: Green 3
+    2300278: Green 4
+    2300280: Green 5
+    2300282: Green 6
+    2300284: Green 7
+    2300286: Green 8
+    2300288: Orange
+    2300290: Orange 1
+    2300292: Orange 2
+    2300294: Orange 3
+    2300296: Orange 4
+    2300298: Orange 5
+    2300300: Orange 6
+    2300302: Orange 7
+    2300304: Orange 8
+    2300306: Red
+    2300308: Red 1
+    2300310: Red 2
+    2300312: Red 3
+    2300314: Red 4
+    2300316: Red 5
+    2300318: Red 6
+    2300320: Red 7
+    2300322: Red 8
+    2300324: White
+    2300326: White 1
+    2300328: White 2
+    2300330: White 3
+    2300332: White 4
+    2300334: White 5
+    2300336: White 6
+    2300338: White 7
+    2300340: White 8
+    2300342: Yellow
+    2300344: Yellow 1
+    2300346: Yellow 2
+    2300348: Yellow 3
+    2300350: Yellow 4
+    2300352: Yellow 5
+    2300354: Yellow 6
+    2300356: Yellow 7
+    2300358: Yellow 8
+    3300000: ChamferBox001
+    3300002: ChamferBox002
+    3300004: ChamferBox003
+    3300006: ChamferBox004
+    3300008: ChamferBox005
+    3300010: ChamferBox007
+    3300012: ChamferBox008
+    3300014: ChamferBox009
+    3300016: ChamferBox010
+    3300018: ChamferBox011
+    3300020: ChamferBox012
+    3300022: ChamferBox013
+    3300024: ChamferBox014
+    3300026: ChamferBox015
+    3300028: ChamferBox016
+    3300030: ChamferBox017
+    3300032: ChamferBox018
+    3300034: ChamferBox019
+    3300036: ChamferBox021
+    3300038: ChamferBox022
+    3300040: ChamferBox023
+    3300042: ChamferBox024
+    3300044: ChamferBox025
+    3300046: ChamferBox026
+    3300048: ChamferBox027
+    3300050: ChamferBox028
+    3300052: ChamferBox029
+    3300054: ChamferBox030
+    3300056: ChamferBox031
+    3300058: ChamferBox032
+    3300060: ChamferBox033
+    3300062: ChamferBox035
+    3300064: ChamferBox036
+    3300066: ChamferBox037
+    3300068: ChamferBox038
+    3300070: ChamferBox039
+    3300072: ChamferBox040
+    3300074: ChamferBox041
+    3300076: ChamferBox042
+    3300078: ChamferBox043
+    3300080: ChamferBox044
+    3300082: ChamferBox045
+    3300084: ChamferBox046
+    3300086: ChamferBox047
+    3300088: ChamferBox048
+    3300090: ChamferBox049
+    3300092: ChamferBox050
+    3300094: ChamferBox052
+    3300096: ChamferBox054
+    3300098: ChamferBox056
+    3300100: ChamferBox057
+    3300102: ChamferBox058
+    3300104: ChamferBox059
+    3300106: ChamferBox060
+    3300108: ChamferBox061
+    3300110: ChamferBox063
+    3300112: ChamferBox064
+    3300114: ChamferBox066
+    3300116: ChamferBox067
+    3300118: ChamferBox068
+    3300120: ChamferBox069
+    3300122: ChamferBox070
+    3300124: ChamferBox071
+    3300126: ChamferBox072
+    3300128: ChamferBox073
+    3300130: ChamferBox074
+    3300132: ChamferBox075
+    3300134: ChamferBox076
+    3300136: ChamferBox077
+    3300138: ChamferBox078
+    3300140: ChamferBox079
+    3300142: ChamferBox080
+    3300144: ChamferBox081
+    3300146: ChamferBox082
+    3300148: ChamferBox083
+    3300150: ChamferBox084
+    3300152: ChamferBox085
+    3300154: ChamferBox086
+    3300156: ChamferBox087
+    3300158: ChamferBox088
+    3300160: ChamferBox089
+    3300162: ChamferBox090
+    3300164: ChamferBox091
+    3300166: ChamferBox092
+    3300168: ChamferBox094
+    3300170: ChamferBox095
+    3300172: ChamferBox096
+    3300174: ChamferBox097
+    3300176: ChamferBox098
+    3300178: ChamferBox099
+    3300180: ChamferBox100
+    3300182: ChamferBox101
+    3300184: ChamferBox102
+    3300186: ChamferBox103
+    3300188: ChamferBox104
+    3300190: ChamferBox105
+    3300192: ChamferBox106
+    3300194: ChamferBox107
+    3300196: ChamferBox108
+    3300198: ChamferBox109
+    3300200: Blue
+    3300202: Blue 1
+    3300204: Blue 2
+    3300206: Blue 3
+    3300208: Blue 4
+    3300210: Blue 5
+    3300212: Blue 6
+    3300214: Blue 7
+    3300216: Blue 8
+    3300218: Center
+    3300220: Center 1
+    3300222: Center 10
+    3300224: Center 11
+    3300226: Center 12
+    3300228: Center 13
+    3300230: Center 14
+    3300232: Center 15
+    3300234: Center 16
+    3300236: Center 17
+    3300238: Center 18
+    3300240: Center 19
+    3300242: Center 2
+    3300244: Center 20
+    3300246: Center 21
+    3300248: Center 22
+    3300250: Center 23
+    3300252: Center 24
+    3300254: Center 3
+    3300256: Center 4
+    3300258: Center 5
+    3300260: Center 6
+    3300262: Center 7
+    3300264: Center 8
+    3300266: Center 9
+    3300268: Cetner
+    3300270: Green
+    3300272: Green 1
+    3300274: Green 2
+    3300276: Green 3
+    3300278: Green 4
+    3300280: Green 5
+    3300282: Green 6
+    3300284: Green 7
+    3300286: Green 8
+    3300288: Orange
+    3300290: Orange 1
+    3300292: Orange 2
+    3300294: Orange 3
+    3300296: Orange 4
+    3300298: Orange 5
+    3300300: Orange 6
+    3300302: Orange 7
+    3300304: Orange 8
+    3300306: Red
+    3300308: Red 1
+    3300310: Red 2
+    3300312: Red 3
+    3300314: Red 4
+    3300316: Red 5
+    3300318: Red 6
+    3300320: Red 7
+    3300322: Red 8
+    3300324: White
+    3300326: White 1
+    3300328: White 2
+    3300330: White 3
+    3300332: White 4
+    3300334: White 5
+    3300336: White 6
+    3300338: White 7
+    3300340: White 8
+    3300342: Yellow
+    3300344: Yellow 1
+    3300346: Yellow 2
+    3300348: Yellow 3
+    3300350: Yellow 4
+    3300352: Yellow 5
+    3300354: Yellow 6
+    3300356: Yellow 7
+    3300358: Yellow 8
+    4300000: ChamferBox068
+    4300002: ChamferBox092
+    4300004: ChamferBox095
+    4300006: ChamferBox088
+    4300008: ChamferBox074
+    4300010: ChamferBox085
+    4300012: ChamferBox083
+    4300014: ChamferBox076
+    4300016: ChamferBox078
+    4300018: ChamferBox079
+    4300020: ChamferBox077
+    4300022: ChamferBox075
+    4300024: ChamferBox080
+    4300026: ChamferBox082
+    4300028: ChamferBox081
+    4300030: ChamferBox072
+    4300032: ChamferBox084
+    4300034: ChamferBox096
+    4300036: ChamferBox098
+    4300038: ChamferBox071
+    4300040: ChamferBox089
+    4300042: ChamferBox100
+    4300044: ChamferBox087
+    4300046: ChamferBox086
+    4300048: ChamferBox070
+    4300050: ChamferBox090
+    4300052: ChamferBox101
+    4300054: ChamferBox091
+    4300056: ChamferBox069
+    4300058: ChamferBox102
+    4300060: ChamferBox094
+    4300062: ChamferBox099
+    4300064: ChamferBox073
+    4300066: ChamferBox097
+    4300068: ChamferBox103
+    4300070: ChamferBox043
+    4300072: ChamferBox042
+    4300074: ChamferBox045
+    4300076: ChamferBox044
+    4300078: ChamferBox039
+    4300080: ChamferBox050
+    4300082: ChamferBox041
+    4300084: ChamferBox040
+    4300086: ChamferBox037
+    4300088: ChamferBox036
+    4300090: ChamferBox038
+    4300092: ChamferBox056
+    4300094: ChamferBox067
+    4300096: ChamferBox054
+    4300098: ChamferBox047
+    4300100: ChamferBox049
+    4300102: ChamferBox048
+    4300104: ChamferBox066
+    4300106: ChamferBox106
+    4300108: ChamferBox064
+    4300110: ChamferBox105
+    4300112: ChamferBox063
+    4300114: ChamferBox061
+    4300116: ChamferBox057
+    4300118: ChamferBox104
+    4300120: ChamferBox058
+    4300122: ChamferBox060
+    4300124: ChamferBox011
+    4300126: ChamferBox010
+    4300128: ChamferBox009
+    4300130: ChamferBox012
+    4300132: ChamferBox007
+    4300134: ChamferBox005
+    4300136: ChamferBox017
+    4300138: ChamferBox008
+    4300140: ChamferBox004
+    4300142: ChamferBox002
+    4300144: ChamferBox003
+    4300146: ChamferBox035
+    4300148: ChamferBox015
+    4300150: ChamferBox001
+    4300152: ChamferBox021
+    4300154: ChamferBox022
+    4300156: ChamferBox023
+    4300158: ChamferBox019
+    4300160: ChamferBox052
+    4300162: ChamferBox033
+    4300164: ChamferBox018
+    4300166: ChamferBox013
+    4300168: ChamferBox014
+    4300170: ChamferBox046
+    4300172: ChamferBox032
+    4300174: ChamferBox016
+    4300176: ChamferBox028
+    4300178: ChamferBox029
+    4300180: ChamferBox107
+    4300182: ChamferBox030
+    4300184: ChamferBox027
+    4300186: ChamferBox108
+    4300188: ChamferBox026
+    4300190: ChamferBox031
+    4300192: ChamferBox024
+    4300194: ChamferBox109
+    4300196: ChamferBox059
+    4300198: ChamferBox025
+    4300200: Red
+    4300202: Green
+    4300204: Blue
+    4300206: Center
+    4300208: Red
+    4300210: Green
+    4300212: Center
+    4300214: Red
+    4300216: Green
+    4300218: Yellow
+    4300220: Center
+    4300222: Red
+    4300224: Blue
+    4300226: Center
+    4300228: Red
+    4300230: Center
+    4300232: Red
+    4300234: Yellow
+    4300236: Center
+    4300238: Red
+    4300240: Blue
+    4300242: Orange
+    4300244: Center
+    4300246: Red
+    4300248: Orange
+    4300250: Center
+    4300252: Yellow
+    4300254: Red
+    4300256: Cetner
+    4300258: Orange
+    4300260: Green
+    4300262: Blue
+    4300264: Center
+    4300266: Green
+    4300268: Center
+    4300270: Green
+    4300272: Yellow
+    4300274: Center
+    4300276: Blue
+    4300278: Center
+    4300280: Yellow
+    4300282: Center
+    4300284: Blue
+    4300286: Orange
+    4300288: Center
+    4300290: Orange
+    4300292: Center
+    4300294: Yellow
+    4300296: Orange
+    4300298: Center
+    4300300: Green
+    4300302: Blue
+    4300304: White
+    4300306: Center
+    4300308: Green
+    4300310: White
+    4300312: Center
+    4300314: Green
+    4300316: White
+    4300318: Yellow
+    4300320: Center
+    4300322: Center
+    4300324: White
+    4300326: Blue
+    4300328: White
+    4300330: Center
+    4300332: White
+    4300334: Yellow
+    4300336: Center
+    4300338: Center
+    4300340: White
+    4300342: Orange
+    4300344: Blue
+    4300346: White
+    4300348: Orange
+    4300350: Center
+    4300352: White
+    4300354: Yellow
+    4300356: Orange
+    4300358: Center
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.001
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

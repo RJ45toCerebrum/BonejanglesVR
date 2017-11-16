@@ -33,7 +33,10 @@ namespace com.EvolveVR.BonejanglesVR
         public float timeBetweenPulses;
         protected float currentHapticTime;
         private VRTK_ControllerReference handRef;
-        private VRTK_Pointer pointer;
+        private VRTK_Pointer pointer; // pointer needed for the main scene
+
+		public float maxHandDistanceFromMouse;
+
 
         private void Awake() {
             mouseInteractable = GetComponent<VRTK_InteractableObject>();
@@ -80,8 +83,11 @@ namespace com.EvolveVR.BonejanglesVR
             if (rt) {
                 Button button = rt.GetComponent<Button>();
                 button.onClick.Invoke();
-                audioSource.time = 3.3f;
-                audioSource.Play();
+				if (audioSource) {
+					audioSource.time = 3.3f;
+					audioSource.Play ();
+				} else
+					Debug.LogWarning ("No Audio source for mouse click sound");
             }
         }
 
@@ -115,19 +121,10 @@ namespace com.EvolveVR.BonejanglesVR
             if (!mouseInteractable.IsGrabbed())
                 return;
 
-            Vector2 relativeMousePosition = GetMousePadPosition();
-            Vector2 cursorPosition = new Vector2(relativeMousePosition.x, relativeMousePosition.y);
-            if (flipCursorDirections)
-                cursorPosition = new Vector2(relativeMousePosition.y, relativeMousePosition.x);
-            if (invertX)
-                cursorPosition.x *= -1;
-            if (invertY)
-                cursorPosition.y *= -1;
+			CursorMovement ();
 
-            uiCursor.localPosition = cursorPosition;
             RectTransform rt = GetOverlappingRT();
-            if (rt) 
-            {
+            if (rt) {
                 Button b = rt.GetComponent<Button>();
                 if (b) {
                     EventSystem.current.SetSelectedGameObject(b.gameObject);
@@ -137,8 +134,28 @@ namespace com.EvolveVR.BonejanglesVR
             else
                 EventSystem.current.SetSelectedGameObject(null);
 
-            Haptics();
-        }   
+
+			// allow the payer to pull dettach from the mouse
+			float offsetFromHand = (transform.position - handRef.actual.transform.position).magnitude;
+			if (offsetFromHand > maxHandDistanceFromMouse)
+				mouseInteractable.ForceStopInteracting ();
+
+			Haptics();
+        }
+
+		private void CursorMovement()
+		{
+			Vector2 relativeMousePosition = GetMousePadPosition();
+			Vector2 cursorPosition = new Vector2(relativeMousePosition.x, relativeMousePosition.y);
+			if (flipCursorDirections)
+				cursorPosition = new Vector2(relativeMousePosition.y, relativeMousePosition.x);
+			if (invertX)
+				cursorPosition.x *= -1;
+			if (invertY)
+				cursorPosition.y *= -1;
+
+			uiCursor.localPosition = cursorPosition;
+		}
 
         private bool IsCursorOverlap(RectTransform rectT)
         {
@@ -188,6 +205,7 @@ namespace com.EvolveVR.BonejanglesVR
             spr.enabled = state;
         }
 
+		// I still have to fix thing in here
         public void OnGameStart() {
             mouseInteractable.ForceStopInteracting();
             mouseInteractable.grabAttachMechanicScript = null;

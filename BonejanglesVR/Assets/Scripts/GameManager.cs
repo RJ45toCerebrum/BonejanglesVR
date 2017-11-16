@@ -6,6 +6,7 @@ namespace com.EvolveVR.BonejanglesVR
     public class GameManager : MonoBehaviour
     {
         private static GameManager gm;
+		private bool gameOver = false;
 
         private int curNumBonesConnected;
         private JointNode[] joints;
@@ -13,6 +14,11 @@ namespace com.EvolveVR.BonejanglesVR
         // delete later
         public GameObject gameOverMessage;
         public AudioSource endGameAudioQueuePlaceholder;
+
+		// timing
+		public float allowedSeconds = 1800.0f;
+		public string winMessage = "Win";
+		public string loseMessage = "Lose";
 
         public static GameManager Instance
         {
@@ -23,6 +29,17 @@ namespace com.EvolveVR.BonejanglesVR
         {
             get { return curNumBonesConnected; }
         }
+
+		public float AllowedSeconds 
+		{
+			get { return allowedSeconds; }
+		}
+
+		public bool GameOver 
+		{
+			get { return gameOver; }
+		}
+
 
         private void Awake()
         {
@@ -37,11 +54,25 @@ namespace com.EvolveVR.BonejanglesVR
             gameOverMessage.SetActive(false);
         }
 
+		private void Update()
+		{
+			if (gameOver)
+				return;
+
+			allowedSeconds -= Time.deltaTime;
+			if (allowedSeconds <= 0)
+				EndGame (loseMessage);
+		}
+
+
         public void AddConnection()
         {
+			if (allowedSeconds <= 0)
+				return;
+
             curNumBonesConnected++;
             if(AllBonesCorrectlyConnected())
-                EndGame();
+                EndGame("Win Message");
         }
 
         private bool AllBonesCorrectlyConnected()
@@ -58,10 +89,14 @@ namespace com.EvolveVR.BonejanglesVR
             curNumBonesConnected--;
         }
 
-        private void EndGame()
+		private void EndGame(string message)
         {
             gameOverMessage.SetActive(true);
+			Text t = gameOverMessage.GetComponentInChildren<Text> ();
+			t.text = message;
+
             endGameAudioQueuePlaceholder.Play();
+			gameOver = true;
         }
     }
 }

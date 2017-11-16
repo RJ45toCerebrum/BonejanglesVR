@@ -138,6 +138,12 @@ namespace com.EvolveVR.BonejanglesVR
         public const float floorHeight = 0.01f;
         private BoxCollider boxCollider;
 
+		MeshRenderer meshRenderer;
+		[SerializeField]
+		private Material unanchoredMaterial;
+		[SerializeField]
+		private Material anchoredMaterial;
+
 
         public Transform[] BottomProngs
         {
@@ -151,9 +157,17 @@ namespace com.EvolveVR.BonejanglesVR
 
         public bool IsAnchored
         {
-            set { isAnchored = value; }
+            set 
+			{ 
+				isAnchored = value; 
+				if (value)
+					meshRenderer.material = anchoredMaterial;
+				else
+					meshRenderer.material = unanchoredMaterial;
+			}
             get { return isAnchored; }
         }
+
 
 
         private void Awake() {
@@ -167,6 +181,9 @@ namespace com.EvolveVR.BonejanglesVR
             blockTriggerEvent.SubOnTriggerExitEvent(OnBlockExit);
 
             prongInfoList = new ProngInfoList();
+
+			meshRenderer = GetComponent<MeshRenderer> ();
+			IsAnchored = false;
         }
 
 
@@ -208,20 +225,14 @@ namespace com.EvolveVR.BonejanglesVR
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.tag == "Floor") 
-            {
-                Collider[] cs = Physics.OverlapBox(transform.position, boxCollider.size, transform.rotation);
-                foreach(Collider c in cs)  {
-                    if(c.tag == "Lego" && c != boxCollider)
-                        return;
-                }
-
+            if (collision.gameObject.tag == "Floor") {
                 AnchorLegoToFloor();
             }
         }
 
         private void OnJointBreak(float breakForce){
             isAnchored = false;
+			meshRenderer.material = unanchoredMaterial;
         }
 
 
@@ -299,7 +310,7 @@ namespace com.EvolveVR.BonejanglesVR
             FixedJoint fixedJoint = gameObject.AddComponent<FixedJoint>();
             fixedJoint.breakForce = breakForce;
             thisLegoInteractble.enabled = false;
-            isAnchored = true;
+            IsAnchored = true;
         }
 
         private void OrientTransform(Transform t)

@@ -27,7 +27,8 @@ namespace com.EvolveVR.BonejanglesVR
         private Quaternion startRotation;
         private Quaternion lastRotation;
         public float startAngle;
-        public float endValue;
+        public float endAngle;
+		public float maxSqrDistanceFromHand = 0.2f;
         public RotationAxis rotationAxis;
         public Transform keyInPlaceTransform;
         
@@ -36,11 +37,16 @@ namespace com.EvolveVR.BonejanglesVR
             get { return isLocked; }
         }
 
+
         protected override void Awake() {
             base.Awake();
             rb = GetComponent<Rigidbody>();
             SetLockState(lockOnStart);
         }
+
+		private void Start() {
+			isUsable = false;
+		}
 
         private void OnTriggerEnter(Collider other)
         {
@@ -66,25 +72,34 @@ namespace com.EvolveVR.BonejanglesVR
             // this checks the hands rotation
             if (other.tag == "Key" && !IsGrabbed() && isLockable && hand != null && keyInLock) 
             {
+				// lets first test to see if player is trying to pull away
+				if ((other.transform.position - hand.transform.position).sqrMagnitude > maxSqrDistanceFromHand) {
+					SetLockState (isLocked);
+					return;
+				}
+
+
                 // get the relative rotation from the starting rotation; Quaternion magic
                 Quaternion relativeRotation = Quaternion.Inverse(startRotation) * hand.transform.rotation;
                 bool isBetweenAngles = false;
                 float dTheta = 0;
                 if (rotationAxis == RotationAxis.X) {
-                    isBetweenAngles = relativeRotation.eulerAngles.x > startAngle && relativeRotation.eulerAngles.x < endValue;
+                    isBetweenAngles = relativeRotation.eulerAngles.x > startAngle && relativeRotation.eulerAngles.x < endAngle;
                     dTheta = relativeRotation.eulerAngles.x - lastRotation.eulerAngles.x;
                 }
                 else if (rotationAxis == RotationAxis.Y) {
-                    isBetweenAngles = relativeRotation.eulerAngles.y > startAngle && relativeRotation.eulerAngles.y < endValue;
+                    isBetweenAngles = relativeRotation.eulerAngles.y > startAngle && relativeRotation.eulerAngles.y < endAngle;
                     dTheta = relativeRotation.eulerAngles.y - lastRotation.eulerAngles.y;
                 }
                 else { 
-                    isBetweenAngles = relativeRotation.eulerAngles.z > startAngle && relativeRotation.eulerAngles.z < endValue;
+                    isBetweenAngles = relativeRotation.eulerAngles.z > startAngle && relativeRotation.eulerAngles.z < endAngle;
                     dTheta = relativeRotation.eulerAngles.z - lastRotation.eulerAngles.z;
                 }
 
-                // rotate the key
-                other.transform.Rotate(keyInPlaceTransform.forward, -dTheta);
+                // rotate the key only if the rotation results in a rotation between the range specified in inspector
+				Vector3 keyRot = other.transform.localEulerAngles;
+				if (keyRot.x - dTheta > startAngle && keyRot.x + dTheta < endAngle)
+					other.transform.Rotate (keyInPlaceTransform.forward, -dTheta);
 
                 if (isBetweenAngles)
                     SetLockState(!isLocked);
@@ -92,6 +107,7 @@ namespace com.EvolveVR.BonejanglesVR
                 lastRotation = relativeRotation;
             }
         }
+
 
         private void SetLockState(bool state)
         {
@@ -153,8 +169,10 @@ namespace com.EvolveVR.BonejanglesVR
         private IEnumerator SetKeyInLock(Transform keyTransform)
         {
             SetKeyState(false);
-            keyIO.transform.position = keyInPlaceTransform.position;
-            keyIO.transform.rotation = keyInPlaceTransform.rotation;
+//            keyIO.transform.position = keyInPlaceTransform.position;
+//            keyIO.transform.rotation = keyInPlaceTransform.rotation;
+			keyTransform.position = keyInPlaceTransform.position;
+			keyTransform.rotation = keyInPlaceTransform.rotation;
             keyInLock = true;
 
             isGrabbable = false;

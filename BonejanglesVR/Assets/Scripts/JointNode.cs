@@ -142,6 +142,7 @@ namespace com.EvolveVR.BonejanglesVR
             if (snapDropZone != null) {
                 snapDropZone.ObjectSnappedToDropZone += ObjectSnapped;
                 snapDropZone.ObjectUnsnappedFromDropZone += ObjectUnsnapped;
+				snapDropZone.ObjectEnteredSnapDropZone += EnteredSnapDropZone;
             }
             else
                 Debug.LogError("JointNode with no SnapDropZone from " + name);
@@ -172,6 +173,17 @@ namespace com.EvolveVR.BonejanglesVR
             }
             else
                 StartCoroutine(PingPongPulses());
+        }
+
+        void EnteredSnapDropZone (object sender, SnapDropZoneEventArgs e)
+        {
+			if (e.snappedObject.name == validObjectName) {
+				MeshRenderer mr = GetComponentInChildren<MeshRenderer> ();
+				mr.material.color = Color.green;
+			} else {
+				MeshRenderer mr = GetComponentInChildren<MeshRenderer> ();
+				mr.material.color = Color.red;
+			}
         }
 
         private void ObjectSnapped(object sender, SnapDropZoneEventArgs e)

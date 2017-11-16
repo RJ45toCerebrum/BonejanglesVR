@@ -13,6 +13,7 @@ namespace com.EvolveVR.BonejanglesVR
         public GameObject radialMenuLeftHand;
         public GameObject radialMenuRightHand;
 
+		private bool onWhiteboard = false;
 
         private void Start()
         {
@@ -32,7 +33,7 @@ namespace com.EvolveVR.BonejanglesVR
                 radialMenuRightHand.SetActive(false);
 
             VRTK_Pointer pointer = e.interactingObject.GetComponent<VRTK_Pointer>();
-            pointer.enabled = false;
+			pointer.enabled = true;
         }
 
         private void Grabbed(object sender, InteractableObjectEventArgs e) {
@@ -42,17 +43,38 @@ namespace com.EvolveVR.BonejanglesVR
             radialMenuRightHand.SetActive(true);
         }
 
-        private void OnTriggerStay(Collider other)
-        {
-            if (other.tag == "WhiteBoard") 
-            {
-                RaycastHit hit;
-                Ray ray = new Ray(raycastTransform.position, raycastTransform.forward);
-                if (Physics.Raycast(ray, out hit, 0.5f))
-                    whiteBoard.Draw(gameObject, hit);
-            }
-        }
+		private void OnTriggerEnter(Collider other)
+		{
+			if (other.tag == "WhiteBoard")
+				onWhiteboard = true;
+		}
 
+		private void OnTriggerExit(Collider other){
+			if (other.tag == "WhiteBoard")
+				onWhiteboard = false;
+		}
+
+//        private void OnTriggerStay(Collider other)
+//        {
+//            if (other.tag == "WhiteBoard") 
+//            {
+//                RaycastHit hit;
+//                Ray ray = new Ray(raycastTransform.position, raycastTransform.forward);
+//                if (Physics.Raycast(ray, out hit, 0.5f))
+//                    whiteBoard.Draw(gameObject, hit);
+//            }
+//        }
+
+		private void Update()
+		{
+			if (!onWhiteboard)
+				return;
+
+			RaycastHit hit;
+			Ray ray = new Ray(raycastTransform.position, raycastTransform.forward);
+			if (Physics.Raycast(ray, out hit, 0.5f))
+				whiteBoard.Draw(gameObject, hit);
+		}
 
         public void BlackButtonClicked() {
             markerRenderer.material.color = Color.black;
