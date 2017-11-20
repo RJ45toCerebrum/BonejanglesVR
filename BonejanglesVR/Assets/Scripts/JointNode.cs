@@ -35,8 +35,18 @@ namespace com.EvolveVR.BonejanglesVR
 
         private static VRTK_ControllerReference leftControllerReference;
         private static VRTK_ControllerReference rightControllerReference;
+		// used for when 
+		private VRTK_ControllerEvents currentHandConEvents;
         private VRTK_SnapDropZone snapDropZone;
         public string validObjectName;
+
+		// variables for highlighting
+		private MeshRenderer boneRenderer;
+		private VRTK_InteractableObject validObj; // null when no valid object in snap drop zone
+		private Transform highlightObjTransform;
+		// this is for checking if the player released bone when it was properly oriented
+		private bool releaseWasValid = false; 
+
 
         [Tooltip("This is the drag that is modified on the snapping rigidbody")]
         // these are rigidbody settings for dealing with hanging skeleton
@@ -45,14 +55,14 @@ namespace com.EvolveVR.BonejanglesVR
         private int originalSolverIters;
         private int originalSolverExitVelIters;
 
-        // variables associated with recursive actions
+		// variables associated with recursive actions; for translation with connected bones and determining whats connected to what
         [SerializeField]
         private JointNode parentNode;
         private JointNode[] childJointNodes;
         private bool isHanging = false;
         public bool modifySwingAngles = false;
 
-
+		#region Properties
         public bool IsSnapped
         {
             get { return snapDropZone.GetCurrentSnappedObject() != null; }
@@ -67,37 +77,45 @@ namespace com.EvolveVR.BonejanglesVR
         {
             get { return jointType; }
         }
+		#endregion
 
+		#region InitializationCode
+        
+		private void Awake()
+		{
+			// initialize joint type
+			if (GetComponent<CharacterJoint> () != null)
+				jointType = JointType.Character;
+			else if (GetComponent<HingeJoint> () != null)
+				jointType = JointType.Hinge;
+			else
+				jointType = JointType.None;
 
-        private void Awake()
-        {
-            // initialize joint type
-            if (GetComponent<CharacterJoint>() != null)
-                jointType = JointType.Character;
-            else if (GetComponent<HingeJoint>() != null)
-                jointType = JointType.Hinge;
-            else
-                jointType = JointType.None;
+			// initialize snapdrop zone events
+			InitSnappingEvents ();
 
-            // initialize snapdrop zone events
-            InitSnappingEvents();
+			// get ref to jointNodes of the snappable object; 
+			// for setting joint angles with already snapped together bones on the the skeleton hanger
+			GameObject snappableObject = GameObject.Find (validObjectName);
+			if (snappableObject)
+				childJointNodes = snappableObject.GetComponentsInChildren<JointNode> ();
+			else
+				Debug.LogWarningFormat ("Unable to find the snappable object {0} in the scene", validObjectName);
 
-            // get ref to jointNodes of the snappable object; 
-            // for setting joint angles with already snapped together bones on the the skeleton hanger
-            GameObject snappableObject = GameObject.Find(validObjectName);
-            if (snappableObject)
-                childJointNodes = snappableObject.GetComponentsInChildren<JointNode>(); 
-            else
-                Debug.LogWarningFormat("Unable to find the snappable object {0} in the scene", validObjectName);
+			InitParentJointNode ();
+			StartCoroutine (LateStart ());
 
-            InitParentJointNode();
-            StartCoroutine(LateStart());
+			// we also need to get the trasnform of the Highlighting container; the Highlight Container is always
+			// the first child of an SDZ --> snap drop zone object
+			highlightObjTransform = transform.GetChild(0);
+			if (highlightObjTransform == null)
+				Debug.LogError ("Could not find highlight container from " + name);
         }
 
         private void Start()
         {
             if (parentNode == null)
-                isHanging = true;
+  		    	isHanging = true;
 
             if (modifySwingAngles) 
             {
@@ -143,11 +161,27 @@ namespace com.EvolveVR.BonejanglesVR
                 snapDropZone.ObjectSnappedToDropZone += ObjectSnapped;
                 snapDropZone.ObjectUnsnappedFromDropZone += ObjectUnsnapped;
 				snapDropZone.ObjectEnteredSnapDropZone += EnteredSnapDropZone;
+				snapDropZone.ObjectExitedSnapDropZone += ObjectExited;
             }
             else
                 Debug.LogError("JointNode with no SnapDropZone from " + name);
         }
 
+		#endregion
+
+		private void Update()
+		{
+			// kinf of sucks but could figure out how to take this out of update
+			if (validObj && highlightObjTransform) {
+				HighlightBone (true);
+				// releaseWasValid state is set in the HighlightBone
+				if (currentHandConEvents && !currentHandConEvents.triggerClicked && !releaseWasValid) {
+					StartCoroutine (StopSnapRoutine ());
+				}
+			}
+		}
+
+		#region Snap Events
         private void ObjectUnsnapped(object sender, SnapDropZoneEventArgs e)
         {
             Rigidbody rb = e.snappedObject.GetComponent<Rigidbody>();
@@ -175,25 +209,40 @@ namespace com.EvolveVR.BonejanglesVR
                 StartCoroutine(PingPongPulses());
         }
 
-        void EnteredSnapDropZone (object sender, SnapDropZoneEventArgs e)
+        private void EnteredSnapDropZone (object sender, SnapDropZoneEventArgs e)
         {
-			if (e.snappedObject.name == validObjectName) {
-				MeshRenderer mr = GetComponentInChildren<MeshRenderer> ();
-				mr.enabled = true;
-				mr.material.color = Color.green;
-			} 
+			// get references if proper bone in the snap zone
+			if (e.snappedObject.name == validObjectName) 
+			{
+				validObj = e.snappedObject.GetComponent<VRTK_InteractableObject> ();
+				GameObject handGO = validObj.GetGrabbingObject ();
+				if (handGO == null)
+					return;
+
+				var currentHand = validObj.GetGrabbingObject ();
+				var handType = VRTK_DeviceFinder.GetControllerHand (currentHand);
+				if (handType == SDK_BaseController.ControllerHand.Left) {
+					var hand = VRTK_DeviceFinder.GetControllerLeftHand ();
+					currentHandConEvents = hand.GetComponent<VRTK_ControllerEvents> ();
+				} else {
+					var hand = VRTK_DeviceFinder.GetControllerRightHand ();
+					currentHandConEvents = hand.GetComponent<VRTK_ControllerEvents> ();
+				}
+				VRDebug.Log (currentHand.name, 2);
+			}
+
 			else {
-				MeshRenderer mr = GetComponentInChildren<MeshRenderer> ();
-				mr.enabled = false;
+				// do not render the highlight at all
+				HighlightBone(false);
 			}
         }
 
         private void ObjectSnapped(object sender, SnapDropZoneEventArgs e)
         {
-            if (e.snappedObject.name != validObjectName) {
+			if (e.snappedObject.name != validObjectName || !isBoneOrientedProperly()) {
                 snapDropZone.ForceUnsnap();
             }
-            else 
+			else
             {
                 // set rigibody values
                 Rigidbody rb = e.snappedObject.GetComponent<Rigidbody>();
@@ -220,6 +269,59 @@ namespace com.EvolveVR.BonejanglesVR
             }
         }
 
+		private void ObjectExited (object sender, SnapDropZoneEventArgs e)  {
+			validObj = null;
+			boneRenderer = null;
+		}
+
+		private IEnumerator StopSnapRoutine()
+		{
+			snapDropZone.enabled = false;
+			yield return new WaitForSeconds (0.5f);
+			snapDropZone.enabled = true;
+		}
+		#endregion
+
+		// utility function for highlighting the bone while inside the snap drop zone
+		private void HighlightBone(bool value)
+		{
+			if (value) 
+			{
+				if(boneRenderer == null)
+					boneRenderer = GetComponentInChildren<MeshRenderer> ();
+				boneRenderer.enabled = true;
+
+				// if the bone is oriented properly then highlight green else highlight red
+				releaseWasValid = isBoneOrientedProperly();
+				if(releaseWasValid)
+					boneRenderer.material.color = Color.green;
+				else
+					boneRenderer.material.color = Color.red;
+			} 
+			else {
+				// do not render the highlight at all
+				boneRenderer = GetComponentInChildren<MeshRenderer> ();
+				boneRenderer.enabled = false;
+			}
+		}
+
+		// the says it all; when the user goes to put bone on the joint
+		// is the position and orientation such that it will be successful?
+		private bool isBoneOrientedProperly()
+		{
+			if (highlightObjTransform == null)
+				return false;
+			else if (validObj == null)
+				return false;
+
+			// both the distance and orientation must be within reasonable value; but not necessarily exact
+			float d = (highlightObjTransform.position - validObj.transform.position).magnitude;
+			float angle = Vector3.Angle (validObj.transform.forward, highlightObjTransform.forward);
+
+			return d < 0.15f && angle < 30.0f;
+		}
+
+		// utility function for modifing allowed joint rotation whether it is hanging on stand or not
         private void ModifyJointRotationAngles()
         {
             if (!modifySwingAngles)
@@ -278,6 +380,8 @@ namespace com.EvolveVR.BonejanglesVR
             }  
         }
 
+		// when we set this bone to hanging, other bones may be connected to this bone;
+		// thus, a recursive check should do the job
         private void SetIsHanging(bool value)
         {
             isHanging = value;
@@ -291,6 +395,7 @@ namespace com.EvolveVR.BonejanglesVR
             }
         }
 
+		// get whether this bone is hanging on the stand or not
         private bool IsHanging()
         {
             return isHanging;
