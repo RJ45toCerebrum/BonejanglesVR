@@ -104,7 +104,7 @@ namespace VRTK
         protected GameObject objectToClone = null;
         protected bool[] clonedObjectColliderStates = new bool[0];
         protected VRTK_BaseHighlighter objectHighlighter;
-        protected bool willSnap = false;
+		protected bool willSnap = false;
         protected bool isSnapped = false;
         protected bool wasSnapped = false;
         protected bool isHighlighted = false;
@@ -114,6 +114,17 @@ namespace VRTK
         protected const string HIGHLIGHT_CONTAINER_NAME = "HighlightContainer";
         protected const string HIGHLIGHT_OBJECT_NAME = "HighlightObject";
         protected const string HIGHLIGHT_EDITOR_OBJECT_NAME = "EditorHighlightObject";
+
+		// MODIFIED BY TYLER HEERS
+		public bool WillSnap {
+			get {
+				return willSnap;
+			}
+			set {
+				willSnap = value;
+			}
+		}
+		// END MODIFICATION
 
         public virtual void OnObjectEnteredSnapDropZone(SnapDropZoneEventArgs e)
         {
@@ -589,8 +600,15 @@ namespace VRTK
             Vector3 startScale = ioTransform.localScale;
             bool storedKinematicState = ioCheck.isKinematic;
             ioCheck.isKinematic = true;
+
+			bool didBreak = false;
             while (elapsedTime <= duration)
             {
+				if (!willSnap) {
+					didBreak = true;
+					break;
+				}
+
                 elapsedTime += Time.deltaTime;
                 if (ioTransform != null && endSettings != null)
                 {
@@ -598,16 +616,19 @@ namespace VRTK
                     ioTransform.rotation = Quaternion.Lerp(startRotation, endSettings.transform.rotation, (elapsedTime / duration));
                     ioTransform.localScale = Vector3.Lerp(startScale, endScale, (elapsedTime / duration));
                 }
+
                 yield return null;
             }
 
-            //Force all to the last setting in case anything has moved during the transition
-            ioTransform.position = endSettings.transform.position;
-            ioTransform.rotation = endSettings.transform.rotation;
-            ioTransform.localScale = endScale;
+			if (!didBreak) {
+				//Force all to the last setting in case anything has moved during the transition
+				ioTransform.position = endSettings.transform.position;
+				ioTransform.rotation = endSettings.transform.rotation;
+				ioTransform.localScale = endScale;
+			}
 
             ioCheck.isKinematic = storedKinematicState;
-            SetDropSnapType(ioCheck);
+			SetDropSnapType(ioCheck);
         }
 
         protected virtual void SetDropSnapType(VRTK_InteractableObject ioCheck)

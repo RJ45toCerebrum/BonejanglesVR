@@ -175,9 +175,8 @@ namespace com.EvolveVR.BonejanglesVR
 			if (validObj && highlightObjTransform) {
 				HighlightBone (true);
 				// releaseWasValid state is set in the HighlightBone
-				if (currentHandConEvents && !currentHandConEvents.triggerClicked && !releaseWasValid) {
+				if (currentHandConEvents && !currentHandConEvents.triggerClicked && !releaseWasValid)
 					StartCoroutine (StopSnapRoutine ());
-				}
 			}
 		}
 
@@ -228,7 +227,7 @@ namespace com.EvolveVR.BonejanglesVR
 					var hand = VRTK_DeviceFinder.GetControllerRightHand ();
 					currentHandConEvents = hand.GetComponent<VRTK_ControllerEvents> ();
 				}
-				VRDebug.Log (currentHand.name, 2);
+				//VRDebug.Log (currentHand.name, 2);
 			}
 
 			else {
@@ -273,14 +272,16 @@ namespace com.EvolveVR.BonejanglesVR
 			validObj = null;
 			boneRenderer = null;
 		}
+			
+		#endregion
 
+		// utility for stopping the snapping process that VRTK does
 		private IEnumerator StopSnapRoutine()
 		{
-			snapDropZone.enabled = false;
-			yield return new WaitForSeconds (0.5f);
-			snapDropZone.enabled = true;
+			snapDropZone.WillSnap = false;
+			yield return new WaitForSeconds (1.0f);
+			snapDropZone.WillSnap = true;
 		}
-		#endregion
 
 		// utility function for highlighting the bone while inside the snap drop zone
 		private void HighlightBone(bool value)
@@ -318,7 +319,7 @@ namespace com.EvolveVR.BonejanglesVR
 			float d = (highlightObjTransform.position - validObj.transform.position).magnitude;
 			float angle = Vector3.Angle (validObj.transform.forward, highlightObjTransform.forward);
 
-			return d < 0.15f && angle < 30.0f;
+			return d < 0.03f && angle < 30.0f;
 		}
 
 		// utility function for modifing allowed joint rotation whether it is hanging on stand or not

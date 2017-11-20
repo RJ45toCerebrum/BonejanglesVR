@@ -772,7 +772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverMessage: {fileID: 697513242}
   endGameAudioQueuePlaceholder: {fileID: 214298325}
-  allowedSeconds: 1200
+  allowedSeconds: 100
   winMessage: 'You have done it! Congrats! '
   loseMessage: Damn... You a Scrub
 --- !u!82 &214298325
@@ -7784,7 +7784,7 @@ Prefab:
     - target: {fileID: 224967593222501826, guid: 8a34ee428f746d044ae82eba5299b920,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 552
+      value: 613
       objectReference: {fileID: 0}
     - target: {fileID: 224967593222501826, guid: 8a34ee428f746d044ae82eba5299b920,
         type: 2}
@@ -11954,7 +11954,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1390046407810860, guid: 80b5713a37bce354f95ffb97b77ff88d, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114626471667179952, guid: 80b5713a37bce354f95ffb97b77ff88d,
         type: 2}
