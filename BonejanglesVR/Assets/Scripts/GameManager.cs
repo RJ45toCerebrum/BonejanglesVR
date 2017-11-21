@@ -7,12 +7,24 @@ namespace com.EvolveVR.BonejanglesVR
 	[System.Serializable]
 	public class Objective
 	{
+		public enum ObjectiveStatus
+		{
+			NotAvailable, Available, Finished
+		}
+
 		public string objectiveMessage;
 		public string[] jointNames;
+		private List<JointNode> jointNodes;
+		private int numAdded;
 		[Tooltip("The time is in Minutes")]
 		public float allowedTime;
+		private ObjectiveStatus objectiveCompleted = ObjectiveStatus.NotAvailable;
+		public ObjectiveUI objectiveUI;
 
-		public bool HasJoint(string jointName){
+
+
+		public bool HasJoint(string jointName)
+		{
 			foreach (string jName in jointNames) {
 				if (jName == jointName)
 					return true;
@@ -25,21 +37,46 @@ namespace com.EvolveVR.BonejanglesVR
 		public float GetTime() {
 			return allowedTime * 60f;
 		}
+
+		public bool ObjectiveCompleted()
+		{
+			if (objectiveCompleted == ObjectiveStatus.Finished)
+				return true;
+
+			foreach (JointNode jn in jointNodes) {
+				if (jn.Connection != JointNode.ConnectionType.Correct)
+					return false;
+			}
+
+			return true;
+		}
+
+		public void SetMessage(){
+			objectiveUI.ChangeMessage (objectiveMessage);
+		}
+
+		public void SetObjectiveStatus(ObjectiveStatus status) {
+			objectiveCompleted = status;
+			objectiveUI.ChangeStatus (status);
+		}
+
+		public void AddJoint(JointNode jn)
+		{
+			if (jointNodes == null)
+				jointNodes = new List<JointNode> (jointNames.Length);
+
+			jointNodes.Add (jn);
+		}
 	}
 
     public class GameManager : MonoBehaviour
     {
         private static GameManager gm;
 		private bool gameOver = false;
+		// this is so we can create 
 		public Objective[] objectiveList;
 		private int currentObjective = 0;
-		// this maps a joint name to a objective; this allows me to 
-		// find whcih objective a JointNode is a part of and thus see if
-		// all the other Node in the set are also connected
-		private Dictionary<string, Objective> jointToObjective;
-
-        private int curNumBonesConnected;
-        private JointNode[] joints;
+		private JointNode[] joints;
 
         // delete later
         public GameObject gameOverMessage;
@@ -55,11 +92,6 @@ namespace com.EvolveVR.BonejanglesVR
         public static GameManager Instance
         {
             get { return gm; }
-        }
-
-        public int CurNumBonesConnected
-        {
-            get { return curNumBonesConnected; }
         }
 
 		public float AllowedSeconds 
@@ -84,14 +116,13 @@ namespace com.EvolveVR.BonejanglesVR
             gameOverMessage.SetActive(false);
 
 			// the point of this is to map joint name --> objective that the joint is apart of
-			InitObjectiveMap();
+			InitObjectives();
         }
 
-		private void InitObjectiveMap()
+		private void InitObjectives()
 		{
 			// the point of this is to map joint name --> objective that the joint is apart of
 			joints = FindObjectsOfType<JointNode>();
-			jointToObjective = new Dictionary<string, Objective> (joints.Length);
 			for(int i = 0; i < joints.Length; i++)
 			{
 				JointNode jn = joints [i];
@@ -99,15 +130,19 @@ namespace com.EvolveVR.BonejanglesVR
 				// find the objective associated with this joint; linear but not that many bones or objectives so its fine
 				Objective objective = null;
 				for(int j = 0; j < objectiveList.Length; j++){
-					if (objectiveList [j].HasJoint (jn.name))
+					if (objectiveList [j].HasJoint (jn.name)) {
 						objective = objectiveList [j];
+						objective.AddJoint (jn);
+					}
 				}
-
-				if (objective != null)
-					jointToObjective.Add (jn.name, objective);
-				else
-					Debug.LogWarningFormat ("Joint {0} has no objective associated", jn.name);
 			}
+
+			// init the objectives now
+			foreach (Objective obj in objectiveList) {
+				obj.SetMessage ();
+				obj.SetObjectiveStatus (Objective.ObjectiveStatus.NotAvailable);
+			}
+			objectiveList [currentObjective].SetObjectiveStatus (Objective.ObjectiveStatus.Available);
 		}
 
 		private void Update()
@@ -120,23 +155,31 @@ namespace com.EvolveVR.BonejanglesVR
 				EndGame (loseMessage);
 		}
 
-
-		private void BoneSnapped(JointNode jn)
+		private void BoneSnapped(JointNode jn) 
 		{
-			Debug.Log (jn.name);
-			Objective obj = jointToObjective [jn.name];
-			Debug.Log (obj.objectiveMessage);
+			if (objectiveList[currentObjective].HasJoint(jn.name) && 
+				objectiveList[currentObjective].ObjectiveCompleted ())
+			{
+				if (AllObjectivesCompleted ()) {
+					Debug.LogError ("Game Won");
+				} else {
+					// play sound, make new objective available
+					objectiveList [currentObjective].SetObjectiveStatus(Objective.ObjectiveStatus.Finished);
+					currentObjective++;
+					objectiveList [currentObjective].SetObjectiveStatus (Objective.ObjectiveStatus.Available);
+				}
+			}
 		}
 
-        public void AddConnection()
-        {
-			if (allowedSeconds <= 0)
-				return;
+		private bool AllObjectivesCompleted()
+		{
+			foreach (Objective obj in objectiveList) {
+				if(!obj.ObjectiveCompleted())
+					return false;
+			}
 
-            curNumBonesConnected++;
-            if(AllBonesCorrectlyConnected())
-                EndGame("Win Message");
-        }
+			return true;
+		}
 
         private bool AllBonesCorrectlyConnected()
         {
@@ -145,11 +188,6 @@ namespace com.EvolveVR.BonejanglesVR
                     return false;
             }
             return true;   
-        }
-
-        public void RemoveConnection()
-        {
-            curNumBonesConnected--;
         }
 
 		private void EndGame(string message)
