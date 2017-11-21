@@ -61,6 +61,8 @@ namespace com.EvolveVR.BonejanglesVR
         private JointNode[] childJointNodes;
         private bool isHanging = false;
         public bool modifySwingAngles = false;
+		public delegate void BoneSnapped(JointNode jn);
+		public event BoneSnapped OnBoneSnapped;
 
 		#region Properties
         public bool IsSnapped
@@ -210,6 +212,8 @@ namespace com.EvolveVR.BonejanglesVR
 
         private void EnteredSnapDropZone (object sender, SnapDropZoneEventArgs e)
         {
+//			VRDebug.Log (name, 1);
+//			VRDebug.Log (e.snappedObject.name, 2);
 			// get references if proper bone in the snap zone
 			if (e.snappedObject.name == validObjectName) 
 			{
@@ -262,9 +266,8 @@ namespace com.EvolveVR.BonejanglesVR
 
                 // velocity manager can be used to mk sure the velocity
                 connectionType = ConnectionType.Correct;
-                GameManager gm = GameManager.Instance;
-                if (gm)
-                    gm.AddConnection();
+				if (OnBoneSnapped != null)
+					OnBoneSnapped (this);
             }
         }
 
@@ -275,7 +278,8 @@ namespace com.EvolveVR.BonejanglesVR
 			
 		#endregion
 
-		// utility for stopping the snapping process that VRTK does
+		// utility for stopping the snapping process that VRTK does;
+		// just a hack because VRTK didnt atticipate people using it liek i am
 		private IEnumerator StopSnapRoutine()
 		{
 			snapDropZone.WillSnap = false;
@@ -319,7 +323,7 @@ namespace com.EvolveVR.BonejanglesVR
 			float d = (highlightObjTransform.position - validObj.transform.position).magnitude;
 			float angle = Vector3.Angle (validObj.transform.forward, highlightObjTransform.forward);
 
-			return d < 0.03f && angle < 30.0f;
+			return d < 0.1f && angle < 30.0f;
 		}
 
 		// utility function for modifing allowed joint rotation whether it is hanging on stand or not
