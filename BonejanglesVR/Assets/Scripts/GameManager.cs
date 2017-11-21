@@ -1,9 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace com.EvolveVR.BonejanglesVR
 {
+	public class Node<T>
+	{
+		public T data;
+		public int depth = 0;
+		public List<Node<T>> children;
+
+		public Node() {
+			children = new List<Node<T>> ();
+		}
+	}
+
 	[System.Serializable]
 	public class Objective
 	{
@@ -12,16 +24,17 @@ namespace com.EvolveVR.BonejanglesVR
 			NotAvailable, Available, Finished
 		}
 
+		public string objectiveName;
+		public string[] connectedObjectiveNames;
+
 		public string objectiveMessage;
 		public string[] jointNames;
 		private List<JointNode> jointNodes;
-		private int numAdded;
 		[Tooltip("The time is in Minutes")]
 		public float allowedTime;
 		private ObjectiveStatus objectiveCompleted = ObjectiveStatus.NotAvailable;
 		public ObjectiveUI objectiveUI;
-
-
+	
 
 		public bool HasJoint(string jointName)
 		{
@@ -73,10 +86,11 @@ namespace com.EvolveVR.BonejanglesVR
     {
         private static GameManager gm;
 		private bool gameOver = false;
-		// this is so we can create 
-		public Objective[] objectiveList;
-		private int currentObjective = 0;
 		private JointNode[] joints;
+
+		public Objective[] objectiveList;
+		private Queue<Node<Objective>> nextObjectives;
+		private List<Objective> activeObjectives;
 
         // delete later
         public GameObject gameOverMessage;
@@ -121,28 +135,55 @@ namespace com.EvolveVR.BonejanglesVR
 
 		private void InitObjectives()
 		{
+			nextObjectives = new Queue<Node<Objective>> ();
+			activeObjectives = new List<Objective> ();
+			Dictionary<string, Node<Objective>> graphBuilder = new Dictionary<string, Node<Objective>> ();
+
 			// the point of this is to map joint name --> objective that the joint is apart of
-			joints = FindObjectsOfType<JointNode>();
-			for(int i = 0; i < joints.Length; i++)
+			joints = FindObjectsOfType<JointNode> ();
+			for (int i = 0; i < joints.Length; i++) 
 			{
 				JointNode jn = joints [i];
 				jn.OnBoneSnapped += BoneSnapped;
-				// find the objective associated with this joint; linear but not that many bones or objectives so its fine
+
+				// FIND the objective associated with this joint; O(n) but not that many bones or objectives so its fine
 				Objective objective = null;
-				for(int j = 0; j < objectiveList.Length; j++){
-					if (objectiveList [j].HasJoint (jn.name)) {
+				for (int j = 0; j < objectiveList.Length; j++) 
+				{
+					if (objectiveList [j].HasJoint (jn.name)) 
+					{
 						objective = objectiveList [j];
 						objective.AddJoint (jn);
+
+						if (!graphBuilder.ContainsKey (objective.objectiveName)) 
+						{
+							Node<Objective> objectiveNode = new Node<Objective> ();
+							objectiveNode.data = objective;
+							graphBuilder.Add (objective.objectiveName, objectiveNode);
+						}
+						// joint is never associated with multiple objectives
+						break;
 					}
 				}
 			}
 
-			// init the objectives now
-			foreach (Objective obj in objectiveList) {
+			// initiallize objective; currently there are no connections between objective nodes; 
+			// make them now that all objective nodes are mapped;
+			foreach (Objective obj in objectiveList) 
+			{
 				obj.SetMessage ();
 				obj.SetObjectiveStatus (Objective.ObjectiveStatus.NotAvailable);
+				Node<Objective> objectiveNode = graphBuilder [obj.objectiveName];
+				foreach (string childObj in obj.connectedObjectiveNames)
+					objectiveNode.children.Add (graphBuilder [childObj]);
 			}
-			objectiveList [currentObjective].SetObjectiveStatus (Objective.ObjectiveStatus.Available);
+				
+			// this is for algorithm that uses Q and List in order to keep track of which objectives
+			// are currently active and which ones are next in the queue
+
+			graphBuilder ["obj1"].depth = 0;
+			nextObjectives.Enqueue (graphBuilder ["obj1"]);
+			NextObjectives ();
 		}
 
 		private void Update()
@@ -155,20 +196,58 @@ namespace com.EvolveVR.BonejanglesVR
 				EndGame (loseMessage);
 		}
 
-		private void BoneSnapped(JointNode jn) 
+		private void NextObjectives()
 		{
-			if (objectiveList[currentObjective].HasJoint(jn.name) && 
-				objectiveList[currentObjective].ObjectiveCompleted ())
+			if (nextObjectives.Count == 0)
+				return;
+
+			activeObjectives.Clear ();
+			// algo --> while nodes in the queue have the same depth as front one;
+			// 1) pop 2) add its children 3) add to active objective list
+			Node<Objective> objectiveNode;
+			int currentDepth = nextObjectives.Peek ().depth;
+
+			while (nextObjectives.Count != 0 && currentDepth == nextObjectives.Peek ().depth) 
 			{
-				if (AllObjectivesCompleted ()) {
-					Debug.LogError ("Game Won");
-				} else {
-					// play sound, make new objective available
-					objectiveList [currentObjective].SetObjectiveStatus(Objective.ObjectiveStatus.Finished);
-					currentObjective++;
-					objectiveList [currentObjective].SetObjectiveStatus (Objective.ObjectiveStatus.Available);
+				objectiveNode = nextObjectives.Dequeue ();
+				activeObjectives.Add (objectiveNode.data);
+				objectiveNode.data.SetObjectiveStatus (Objective.ObjectiveStatus.Available);
+				foreach (var node in objectiveNode.children) {
+					node.depth = currentDepth + 1;
+					nextObjectives.Enqueue (node);
 				}
 			}
+		}
+
+		private void BoneSnapped(JointNode jn) 
+		{
+			// if the player completed an objective then Play sound, set objective state
+			bool allObjectviesComplete = true;
+			foreach (Objective obj in activeObjectives) 
+			{
+				if (obj.ObjectiveCompleted ())
+					obj.SetObjectiveStatus (Objective.ObjectiveStatus.Finished);
+				else
+					allObjectviesComplete = false;
+			}
+
+			if (allObjectviesComplete)
+				NextObjectives ();
+
+			// game over check
+			if (AllObjectivesCompleted()){
+				Debug.LogError ("Game won not implemented");
+			}
+		}
+
+		private bool AllObjectivesCompleted(List<Objective> objectives)
+		{
+			foreach (Objective obj in objectives) {
+				if(!obj.ObjectiveCompleted())
+					return false;
+			}
+
+			return true;
 		}
 
 		private bool AllObjectivesCompleted()

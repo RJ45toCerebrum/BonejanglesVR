@@ -1080,18 +1080,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveList:
-  - objectiveMessage: Hang Cranium on the Skeleton Stand
+  - objectiveName: obj1
+    connectedObjectiveNames:
+    - obj2
+    objectiveMessage: Hang Cranium on the Skeleton Stand
     jointNames:
     - cranium_SDZ
     allowedTime: 10
     objectiveUI: {fileID: 1598481837}
-  - objectiveMessage: Hang Cervical and Mandible on the cranium
+  - objectiveName: obj2
+    connectedObjectiveNames:
+    - obj3
+    objectiveMessage: Hang Cervical and Mandible on the cranium
     jointNames:
     - cervical_SDZ
     - mandible_SDZ
     allowedTime: 6
     objectiveUI: {fileID: 1888521882}
-  - objectiveMessage: Hang Thoracic vertebrae, Lumber vertebrae, Rib-cage, Hip Bone,
+  - objectiveName: obj3
+    connectedObjectiveNames:
+    - obj4
+    - obj5
+    - obj6
+    - obj7
+    objectiveMessage: Hang Thoracic vertebrae, Lumber vertebrae, Rib-cage, Hip Bone,
       and Sacrum
     jointNames:
     - thoracic_SDZ
@@ -1101,7 +1113,9 @@ MonoBehaviour:
     - hip_SDZ
     allowedTime: 8
     objectiveUI: {fileID: 1520236837}
-  - objectiveMessage: Hang Left Arm bones
+  - objectiveName: obj4
+    connectedObjectiveNames: []
+    objectiveMessage: Hang Left Arm bones
     jointNames:
     - scapula_L_SDZ
     - humerus_L_SDZ
@@ -1110,7 +1124,9 @@ MonoBehaviour:
     - hand_L_SDZ
     allowedTime: 7
     objectiveUI: {fileID: 1844982109}
-  - objectiveMessage: Hang Right Arm bones
+  - objectiveName: obj5
+    connectedObjectiveNames: []
+    objectiveMessage: Hang Right Arm bones
     jointNames:
     - scapula_R_SDZ
     - humerus_R_SDZ
@@ -1119,7 +1135,9 @@ MonoBehaviour:
     - hand_R_SDZ
     allowedTime: 7
     objectiveUI: {fileID: 532022670}
-  - objectiveMessage: Hang Left Leg bones
+  - objectiveName: obj6
+    connectedObjectiveNames: []
+    objectiveMessage: Hang Left Leg bones
     jointNames:
     - femur_L_SDZ
     - tibia_L_SDZ
@@ -1127,7 +1145,9 @@ MonoBehaviour:
     - foot_L_SDZ
     allowedTime: 7
     objectiveUI: {fileID: 1338832964}
-  - objectiveMessage: Hang Right Leg bones
+  - objectiveName: obj7
+    connectedObjectiveNames: []
+    objectiveMessage: Hang Right Leg bones
     jointNames:
     - femur_R_SDZ
     - tibia_R_SDZ
@@ -1694,7 +1714,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -507.22888}
+  m_AnchoredPosition: {x: 0, y: -507.2064}
   m_SizeDelta: {x: 883, y: 1900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250528507
@@ -4491,7 +4511,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 240381262}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.46488467
+  m_Size: 0.46513584
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8981,7 +9001,7 @@ Prefab:
     - target: {fileID: 224967593222501826, guid: 8a34ee428f746d044ae82eba5299b920,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 611
+      value: 653
       objectReference: {fileID: 0}
     - target: {fileID: 224967593222501826, guid: 8a34ee428f746d044ae82eba5299b920,
         type: 2}
