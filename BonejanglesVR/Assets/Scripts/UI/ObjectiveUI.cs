@@ -13,7 +13,6 @@ namespace com.EvolveVR.BonejanglesVR
 		public Color notAvailableColor;
 		public Color notFinishedColor;
 		public Text messageText;
-			
 
 		public void ChangeStatus(Objective.ObjectiveStatus status) 
 		{

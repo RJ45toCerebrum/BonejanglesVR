@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using VRTK;
 
 namespace com.EvolveVR.BonejanglesVR
 {
@@ -94,7 +95,9 @@ namespace com.EvolveVR.BonejanglesVR
 
         // delete later
         public GameObject gameOverMessage;
-        public AudioSource endGameAudioQueuePlaceholder;
+        public AudioSource audioSource;
+		public AudioClip winAudio;
+		public AudioClip loseAudio;
 
 		// timing
 		public float allowedSeconds = 1800.0f;
@@ -193,7 +196,7 @@ namespace com.EvolveVR.BonejanglesVR
 
 			allowedSeconds -= Time.deltaTime;
 			if (allowedSeconds <= 0)
-				EndGame (loseMessage);
+				EndGame (false, loseMessage);
 		}
 
 		private void NextObjectives()
@@ -211,6 +214,7 @@ namespace com.EvolveVR.BonejanglesVR
 			{
 				objectiveNode = nextObjectives.Dequeue ();
 				activeObjectives.Add (objectiveNode.data);
+				allowedSeconds = objectiveNode.data.GetTime();
 				objectiveNode.data.SetObjectiveStatus (Objective.ObjectiveStatus.Available);
 				foreach (var node in objectiveNode.children) {
 					node.depth = currentDepth + 1;
@@ -236,7 +240,7 @@ namespace com.EvolveVR.BonejanglesVR
 
 			// game over check
 			if (AllObjectivesCompleted()){
-				Debug.LogError ("Game won not implemented");
+				EndGame (true, winMessage);
 			}
 		}
 
@@ -269,14 +273,21 @@ namespace com.EvolveVR.BonejanglesVR
             return true;   
         }
 
-		private void EndGame(string message)
+		private void EndGame(bool won, string message)
         {
             gameOverMessage.SetActive(true);
 			Text t = gameOverMessage.GetComponentInChildren<Text> ();
 			t.text = message;
 
-            endGameAudioQueuePlaceholder.Play();
+			if (won)
+				audioSource.clip = winAudio;
+			else
+				audioSource.clip = loseAudio;
+			
+            audioSource.Play();
 			gameOver = true;
+
+			//FindObjectOfType<VRTK_Head>
         }
     }
 }

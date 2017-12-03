@@ -35,7 +35,6 @@ namespace com.EvolveVR.BonejanglesVR
 
         private static VRTK_ControllerReference leftControllerReference;
         private static VRTK_ControllerReference rightControllerReference;
-		// used for when 
 		private VRTK_ControllerEvents currentHandConEvents;
         private VRTK_SnapDropZone snapDropZone;
         public string validObjectName;
@@ -62,7 +61,9 @@ namespace com.EvolveVR.BonejanglesVR
         private bool isHanging = false;
         public bool modifySwingAngles = false;
 		public delegate void BoneSnapped(JointNode jn);
+		public delegate void BoneUnsnapped(JointNode jn);
 		public event BoneSnapped OnBoneSnapped;
+		public event BoneUnsnapped OnBoneUnsnapped;
 
 		#region Properties
         public bool IsSnapped
@@ -203,6 +204,9 @@ namespace com.EvolveVR.BonejanglesVR
             // this is because only valid objects add connections
             if (e.snappedObject.name != validObjectName)
 				StartCoroutine(PingPongPulses());
+
+			if (OnBoneUnsnapped != null)
+				OnBoneUnsnapped (this);
         }
 
         private void EnteredSnapDropZone (object sender, SnapDropZoneEventArgs e)
@@ -270,7 +274,6 @@ namespace com.EvolveVR.BonejanglesVR
 			validObj = null;
 			boneRenderer = null;
 		}
-			
 		#endregion
 
 		// utility for stopping the snapping process that VRTK does;

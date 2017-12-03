@@ -38,6 +38,15 @@ namespace com.EvolveVR.BonejanglesVR
 		public float maxHandDistanceFromMouse;
 
 
+		public bool InUse
+		{
+			get  
+			{
+				return mouseInteractable.IsUsing ();
+			}	
+		}
+
+
         private void Awake() {
             mouseInteractable = GetComponent<VRTK_InteractableObject>();
             audioSource = GetComponent<AudioSource>();
