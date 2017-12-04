@@ -98,6 +98,7 @@ namespace com.EvolveVR.BonejanglesVR
         public AudioSource audioSource;
 		public AudioClip winAudio;
 		public AudioClip loseAudio;
+		public AudioClip objectiveCompleteClip;
 
 		// timing
 		public float allowedSeconds = 1800.0f;
@@ -235,8 +236,11 @@ namespace com.EvolveVR.BonejanglesVR
 					allObjectviesComplete = false;
 			}
 
-			if (allObjectviesComplete)
+			if (allObjectviesComplete) {
+				audioSource.clip = objectiveCompleteClip;
+				audioSource.Play ();
 				NextObjectives ();
+			}
 
 			// game over check
 			if (AllObjectivesCompleted()){
@@ -283,10 +287,11 @@ namespace com.EvolveVR.BonejanglesVR
 				audioSource.clip = winAudio;
 			else
 				audioSource.clip = loseAudio;
-			
+
             audioSource.Play();
 			gameOver = true;
 
+			// do the headset fade then call the loading start scene coroutine
 			//FindObjectOfType<VRTK_Head>
         }
     }
