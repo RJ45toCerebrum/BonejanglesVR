@@ -287,15 +287,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1581115399082022}
-  m_LocalRotation: {x: -0, y: -0.3778159, z: -0, w: 0.9258808}
-  m_LocalPosition: {x: -1.928, y: 0.005, z: -2.928}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.035, y: 0.004999995, z: -2.233}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4124407250037036}
   - {fileID: 4675566167253640}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -44.397003, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4662880008354720
 Transform:
   m_ObjectHideFlags: 1
@@ -948,8 +948,9 @@ MonoBehaviour:
   usingState: 0
   lockOnStart: 1
   audioSource: {fileID: 82673511777893996}
-  startAngle: 290
-  endValue: 310
+  startAngle: 270
+  endAngle: 315
+  maxSqrDistanceFromHand: 0.01
   rotationAxis: 2
   keyInPlaceTransform: {fileID: 4513174410708346}
 --- !u!114 &114150169496429436
@@ -984,8 +985,9 @@ MonoBehaviour:
   usingState: 0
   lockOnStart: 1
   audioSource: {fileID: 82673511777893996}
-  startAngle: 290
-  endValue: 310
+  startAngle: 270
+  endAngle: 315
+  maxSqrDistanceFromHand: 0.01
   rotationAxis: 2
   keyInPlaceTransform: {fileID: 4520013088406558}
 --- !u!114 &114445816556271246
@@ -1051,7 +1053,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0.443135, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1.7633545, y: 0.448135, z: -3.7291589}
+  m_ConnectedAnchor: {x: 0.041999817, y: 0.448135, z: -5.388}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 1
@@ -1145,7 +1147,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0.39, y: 0.11649498, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -1.636792, y: 0.64876735, z: -2.6428587}
+  m_ConnectedAnchor: {x: -1.627437, y: 0.64876735, z: -2.233}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: -1, z: 0}
   m_XMotion: 1

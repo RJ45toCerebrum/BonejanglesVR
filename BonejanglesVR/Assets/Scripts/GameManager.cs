@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using VRTK;
+using UnityEngine.SceneManagement;
 
 namespace com.EvolveVR.BonejanglesVR
 {
@@ -33,7 +34,7 @@ namespace com.EvolveVR.BonejanglesVR
 		private List<JointNode> jointNodes;
 		[Tooltip("The time is in Minutes")]
 		public float allowedTime;
-		private ObjectiveStatus objectiveCompleted = ObjectiveStatus.NotAvailable;
+		public ObjectiveStatus objectiveStatus = ObjectiveStatus.NotAvailable;
 		public ObjectiveUI objectiveUI;
 	
 
@@ -54,7 +55,7 @@ namespace com.EvolveVR.BonejanglesVR
 
 		public bool ObjectiveCompleted()
 		{
-			if (objectiveCompleted == ObjectiveStatus.Finished)
+			if (objectiveStatus == ObjectiveStatus.Finished)
 				return true;
 
 			foreach (JointNode jn in jointNodes) {
@@ -70,7 +71,7 @@ namespace com.EvolveVR.BonejanglesVR
 		}
 
 		public void SetObjectiveStatus(ObjectiveStatus status) {
-			objectiveCompleted = status;
+			objectiveStatus = status;
 			objectiveUI.ChangeStatus (status);
 		}
 
@@ -230,22 +231,22 @@ namespace com.EvolveVR.BonejanglesVR
 			bool allObjectviesComplete = true;
 			foreach (Objective obj in activeObjectives) 
 			{
-				if (obj.ObjectiveCompleted ())
+				if (obj.ObjectiveCompleted () && obj.objectiveStatus != Objective.ObjectiveStatus.Finished) 
+				{
+					audioSource.clip = objectiveCompleteClip;
+					audioSource.Play ();
 					obj.SetObjectiveStatus (Objective.ObjectiveStatus.Finished);
+				}
 				else
 					allObjectviesComplete = false;
 			}
 
-			if (allObjectviesComplete) {
-				audioSource.clip = objectiveCompleteClip;
-				audioSource.Play ();
+			if (allObjectviesComplete)
 				NextObjectives ();
-			}
 
 			// game over check
-			if (AllObjectivesCompleted()){
+			if (AllObjectivesCompleted())
 				EndGame (true, winMessage);
-			}
 		}
 
 		private bool AllObjectivesCompleted(List<Objective> objectives)
@@ -291,8 +292,18 @@ namespace com.EvolveVR.BonejanglesVR
             audioSource.Play();
 			gameOver = true;
 
-			// do the headset fade then call the loading start scene coroutine
-			//FindObjectOfType<VRTK_Head>
+			StartCoroutine (StartSceneTransition());
         }
+
+		private IEnumerator StartSceneTransition()
+		{
+			// do the headset fade then call the loading start scene coroutine
+			VRTK_HeadsetFade headsetFader = FindObjectOfType<VRTK_HeadsetFade>();
+			headsetFader.Fade (Color.black, 10.0f);
+			MouseSlide mouse = FindObjectOfType<MouseSlide> ();
+			mouse.InteractableObject.ForceStopInteracting ();
+			yield return new WaitWhile (() => {return headsetFader.IsTransitioning(); });
+			SceneManager.LoadSceneAsync ("Scenes/StartScene");
+		}
     }
 }

@@ -221,6 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e463e9aff43a64f45b912f0c9f175a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
+  mouseSlide: {fileID: 1390962525}
   placeholderAudioQueue: {fileID: 1299725974}
   audioSource: {fileID: 17447257}
 --- !u!82 &17447257
@@ -1844,7 +1847,7 @@ Prefab:
     - target: {fileID: 224476667224492294, guid: 393f49187e70fd849aa82f89f3fd7781,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 651
+      value: 656
       objectReference: {fileID: 0}
     - target: {fileID: 224476667224492294, guid: 393f49187e70fd849aa82f89f3fd7781,
         type: 2}
@@ -3273,6 +3276,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -34.493, z: 0}
+--- !u!114 &1390962525 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114054394623145354, guid: f93e66b290f6e7742ab074d19c03615f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1340554060}
+  m_Script: {fileID: 11500000, guid: 21cd0a741fe168b45940c200f80f06f6, type: 3}
 --- !u!1 &1427755371
 GameObject:
   m_ObjectHideFlags: 0

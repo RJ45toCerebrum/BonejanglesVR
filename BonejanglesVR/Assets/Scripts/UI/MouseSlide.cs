@@ -46,6 +46,10 @@ namespace com.EvolveVR.BonejanglesVR
 			}	
 		}
 
+		public VRTK_InteractableObject InteractableObject
+		{
+			get{ return mouseInteractable;}
+		}
 
         private void Awake() {
             mouseInteractable = GetComponent<VRTK_InteractableObject>();
